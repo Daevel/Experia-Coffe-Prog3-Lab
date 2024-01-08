@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f730e49-c21b-4504-8bab-0f139ba80abb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/prova.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="4f730e49-c21b-4504-8bab-0f139ba80abb" name="Changes" comment="First commit about Experia Project for Prog3/Lab&#10;&#10;Using Scene builder and Intellij IDEA" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +41,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   }
@@ -113,12 +97,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704747385771</updated>
-      <workItem from="1704747387068" duration="2950000" />
+      <workItem from="1704747387068" duration="3413000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit about Experia Project for Prog3/Lab&#10;&#10;Using Scene builder and Intellij IDEA">
+      <option name="closed" value="true" />
+      <created>1704750483472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704750483472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit about Experia Project for Prog3/Lab&#10;&#10;Using Scene builder and Intellij IDEA" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit about Experia Project for Prog3/Lab&#10;&#10;Using Scene builder and Intellij IDEA" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
