@@ -19,4 +19,6 @@ module experia.coffee.experiacoffee {
     exports experia.coffee.experiacoffee;
     exports experia.coffee.experiacoffee.data;
     exports experia.coffee.experiacoffee.model;
+    exports experia.coffee.experiacoffee.controller;
+    opens experia.coffee.experiacoffee.controller to javafx.fxml;
 }

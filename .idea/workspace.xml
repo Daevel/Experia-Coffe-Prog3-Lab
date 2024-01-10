@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/AppQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added all the functionalities for add, update, delete products">
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/SceneSwitch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/assets/template.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/profilePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/hello-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/prova.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/prova.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,15 +30,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,46 +53,58 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2ai6DYDYWs0I8xkOQLW8KAFEYVH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.All in experiaCoffee.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in experiaCoffee.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/luigiavitabile/IdeaProjects/Experia-Coffe-Prog3-Lab/src/main/resources/assets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="experia.coffee.experiacoffee.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="experia.coffee.experiacoffee.App" />
       <module name="experiaCoffee" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="experia.coffee.experiacoffee.*" />
+          <option name="PATTERN" value="experia.coffee.experiacoffee.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,11 +113,11 @@
       </method>
     </configuration>
     <configuration name="ProductController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="experia.coffee.experiacoffee.ProductController" />
+      <option name="MAIN_CLASS_NAME" value="experia.coffee.experiacoffee.controller.ProductController" />
       <module name="experiaCoffee" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="experia.coffee.experiacoffee.*" />
+          <option name="PATTERN" value="experia.coffee.experiacoffee.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.All in experiaCoffee" />
         <item itemvalue="Application.ProductController" />
       </list>
@@ -157,12 +172,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704788933779</updated>
-      <workItem from="1704788936000" duration="16087000" />
+      <workItem from="1704788936000" duration="16363000" />
+      <workItem from="1704815505002" duration="207000" />
+      <workItem from="1704872545457" duration="10747000" />
+      <workItem from="1704896277418" duration="1799000" />
     </task>
+    <task id="LOCAL-00001" summary="added all the functionalities for add, update, delete products">
+      <option name="closed" value="true" />
+      <created>1704814208463</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704814208463</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added all the functionalities for add, update, delete products" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all the functionalities for add, update, delete products" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
