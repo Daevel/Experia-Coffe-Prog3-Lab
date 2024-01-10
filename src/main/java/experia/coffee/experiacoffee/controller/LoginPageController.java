@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.model.SceneSwitch;
+import experia.coffee.experiacoffee.model.ToastMessage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +31,9 @@ public class LoginPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
-
+        System.out.println("Login page controllore initialized");
+        ToastMessage toast = new ToastMessage();
+        toast.showToast("Messagge works!");
     }
 
     @FXML

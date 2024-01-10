@@ -1,0 +1,7 @@
+.toast-message {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
