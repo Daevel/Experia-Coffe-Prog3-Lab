@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="sceneAnchorPane" prefHeight="568.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProductController">
+<AnchorPane fx:id="sceneAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProductController">
    <children>
       <GridPane layoutX="26.0" layoutY="21.0" prefHeight="83.0" prefWidth="97.0">
         <columnConstraints>
@@ -49,7 +50,7 @@
       <Button fx:id="btnLogin" layoutX="75.0" layoutY="129.0" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="36.0" prefWidth="73.0" text="Login" />
       <Label layoutX="66.0" layoutY="192.0" prefHeight="18.0" prefWidth="59.0" text="Search:" />
       <TextField layoutX="123.0" layoutY="188.0" prefHeight="25.0" prefWidth="435.0" promptText="Search..." />
-      <TableView fx:id="tableView" layoutX="26.0" layoutY="230.0" prefHeight="323.0" prefWidth="532.0">
+      <TableView fx:id="tableView" layoutX="26.0" layoutY="255.0" prefHeight="323.0" prefWidth="333.0">
         <columns>
           <TableColumn fx:id="colId" minWidth="0.0" prefWidth="0.0" text="C1" />
           <TableColumn fx:id="colFirstname" prefWidth="183.0" text="FIRST NAME" />
@@ -57,5 +58,24 @@
             <TableColumn fx:id="colLastName" prefWidth="199.0" text="LAST NAME" />
         </columns>
       </TableView>
+      <TableView layoutX="365.0" layoutY="255.0" prefHeight="323.0" prefWidth="397.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="0.0" text="C1" />
+            <TableColumn prefWidth="183.0" text="ID ORDINE" />
+            <TableColumn prefWidth="149.0" text="FATTURA" />
+            <TableColumn prefWidth="199.0" text="ID CARRELLO" />
+            <TableColumn prefWidth="199.0" text="INDIRIZZO DI SPEDIZIONE" />
+         </columns>
+      </TableView>
+      <Label layoutX="132.0" layoutY="227.0" prefHeight="27.0" prefWidth="121.0" text="PRODUCT LIST">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="515.0" layoutY="227.0" prefHeight="27.0" prefWidth="97.0" text="ORDER LIST">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
