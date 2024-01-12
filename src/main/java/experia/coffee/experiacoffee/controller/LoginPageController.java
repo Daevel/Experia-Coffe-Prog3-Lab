@@ -2,6 +2,7 @@ package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.data.LoginQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
+import experia.coffee.experiacoffee.model.Utente;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -50,18 +51,13 @@ public class LoginPageController implements Initializable {
     }
 
     @FXML
-    public void openHomePage() throws IOException {
-        new SceneSwitch(scene2AnchorPane, "prova.fxml");
-    }
-
-    @FXML
     public void onLogin() throws IOException {
-        experia.coffee.experiacoffee.model.Utente utente = new experia.coffee.experiacoffee.model.Utente(fieldUsername.getText(), fieldPassword.getText());
+        Utente.UtenteBuilder utente = new Utente.UtenteBuilder(fieldUsername.getText(), fieldPassword.getText());
         experia.coffee.experiacoffee.data.LoginQuery query = new LoginQuery();
-        query.loginUser(utente);
+        query.loginUser(utente.build());
 
-        if(query.loginUser(utente)) {
-            openHomePage();
+        if(query.loginUser(utente.build())) {
+            new SceneSwitch(scene2AnchorPane, "prova.fxml");
         } else {
             System.out.println("Credenziali errate riprovare");
         }

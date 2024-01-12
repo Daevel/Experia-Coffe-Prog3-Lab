@@ -1,6 +1,8 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.data.SignupQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
+import experia.coffee.experiacoffee.model.Utente;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,7 +24,6 @@ public class SignUpController implements Initializable {
     private AnchorPane signUpAnchorPane;
 
     /* TEXT FIELDS */
-
     @FXML
     public TextField name;
 
@@ -53,8 +54,19 @@ public class SignUpController implements Initializable {
     @FXML
     public TextField city;
 
-    /* BUTTONS */
+    @FXML
+    public TextField cardNumber;
 
+    @FXML
+    public TextField cvvNumber;
+
+    @FXML
+    public TextField expirationDate;
+
+    @FXML
+    public TextField cardOwner;
+
+    /* BUTTONS */
     @FXML
     public Button confirmSubscription;
 
@@ -67,9 +79,27 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    public void subscribe() throws IOException {
-        System.out.println("pwd "+pwd.getText());
-        System.out.println("repeatPwd "+repeatPwd.getText());
+    public void onSignUp() throws IOException {
+        Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
+                .setNAME(name.getText())
+                .setSURNAME(surname.getText())
+                .setCELLULARE(phoneNumber.getText())
+                .setVIA(streetAddress.getText())
+                .setN_CIVICO(streetNumber.getText())
+                .setCITTA(city.getText())
+                .setCAP(postalCode.getText())
+                .setNUM_CARTA(cardNumber.getText())
+                .setCVV_CARTA(cvvNumber.getText())
+                .setINTESTATARIO_CARTA(cardOwner.getText())
+                .setSCADENZA_CARTA(expirationDate.getText());
+        experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
+        boolean signUpSuccess = query.signUpUser(utente.build());
+
+        if (signUpSuccess) {
+            new SceneSwitch(signUpAnchorPane, "prova.fxml");
+        } else {
+            System.out.println("Registrazione fallita, riprovare");
+        }
     }
 
 }
