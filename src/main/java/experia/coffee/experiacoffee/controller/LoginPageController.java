@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.data.LoginQuery;
+import experia.coffee.experiacoffee.model.LoginResult;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.Utente;
 import javafx.fxml.FXML;
@@ -21,9 +22,6 @@ public class LoginPageController implements Initializable {
     private AnchorPane scene2AnchorPane;
 
     @FXML
-    public Button returnToHomeButton;
-
-    @FXML
     public Button loginButton;
     @FXML
     public Button signUpButton;
@@ -34,16 +32,8 @@ public class LoginPageController implements Initializable {
     @FXML
     public TextField fieldPassword;
 
-
-    @FXML
-    public void onSwitch2Click() throws IOException {
-        new SceneSwitch(scene2AnchorPane, "prova.fxml");
-    }
-
     @Override
-    public void initialize(URL url, ResourceBundle rb)  {
-        System.out.println("Login page controllore initialized");
-    }
+    public void initialize(URL url, ResourceBundle rb)  {}
 
     @FXML
     public void openSignUpPage() throws IOException {
@@ -54,10 +44,18 @@ public class LoginPageController implements Initializable {
     public void onLogin() throws IOException {
         Utente.UtenteBuilder utente = new Utente.UtenteBuilder(fieldUsername.getText(), fieldPassword.getText());
         experia.coffee.experiacoffee.data.LoginQuery query = new LoginQuery();
-        query.loginUser(utente.build());
 
-        if(query.loginUser(utente.build())) {
-            new SceneSwitch(scene2AnchorPane, "prova.fxml");
+        LoginResult loginResult = query.loginUser(utente.build());
+
+        if(loginResult.isSuccess()) {
+
+            String ruoloUtente = loginResult.getRuolo();
+
+            if ("cliente".equals(ruoloUtente)) {
+                new SceneSwitch(scene2AnchorPane, "clienteHomePage.fxml");
+            } else if ("dipendente".equals(ruoloUtente)){
+                new SceneSwitch(scene2AnchorPane, "dipendenteHomePage.fxml");
+            }
         } else {
             System.out.println("Credenziali errate riprovare");
         }

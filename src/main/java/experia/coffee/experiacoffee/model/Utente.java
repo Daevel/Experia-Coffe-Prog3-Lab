@@ -1,5 +1,4 @@
 package experia.coffee.experiacoffee.model;
-
 public class Utente {
 
     // required
@@ -18,7 +17,7 @@ public class Utente {
     private String CVV_CARTA;
     private String INTESTATARIO_CARTA;
     private String SCADENZA_CARTA;
-
+    private String RUOLO;
 
     public String getEMAIL() {
         return EMAIL;
@@ -70,6 +69,10 @@ public class Utente {
     public String getSCADENZA_CARTA() {
         return SCADENZA_CARTA;
     }
+
+    public String getRUOLO() {
+        return RUOLO;
+    }
     private Utente(UtenteBuilder builder) {
        this.NAME = builder.NAME;
        this.SURNAME = builder.SURNAME;
@@ -84,9 +87,8 @@ public class Utente {
        this.NUM_CARTA = builder.NUM_CARTA;
        this.CVV_CARTA = builder.CVV_CARTA;
        this.SCADENZA_CARTA = builder.SCADENZA_CARTA;
+       this.RUOLO = builder.RUOLO;
     }
-
-
 
     public static class UtenteBuilder {
 
@@ -109,6 +111,7 @@ public class Utente {
         private String CVV_CARTA;
         private String INTESTATARIO_CARTA;
         private String SCADENZA_CARTA;
+        private String RUOLO;
 
 
 
@@ -165,10 +168,14 @@ public class Utente {
             return this;
         }
 
+        public UtenteBuilder setRUOLO(String RUOLO) {
+            this.RUOLO = RUOLO;
+            return this;
+        }
+
         public Utente build() {
             return new Utente(this);
         }
-
 
     }
 

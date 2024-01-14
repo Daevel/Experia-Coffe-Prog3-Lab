@@ -93,6 +93,7 @@ public class SignUpController implements Initializable {
                 .setINTESTATARIO_CARTA(cardOwner.getText())
                 .setSCADENZA_CARTA(expirationDate.getText());
         experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
+
         boolean signUpSuccess = query.signUpUser(utente.build());
 
         if (signUpSuccess) {

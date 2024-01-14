@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added&#10;- Login page&#10;- Profile page&#10;- Signup page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/SignupQuery.java" afterDir="false" />
+    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added login query and athentication logic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/LoginResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/assets/ExperiaLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/assets/template.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/prova.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/prova.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -66,7 +75,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luigiavitabile/IdeaProjects/Experia-Coffe-Prog3-Lab/src/main/resources/assets&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luigi Avitabile/IdeaProjects/Experia Coffee/src/main/resources/experia/coffee/experiacoffee/assets&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -82,6 +91,7 @@
       <recent name="experia.coffee.experiacoffee.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luigi Avitabile\IdeaProjects\Experia Coffee\src\main\resources\experia\coffee\experiacoffee\assets" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets" />
       <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
     </key>
@@ -172,6 +182,7 @@
       <workItem from="1704872545457" duration="10747000" />
       <workItem from="1704896277418" duration="1799000" />
       <workItem from="1704964367175" duration="8546000" />
+      <workItem from="1705219859599" duration="9941000" />
     </task>
     <task id="LOCAL-00001" summary="added all the functionalities for add, update, delete products">
       <option name="closed" value="true" />

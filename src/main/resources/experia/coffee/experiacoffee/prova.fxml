@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -11,9 +10,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="sceneAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProductController">
+<AnchorPane fx:id="sceneAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProductController">
    <children>
-      <GridPane layoutX="26.0" layoutY="21.0" prefHeight="83.0" prefWidth="97.0">
+      <GridPane layoutX="108.0" layoutY="388.0" prefHeight="83.0" prefWidth="97.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="86.0" />
         </columnConstraints>
@@ -23,12 +22,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="18.0" prefWidth="100.0" text="FIRST NAME:" />
+            <Label prefHeight="0.0" prefWidth="97.0" text="FIRST NAME:" />
             <Label prefHeight="17.0" prefWidth="99.0" text="SECOND NAME:" GridPane.rowIndex="1" />
             <Label prefHeight="17.0" prefWidth="88.0" text="LAST NAME:" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <GridPane layoutX="123.0" layoutY="19.0" prefHeight="89.0" prefWidth="435.0">
+      <GridPane layoutX="205.0" layoutY="386.0" prefHeight="89.0" prefWidth="435.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -43,38 +42,22 @@
             <TextField fx:id="fieldLastName" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="btnNew" layoutX="192.0" layoutY="129.0" mnemonicParsing="false" onAction="#clickNew" prefHeight="36.0" prefWidth="73.0" text="New" />
-      <Button fx:id="btnSave" layoutX="292.0" layoutY="129.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="36.0" prefWidth="73.0" text="Save" />
-      <Button fx:id="btnUpdate" layoutX="388.0" layoutY="129.0" mnemonicParsing="false" onAction="#updateProducts" prefHeight="36.0" prefWidth="73.0" text="Update" />
-      <Button fx:id="btnDelete" layoutX="485.0" layoutY="129.0" mnemonicParsing="false" onAction="#deleteProducts" prefHeight="36.0" prefWidth="73.0" text="Delete" />
-      <Button fx:id="btnLogin" layoutX="75.0" layoutY="129.0" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="36.0" prefWidth="73.0" text="Login" />
-      <Label layoutX="66.0" layoutY="192.0" prefHeight="18.0" prefWidth="59.0" text="Search:" />
-      <TextField layoutX="123.0" layoutY="188.0" prefHeight="25.0" prefWidth="435.0" promptText="Search..." />
-      <TableView fx:id="tableView" layoutX="26.0" layoutY="255.0" prefHeight="323.0" prefWidth="333.0">
-        <columns>
-          <TableColumn fx:id="colId" minWidth="0.0" prefWidth="0.0" text="C1" />
-          <TableColumn fx:id="colFirstname" prefWidth="183.0" text="FIRST NAME" />
-            <TableColumn fx:id="colSecondName" prefWidth="149.0" text="SECOND NAME" />
-            <TableColumn fx:id="colLastName" prefWidth="199.0" text="LAST NAME" />
-        </columns>
-      </TableView>
-      <TableView layoutX="365.0" layoutY="255.0" prefHeight="323.0" prefWidth="397.0">
-         <columns>
-            <TableColumn minWidth="0.0" prefWidth="0.0" text="C1" />
-            <TableColumn prefWidth="183.0" text="ID ORDINE" />
-            <TableColumn prefWidth="149.0" text="FATTURA" />
-            <TableColumn prefWidth="199.0" text="ID CARRELLO" />
-            <TableColumn prefWidth="199.0" text="INDIRIZZO DI SPEDIZIONE" />
-         </columns>
-      </TableView>
-      <Label layoutX="132.0" layoutY="227.0" prefHeight="27.0" prefWidth="121.0" text="PRODUCT LIST">
+      <Button fx:id="btnNew" layoutX="225.0" layoutY="499.0" mnemonicParsing="false" onAction="#clickNew" prefHeight="36.0" prefWidth="73.0" text="New" />
+      <Button fx:id="btnSave" layoutX="325.0" layoutY="499.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="36.0" prefWidth="73.0" text="Save" />
+      <Button fx:id="btnUpdate" layoutX="421.0" layoutY="499.0" mnemonicParsing="false" onAction="#updateProducts" prefHeight="36.0" prefWidth="73.0" text="Update" />
+      <Button fx:id="btnDelete" layoutX="518.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteProducts" prefHeight="36.0" prefWidth="73.0" text="Delete" />
+      <Label layoutX="99.0" layoutY="649.0" prefHeight="18.0" prefWidth="59.0" text="Search:" />
+      <TextField layoutX="156.0" layoutY="645.0" prefHeight="25.0" prefWidth="435.0" promptText="Search..." />
+      <Button fx:id="btnLogin" layoutX="129.0" layoutY="499.0" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="36.0" prefWidth="73.0" text="Login" />
+      <Accordion layoutX="73.0" layoutY="49.0" />
+      <Label layoutX="26.0" layoutY="32.0" prefHeight="49.0" prefWidth="126.0" text="Benvenuto, ">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="515.0" layoutY="227.0" prefHeight="27.0" prefWidth="97.0" text="ORDER LIST">
+      <Label fx:id="userID" layoutX="152.0" layoutY="32.0" prefHeight="49.0" prefWidth="126.0">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
    </children>

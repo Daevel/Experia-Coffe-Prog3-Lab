@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.data;
 
+import experia.coffee.experiacoffee.model.LoginResult;
 import experia.coffee.experiacoffee.model.Utente;
 
 import java.sql.PreparedStatement;
@@ -9,24 +10,30 @@ public class LoginQuery {
 
     private DBConnection c = new DBConnection();
 
-    public boolean loginUser(Utente utente) {
+    public LoginResult loginUser(Utente utente) {
         try {
             c.getDBConn();
             String query = "SELECT * FROM tbl_cliente WHERE EMAIL = ? AND UTENTE_PASSWORD = ?";
             try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+
                 preparedStatement.setString(1, utente.getEMAIL());
                 preparedStatement.setString(2, utente.getPASSWORD());
 
-                System.out.println(utente.getEMAIL());
-                System.out.println(utente.getPASSWORD());
+
 
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    return resultSet.next();
+                   if(resultSet.next()) {
+                       String ruolo = resultSet.getString("RUOLO");
+
+                       return new LoginResult(true, ruolo);
+                   } else {
+                       return new LoginResult(false, null);
+                   }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return new LoginResult(false, null);
         }
     }
 

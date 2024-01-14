@@ -1,15 +1,11 @@
 package experia.coffee.experiacoffee.controller;
-
 import experia.coffee.experiacoffee.data.AppQuery;
 import experia.coffee.experiacoffee.model.Product;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import org.w3c.dom.events.MouseEvent;
@@ -22,11 +18,13 @@ public class ProductController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
-        showProducts();
+        //showProducts();
         btnUpdate.setDisable(true);
         btnDelete.setDisable(true);
     }
 
+    @FXML
+    public Label userID;
     @FXML
     public TextField fieldFirstName;
     @FXML
