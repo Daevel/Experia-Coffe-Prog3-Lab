@@ -2,62 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="signUpAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.SignUpController">
    <children>
-      <Label layoutX="27.0" layoutY="22.0" prefHeight="44.0" prefWidth="201.0" text="Registrati qui">
+      <Label layoutX="27.0" layoutY="22.0" prefHeight="53.0" prefWidth="413.0" text="Registrati qui">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="name" layoutX="28.0" layoutY="102.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="surname" layoutX="260.0" layoutY="102.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="phoneNumber" layoutX="539.0" layoutY="285.0" />
-      <TextField fx:id="email" layoutX="27.0" layoutY="193.0" prefHeight="52.0" prefWidth="179.0" />
-      <Label layoutX="28.0" layoutY="85.0" text="Nome" />
-      <Label layoutX="259.0" layoutY="86.0" prefHeight="17.0" prefWidth="58.0" text="Cognome" />
-      <Label layoutX="539.0" layoutY="268.0" text="Telefono" />
-      <Label layoutX="29.0" layoutY="175.0" text="Email" />
-      <Label layoutX="539.0" layoutY="210.0" text="Password" />
-      <PasswordField fx:id="pwd" layoutX="539.0" layoutY="227.0" />
-      <Label layoutX="33.0" layoutY="273.0" prefHeight="44.0" prefWidth="352.0" text="Indirizzo di spedizione/fatturazione">
+      <TextField fx:id="name" layoutX="56.0" layoutY="259.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="surname" layoutX="261.0" layoutY="259.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="phoneNumber" layoutX="261.0" layoutY="339.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="email" layoutX="56.0" layoutY="339.0" prefHeight="52.0" prefWidth="179.0" />
+      <Label layoutX="56.0" layoutY="242.0" text="Nome" />
+      <Label layoutX="261.0" layoutY="242.0" prefHeight="17.0" prefWidth="58.0" text="Cognome" />
+      <Label layoutX="261.0" layoutY="322.0" text="Telefono" />
+      <Label layoutX="56.0" layoutY="322.0" text="Email" />
+      <Label layoutX="56.0" layoutY="417.0" text="Password" />
+      <PasswordField fx:id="pwd" layoutX="56.0" layoutY="434.0" prefHeight="52.0" prefWidth="179.0" />
+      <Label layoutX="556.0" layoutY="22.0" prefHeight="44.0" prefWidth="710.0" text="Indirizzo di spedizione/fatturazione">
          <font>
-            <Font size="24.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="streetAddress" layoutX="33.0" layoutY="334.0" />
-      <TextField fx:id="streetNumber" layoutX="212.0" layoutY="334.0" />
-      <TextField fx:id="postalCode" layoutX="212.0" layoutY="398.0" />
-      <Label layoutX="33.0" layoutY="317.0" text="Indirizzo/via" />
-      <Label layoutX="212.0" layoutY="317.0" prefHeight="17.0" prefWidth="58.0" text="Civico" />
-      <Label layoutX="213.0" layoutY="381.0" text="CAP" />
-      <Label layoutX="33.0" layoutY="381.0" text="Città" />
-      <PasswordField fx:id="city" layoutX="33.0" layoutY="398.0" />
-      <ButtonBar layoutX="40.0" layoutY="620.0" prefHeight="26.0" prefWidth="322.0">
+      <TextField fx:id="streetAddress" layoutX="653.0" layoutY="167.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="streetNumber" layoutX="653.0" layoutY="282.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="postalCode" layoutX="870.0" layoutY="282.0" prefHeight="52.0" prefWidth="179.0" />
+      <Label layoutX="653.0" layoutY="150.0" text="Indirizzo/via" />
+      <Label layoutX="653.0" layoutY="265.0" prefHeight="17.0" prefWidth="58.0" text="Civico" />
+      <Label layoutX="871.0" layoutY="265.0" text="CAP" />
+      <Label layoutX="870.0" layoutY="150.0" text="Città" />
+      <ButtonBar layoutX="42.0" layoutY="664.0" prefHeight="113.0" prefWidth="359.0">
         <buttons>
-            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" text="Conferma registrazione" />
-            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="26.0" text="Annulla" />
+            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="78.0" prefWidth="190.0" text="Conferma registrazione" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="78.0" prefWidth="190.0" text="Annulla" />
         </buttons>
       </ButtonBar>
-      <PasswordField fx:id="repeatPwd" layoutX="718.0" layoutY="227.0" />
-      <Label layoutX="717.0" layoutY="210.0" text="Ripeti password" />
-      <Label layoutX="33.0" layoutY="436.0" prefHeight="44.0" prefWidth="352.0" text="Metodo di pagamaneto">
+      <PasswordField fx:id="repeatPwd" layoutX="261.0" layoutY="434.0" prefHeight="52.0" prefWidth="179.0" />
+      <Label layoutX="260.0" layoutY="417.0" text="Ripeti password" />
+      <Label layoutX="556.0" layoutY="395.0" prefHeight="44.0" prefWidth="589.0" text="Metodo di pagamaneto">
          <font>
-            <Font size="24.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="cardNumber" layoutX="33.0" layoutY="497.0" />
-      <TextField fx:id="cvvNumber" layoutX="212.0" layoutY="497.0" />
-      <TextField fx:id="cardOwner" layoutX="212.0" layoutY="561.0" />
-      <Label layoutX="33.0" layoutY="480.0" text="Numero carta" />
-      <Label layoutX="212.0" layoutY="480.0" prefHeight="17.0" prefWidth="58.0" text="CVV" />
-      <Label layoutX="213.0" layoutY="544.0" text="Intestatario Carta" />
-      <Label layoutX="33.0" layoutY="544.0" text="Scadenza carta" />
-      <PasswordField fx:id="expirationDate" layoutX="33.0" layoutY="561.0" />
+      <TextField fx:id="cardNumber" layoutX="653.0" layoutY="503.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="cvvNumber" layoutX="870.0" layoutY="503.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="cardOwner" layoutX="870.0" layoutY="612.0" prefHeight="52.0" prefWidth="179.0" />
+      <Label layoutX="653.0" layoutY="486.0" text="Numero carta" />
+      <Label layoutX="870.0" layoutY="486.0" prefHeight="17.0" prefWidth="58.0" text="CVV" />
+      <Label layoutX="871.0" layoutY="595.0" text="Intestatario Carta" />
+      <Label layoutX="653.0" layoutY="595.0" text="Scadenza carta" />
+      <Separator layoutX="531.0" layoutY="-6.0" orientation="VERTICAL" prefHeight="809.0" prefWidth="2.0" style="-fx-background-color: black;" />
+      <TextField fx:id="city" layoutX="870.0" layoutY="167.0" prefHeight="52.0" prefWidth="179.0" />
+      <DatePicker fx:id="expirationDate" layoutX="653.0" layoutY="612.0" prefHeight="52.0" prefWidth="179.0" />
    </children>
 </AnchorPane>

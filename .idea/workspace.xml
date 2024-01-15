@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added login query and athentication logic">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/UtenteSingleton.java" afterDir="false" />
+    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added all the functionalities for add, update, delete products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/LoginResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/LoginResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +32,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Daevel"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Daevel&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -171,7 +162,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
+        <option value="jdk-16.0.2-corretto-16.0.2-3183f394aec4-fe0432aa" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
         <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
     </attachedChunks>
@@ -193,6 +185,7 @@
       <workItem from="1704896277418" duration="1799000" />
       <workItem from="1704964367175" duration="8546000" />
       <workItem from="1705219859599" duration="9941000" />
+      <workItem from="1705328043681" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="added all the functionalities for add, update, delete products">
       <option name="closed" value="true" />
