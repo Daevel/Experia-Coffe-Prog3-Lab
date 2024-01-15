@@ -2,18 +2,18 @@ package experia.coffee.experiacoffee.model;
 
 public class LoginResult {
     private boolean success;
-    private String ruolo;
+    private Utente user;
 
-    public LoginResult(boolean success, String ruolo) {
+    public LoginResult(boolean success, Utente user) {
         this.success = success;
-        this.ruolo = ruolo;
+        this.user = user;
     }
 
     public boolean isSuccess() {
         return success;
     }
 
-    public String getRuolo() {
-        return ruolo;
+    public Utente getUser() {
+        return user;
     }
 }

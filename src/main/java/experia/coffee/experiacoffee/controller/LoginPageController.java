@@ -4,9 +4,11 @@ import experia.coffee.experiacoffee.data.LoginQuery;
 import experia.coffee.experiacoffee.model.LoginResult;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.Utente;
+import experia.coffee.experiacoffee.model.UtenteSingleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -32,6 +34,9 @@ public class LoginPageController implements Initializable {
     @FXML
     public TextField fieldPassword;
 
+    @FXML
+    public Label errorInvalidCredentials;
+
     @Override
     public void initialize(URL url, ResourceBundle rb)  {}
 
@@ -45,11 +50,18 @@ public class LoginPageController implements Initializable {
         Utente.UtenteBuilder utente = new Utente.UtenteBuilder(fieldUsername.getText(), fieldPassword.getText());
         experia.coffee.experiacoffee.data.LoginQuery query = new LoginQuery();
 
-        LoginResult loginResult = query.loginUser(utente.build());
+        Utente userLogged = query.loginUser(utente.build());
 
-        if(loginResult.isSuccess()) {
-
-            String ruoloUtente = loginResult.getRuolo();
+        if(userLogged != null) {
+            String ruoloUtente = userLogged.getRUOLO();
+            String nomeUtente = userLogged.getNAME();
+            String cognomeUtente = userLogged.getSURNAME();
+            UtenteSingleton utenteSingleton = UtenteSingleton.getInstance();
+            utenteSingleton.setUtente(utente
+                    .setRUOLO(ruoloUtente)
+                    .setNAME(nomeUtente)
+                    .setSURNAME(cognomeUtente)
+                    .build());
 
             if ("cliente".equals(ruoloUtente)) {
                 new SceneSwitch(scene2AnchorPane, "clienteHomePage.fxml");
@@ -57,6 +69,7 @@ public class LoginPageController implements Initializable {
                 new SceneSwitch(scene2AnchorPane, "dipendenteHomePage.fxml");
             }
         } else {
+            errorInvalidCredentials.setText("Credenziali errate o non valide, riprovare.");
             System.out.println("Credenziali errate riprovare");
         }
     }

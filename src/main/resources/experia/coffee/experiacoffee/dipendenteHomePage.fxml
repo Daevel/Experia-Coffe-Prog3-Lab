@@ -12,6 +12,7 @@
             <Font size="24.0" />
          </font></Label>
       <Button fx:id="returnToLoginPageButton" layoutX="1175.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="68.0" prefWidth="91.0" text="Logout" />
+      <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="526.0" layoutY="190.0" prefHeight="108.0" prefWidth="173.0" text="Label" />
       
    </children>
 </AnchorPane>

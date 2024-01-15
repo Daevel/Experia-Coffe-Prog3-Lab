@@ -7,21 +7,29 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="scene2AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.LoginPageController">
    <children>
       <Label alignment="CENTER" layoutX="488.0" layoutY="315.0" prefHeight="45.0" prefWidth="160.0" style="-fx-font-size: 30px;" text="Accedi" />
-      <TextField fx:id="fieldUsername" layoutX="497.0" layoutY="389.0" />
-      <PasswordField fx:id="fieldPassword" layoutX="497.0" layoutY="439.0" />
-      <Label layoutX="497.0" layoutY="370.0" prefHeight="17.0" prefWidth="87.0" text="Username" />
-      <Label layoutX="497.0" layoutY="420.0" prefHeight="17.0" prefWidth="87.0" text="Password" />
-      <Button fx:id="loginButton" layoutX="497.0" layoutY="482.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="26.0" prefWidth="160.0" text="Accedi" />
-      <Label alignment="CENTER" layoutX="497.0" layoutY="531.0" prefHeight="17.0" prefWidth="160.0" text="Non sei registrato?" />
-      <Button fx:id="signUpButton" layoutX="497.0" layoutY="563.0" mnemonicParsing="false" onAction="#openSignUpPage" prefHeight="26.0" prefWidth="160.0" text="Registrati" />
+      <TextField fx:id="fieldUsername" layoutX="467.0" layoutY="394.0" prefHeight="64.0" prefWidth="225.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <PasswordField fx:id="fieldPassword" layoutX="465.0" layoutY="512.0" prefHeight="68.0" prefWidth="225.0">
+         <font>
+            <Font size="18.0" />
+         </font></PasswordField>
+      <Label layoutX="468.0" layoutY="377.0" prefHeight="17.0" prefWidth="87.0" text="Username" />
+      <Label layoutX="467.0" layoutY="494.0" prefHeight="17.0" prefWidth="87.0" text="Password" />
+      <Button fx:id="loginButton" layoutX="467.0" layoutY="602.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="47.0" prefWidth="228.0" text="Accedi" />
+      <Label alignment="CENTER" layoutX="500.0" layoutY="665.0" prefHeight="17.0" prefWidth="160.0" text="Non sei registrato?" />
+      <Button fx:id="signUpButton" layoutX="468.0" layoutY="696.0" mnemonicParsing="false" onAction="#openSignUpPage" prefHeight="54.0" prefWidth="232.0" text="Registrati" />
       <ImageView fitHeight="260.0" fitWidth="677.0" layoutX="304.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/ExperiaLogo.png" />
          </image>
       </ImageView>
+      <Label fx:id="errorInvalidCredentials" ellipsisString="" layoutX="467.0" layoutY="458.0" prefHeight="19.0" prefWidth="225.0" textFill="RED" />
    </children>
 </AnchorPane>
