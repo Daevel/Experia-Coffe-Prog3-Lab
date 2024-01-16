@@ -18,10 +18,10 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ToolBar layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="59.0" prefWidth="1280.0">
+      <ToolBar layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1280.0">
         <items>
-            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="59.0" prefWidth="90.0" text="Logout" />
-            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="59.0" prefWidth="90.0" text="Profile" />
+            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" text="Logout" />
+            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" text="Profile" />
         </items>
       </ToolBar>
    </children>
