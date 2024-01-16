@@ -7,7 +7,6 @@ public class UtenteSingleton {
     private UtenteSingleton() {
 
     }
-
     public static UtenteSingleton getInstance() {
         if (instance == null) {
             instance = new UtenteSingleton();

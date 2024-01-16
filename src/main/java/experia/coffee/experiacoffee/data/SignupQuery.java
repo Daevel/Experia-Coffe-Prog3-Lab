@@ -24,7 +24,9 @@ public class SignupQuery {
                     "`NUM_CARTA`,\n" +
                     "`CVV_CARTA`,\n" +
                     "`INTESTATARIO_CARTA`,\n" +
-                    "`SCADENZA_CARTA`)\n" +
+                    "`SCADENZA_CARTA`" +
+                    "`CODICE_FISCALE`" +
+                    "`DATA_DI_NASCITA`)\n" +
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
@@ -41,6 +43,8 @@ public class SignupQuery {
                 preparedStatement.setString(11, utente.getCVV_CARTA());
                 preparedStatement.setString(12, utente.getINTESTATARIO_CARTA());
                 preparedStatement.setString(13, utente.getSCADENZA_CARTA());
+                preparedStatement.setString(14, utente.getCODICE_FISCALE());
+                preparedStatement.setString(15, utente.getDATA_DI_NASCITA());
                 preparedStatement.executeUpdate();
                 return true;
             }

@@ -66,6 +66,12 @@ public class SignUpController implements Initializable {
     @FXML
     public TextField cardOwner;
 
+    @FXML
+    public TextField fiscalCode;
+
+    @FXML
+    public TextField birthDate;
+
     /* BUTTONS */
     @FXML
     public Button confirmSubscription;
@@ -91,13 +97,15 @@ public class SignUpController implements Initializable {
                 .setNUM_CARTA(cardNumber.getText())
                 .setCVV_CARTA(cvvNumber.getText())
                 .setINTESTATARIO_CARTA(cardOwner.getText())
-                .setSCADENZA_CARTA(expirationDate.getText());
+                .setSCADENZA_CARTA(expirationDate.getText())
+                .setCODICE_FISCALE(fiscalCode.getText())
+                .setDATA_DI_NASCITA(birthDate.getText());
         experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
 
         boolean signUpSuccess = query.signUpUser(utente.build());
 
         if (signUpSuccess) {
-            new SceneSwitch(signUpAnchorPane, "prova.fxml");
+            new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
         } else {
             System.out.println("Registrazione fallita, riprovare");
         }

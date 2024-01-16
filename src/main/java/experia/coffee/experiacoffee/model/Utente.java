@@ -19,6 +19,9 @@ public class Utente {
     private String SCADENZA_CARTA;
     private String RUOLO;
 
+    private String DATA_DI_NASCITA;
+    private String CODICE_FISCALE;
+
     public String getEMAIL() {
         return EMAIL;
     }
@@ -70,6 +73,13 @@ public class Utente {
         return SCADENZA_CARTA;
     }
 
+    public String getDATA_DI_NASCITA() {
+        return DATA_DI_NASCITA;
+    }
+
+    public String getCODICE_FISCALE() {
+        return CODICE_FISCALE;
+    }
     public String getRUOLO() {
         return RUOLO;
     }
@@ -88,6 +98,8 @@ public class Utente {
        this.CVV_CARTA = builder.CVV_CARTA;
        this.SCADENZA_CARTA = builder.SCADENZA_CARTA;
        this.RUOLO = builder.RUOLO;
+       this.CODICE_FISCALE = builder.CODICE_FISCALE;
+       this.DATA_DI_NASCITA = builder.DATA_DI_NASCITA;
     }
 
     public static class UtenteBuilder {
@@ -113,6 +125,9 @@ public class Utente {
         private String SCADENZA_CARTA;
         private String RUOLO;
 
+        private String CODICE_FISCALE;
+        private String DATA_DI_NASCITA;
+
 
 
         public UtenteBuilder(String EMAIL, String PASSWORD) {
@@ -132,7 +147,6 @@ public class Utente {
             this.CELLULARE = CELLULARE;
             return this;
         }
-
         public UtenteBuilder setCITTA(String CITTA) {
             this.CITTA = CITTA;
             return this;
@@ -170,6 +184,16 @@ public class Utente {
 
         public UtenteBuilder setRUOLO(String RUOLO) {
             this.RUOLO = RUOLO;
+            return this;
+        }
+
+        public UtenteBuilder setCODICE_FISCALE(String CODICE_FISCALE) {
+            this.CODICE_FISCALE = CODICE_FISCALE;
+            return this;
+        }
+
+        public UtenteBuilder setDATA_DI_NASCITA(String DATA_DI_NASCITA) {
+            this.DATA_DI_NASCITA = DATA_DI_NASCITA;
             return this;
         }
 

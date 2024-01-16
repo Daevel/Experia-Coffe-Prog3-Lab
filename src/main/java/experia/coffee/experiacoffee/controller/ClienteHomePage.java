@@ -21,10 +21,10 @@ public class ClienteHomePage implements Initializable {
     public Button returnToLoginPageButton;
 
     @FXML
-    public Label welcomeLabel;
+    public Button profilePageButton;
 
     @FXML
-    public Button profilePageButton;
+    public Label welcomeLabel;
 
     @FXML
     public void returnToLoginPage() throws IOException {

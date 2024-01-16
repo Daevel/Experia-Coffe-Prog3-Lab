@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,8 +14,21 @@ public class App extends Application {
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
+
+        String os = System.getProperty("os.name").toLowerCase();
+
+        if (os.contains("win")) {
+            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.ico")));
+        } else if (os.contains("mac")) {
+            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.icns")));
+        } else {
+            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.png")));
+        }
+
         Scene scene = new Scene(loadFXML("loginPage"));
-        stage.setTitle("CRUD Project");
+
+        stage.setTitle("Experia Coffee");
+
         stage.setScene(scene);
         stage.show();
     }
