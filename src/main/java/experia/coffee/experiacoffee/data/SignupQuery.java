@@ -24,21 +24,21 @@ public class SignupQuery {
                     "`NUM_CARTA`,\n" +
                     "`CVV_CARTA`,\n" +
                     "`INTESTATARIO_CARTA`,\n" +
-                    "`SCADENZA_CARTA`" +
-                    "`CODICE_FISCALE`" +
+                    "`SCADENZA_CARTA`,\n" +
+                    "`CODICE_FISCALE`,\n" +
                     "`DATA_DI_NASCITA`)\n" +
-                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
                 preparedStatement.setString(1, utente.getNAME());
                 preparedStatement.setString(2, utente.getSURNAME());
                 preparedStatement.setString(3, utente.getEMAIL());
-                preparedStatement.setString(4, utente.getPASSWORD());
-                preparedStatement.setString(5, utente.getCELLULARE());
-                preparedStatement.setString(6, utente.getCITTA());
-                preparedStatement.setString(7, utente.getVIA());
-                preparedStatement.setString(8, utente.getN_CIVICO());
-                preparedStatement.setString(9, utente.getCAP());
+                preparedStatement.setString(4, utente.getCELLULARE());
+                preparedStatement.setString(5, utente.getCITTA());
+                preparedStatement.setString(6, utente.getVIA());
+                preparedStatement.setString(7, utente.getN_CIVICO());
+                preparedStatement.setString(8, utente.getCAP());
+                preparedStatement.setString(9, utente.getPASSWORD());
                 preparedStatement.setString(10, utente.getNUM_CARTA());
                 preparedStatement.setString(11, utente.getCVV_CARTA());
                 preparedStatement.setString(12, utente.getINTESTATARIO_CARTA());
