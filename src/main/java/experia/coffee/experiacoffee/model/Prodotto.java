@@ -1,0 +1,74 @@
+package experia.coffee.experiacoffee.model;
+
+public class Prodotto {
+    private String NOME_PRODOTTO;
+    private Float PREZZO_PRODOTTO;
+    private Integer QUANTITA;
+    private String PROVENIENZA;
+    private String ID_FORNITURA;
+    private String ID_PRODOTTO;
+
+    public Prodotto(String NOME_PRODOTTO, Float PREZZO_PRODOTTO, Integer QUANTITA, String PROVENIENZA, String ID_FORNITURA, String ID_PRODOTTO) {
+        this.setNOME_PRODOTTO(NOME_PRODOTTO);
+        this.setPREZZO_PRODOTTO(PREZZO_PRODOTTO);
+        this.setQUANTITA(QUANTITA);
+        this.setPROVENIENZA(PROVENIENZA);
+        this.setID_FORNITURA(ID_FORNITURA);
+        this.setID_PRODOTTO(ID_PRODOTTO);
+    }
+    public Prodotto(String NOME_PRODOTTO, Float PREZZO_PRODOTTO, Integer QUANTITA, String PROVENIENZA, String ID_FORNITURA) {
+        this.setNOME_PRODOTTO(NOME_PRODOTTO);
+        this.setPREZZO_PRODOTTO(PREZZO_PRODOTTO);
+        this.setQUANTITA(QUANTITA);
+        this.setPROVENIENZA(PROVENIENZA);
+        this.setID_FORNITURA(ID_FORNITURA);
+    }
+
+    public String getNOME_PRODOTTO() {
+        return NOME_PRODOTTO;
+    }
+
+    public void setNOME_PRODOTTO(String NOME_PRODOTTO) {
+        this.NOME_PRODOTTO = NOME_PRODOTTO;
+    }
+
+    public Float getPREZZO_PRODOTTO() {
+        return PREZZO_PRODOTTO;
+    }
+
+    public void setPREZZO_PRODOTTO(Float PREZZO_PRODOTTO) {
+        this.PREZZO_PRODOTTO = PREZZO_PRODOTTO;
+    }
+
+    public Integer getQUANTITA() {
+        return QUANTITA;
+    }
+
+    public void setQUANTITA(Integer QUANTITA) {
+        this.QUANTITA = QUANTITA;
+    }
+
+    public String getPROVENIENZA() {
+        return PROVENIENZA;
+    }
+
+    public void setPROVENIENZA(String PROVENIENZA) {
+        this.PROVENIENZA = PROVENIENZA;
+    }
+
+    public String getID_FORNITURA() {
+        return ID_FORNITURA;
+    }
+
+    public void setID_FORNITURA(String ID_FORNITURA) {
+        this.ID_FORNITURA = ID_FORNITURA;
+    }
+
+    public String getID_PRODOTTO() {
+        return ID_PRODOTTO;
+    }
+
+    public void setID_PRODOTTO(String ID_PRODOTTO) {
+        this.ID_PRODOTTO = ID_PRODOTTO;
+    }
+}

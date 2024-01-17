@@ -17,7 +17,7 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
-        System.out.println("Signup page controllore initialized");
+
     }
 
     @FXML
