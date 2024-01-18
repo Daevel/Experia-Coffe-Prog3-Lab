@@ -1,3 +1,15 @@
+root {
+    --primary-color:  #6f4e37;
+    --text-color: #fffdd0;
+}
+
+.button {
+    -fx-background-color: var(--text-color);
+    -fx-text-fill: white;
+}
+
+
+
 .toast-message {
     -fx-background-color: green;
     -fx-text-fill: white;

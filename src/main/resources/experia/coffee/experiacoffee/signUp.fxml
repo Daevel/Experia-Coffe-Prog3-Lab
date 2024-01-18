@@ -38,10 +38,10 @@
       <Label layoutX="653.0" layoutY="265.0" prefHeight="17.0" prefWidth="58.0" text="Civico" />
       <Label layoutX="871.0" layoutY="265.0" text="CAP" />
       <Label layoutX="870.0" layoutY="150.0" text="Città" />
-      <ButtonBar layoutX="42.0" layoutY="664.0" prefHeight="113.0" prefWidth="359.0">
+      <ButtonBar layoutX="59.0" layoutY="664.0" prefHeight="113.0" prefWidth="359.0">
         <buttons>
-            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="78.0" prefWidth="190.0" text="Conferma registrazione" />
-            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="78.0" prefWidth="190.0" text="Annulla" />
+            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="48.0" prefWidth="190.0" text="Conferma registrazione" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="48.0" prefWidth="190.0" text="Annulla" />
         </buttons>
       </ButtonBar>
       <PasswordField fx:id="repeatPwd" layoutX="261.0" layoutY="512.0" prefHeight="52.0" prefWidth="179.0" />
@@ -65,5 +65,6 @@
       <TextField fx:id="fiscalCode" layoutX="56.0" layoutY="423.0" prefHeight="52.0" prefWidth="179.0" />
       <Label layoutX="261.0" layoutY="406.0" text="Data di nascita" />
       <Label layoutX="56.0" layoutY="406.0" text="Codice Fiscale" />
+      <Label fx:id="errorMismatchPassword" layoutX="59.0" layoutY="571.0" prefHeight="17.0" prefWidth="179.0" text="Le password devono coincidere." textFill="RED" />
    </children>
 </AnchorPane>

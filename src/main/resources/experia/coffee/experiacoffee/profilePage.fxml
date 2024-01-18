@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profilePageAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProfilePageController">
+<AnchorPane fx:id="profilePageAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ProfilePageController">
    <children>
       <Label layoutX="92.0" layoutY="94.0" prefHeight="70.0" prefWidth="141.0" text="Profilo">
          <font>
@@ -48,7 +49,29 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Separator layoutX="956.0" layoutY="342.0" orientation="VERTICAL" prefHeight="322.0" prefWidth="6.0" style="-fx-background-color: red;" />
-      <Separator layoutX="613.0" layoutY="347.0" orientation="VERTICAL" prefHeight="311.0" prefWidth="6.0" style="-fx-background-color: red;" />
+      <Separator layoutX="804.0" layoutY="382.0" orientation="VERTICAL" prefHeight="293.0" prefWidth="6.0" style="-fx-background-color: gray;" />
+      <Button id="button" layoutX="266.0" layoutY="184.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="142.0" stylesheets="@styles/style.css" text="Modifica indirizzo email" />
+      <Button fx:id="showResetPassword" layoutX="266.0" layoutY="247.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="142.0" text="Reset password" />
+      <PasswordField fx:id="resetPasswordField" layoutX="831.0" layoutY="398.0" prefHeight="48.0" prefWidth="218.0" />
+      <PasswordField fx:id="resetPasswordRepeatField" layoutX="831.0" layoutY="513.0" prefHeight="48.0" prefWidth="218.0" />
+      <Label layoutX="832.0" layoutY="347.0" text="Nuova password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="831.0" layoutY="468.0" prefHeight="35.0" prefWidth="172.0" text="Ripeti password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="onResetPassword" layoutX="832.0" layoutY="596.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="218.0" text="Conferma" />
+      <Separator layoutX="528.0" layoutY="384.0" orientation="VERTICAL" prefHeight="293.0" prefWidth="6.0" style="-fx-background-color: gray;" />
+      <PasswordField fx:id="resetPasswordRepeatField1" layoutX="556.0" layoutY="398.0" prefHeight="48.0" prefWidth="218.0" />
+      <Label layoutX="556.0" layoutY="349.0" prefHeight="35.0" prefWidth="172.0" text="Nuova email">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="onResetPassword1" layoutX="556.0" layoutY="598.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="218.0" text="Conferma" />
    </children>
 </AnchorPane>

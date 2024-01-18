@@ -34,14 +34,9 @@ public class DipendenteHomePage implements Initializable {
         Utente utente = singleton.getUtente();
 
         if (utente != null) {
-            String email = utente.getEMAIL();
-            String password = utente.getPASSWORD();
-            String nome = utente.getNAME();
-            String cognome = utente.getSURNAME();
-            String ruolo = utente.getRUOLO();
+            String fiscalCode = utente.getFISCAL_CODE();
 
-
-            welcomeLabel.setText("Benvenuto, " + nome + cognome + ruolo + "!");
+            welcomeLabel.setText("Autenticato come " + fiscalCode);
 
         } else {
             System.out.println("L'utente e' null nella Home page");
