@@ -1,5 +1,3 @@
--- TABELLA CLIENTI --
-
 INSERT INTO tbl_cliente (NOME, COGNOME, EMAIL, CELLULARE, CITTA, VIA, N_CIVICO, CAP, NUM_CARTA, CVV_CARTA, INTESTATARIO_CARTA, SCADENZA_CARTA, CODICE_FISCALE, DATA_DI_NASCITA)
 VALUES
     ('Alessio', 'Ferri', 'alessio.ferri@outlook.com', '+39 342 2345678', 'Catania', 'Via Catania', '120', '95100', '2345678901234567', '234', 'Alessio Ferri', '2024-01-05', 'RSSMRA90M01H501Z', '1990-01-01'),
@@ -24,15 +22,11 @@ VALUES
     ('Valentina', 'Marchetti', 'valentina.marchetti@gmail.com', '+39 339 9012345', 'Bari', 'Via Bari', '90', '70100', '9012345678901234', '901', 'Valentina Marchetti', '2024-01-05', 'RSSLNT88M41H501M', '1988-11-15'),
     ('Ernesto', 'Brancaccio', 'ernesto.brancaccio@gmail.com', '+39 357 3211565', 'Potenza', 'Via del Piave', '11', '85100', '9013645655901255', '777', 'Ernesto Brancaccio', '2024-02-22', 'RSSTNB90M22H501E', '1990-06-30');
 
--- TABELLA FILIALE --
-
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Naples', 'Napoli', 'Z001');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Rome', 'Roma', 'Z002');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Milan', 'Milano', 'Z003');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Florence', 'Firenze', 'Z004');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Palermo', 'Palermo', 'Z005');
-
--- TABELLA DIPENDENTI --
 
 INSERT INTO tbl_dipendente (ID, NOME, COGNOME, VIA, CITTA, CAP, CODICE_FISCALE, DATA_ASSUNZIONE, PAGA_ORARIA, CODICE_ZONA, EMAIL, N_CIVICO, DATA_DI_NASCITA)
 VALUES
@@ -57,8 +51,6 @@ VALUES
     (21, 'Federico', 'Senna', 'Via delle stelle, 36-B', 'Milano', '20019', 'SNAFCO8954113745', DATE '2023-04-12', 6.5, 'Z003', 'federico.senna@experiacoffee.it', '49U', '1990-01-01'),
     (15, 'Damiano', 'Volpe', 'Via dei fiori sospesi 15', 'Cremona', '26100', 'VLPDMA1782002345', DATE '2021-10-27', 7.2, 'Z003', 'damiano.volpe@experiacoffee.it', '12V', '1988-01-15'),
     (8, 'Amelia', 'Verdi', 'Via Cristoforo Colombo 17', 'Napoli', '80100', 'VRDAML123456RDF4', DATE '2020-02-03', 7.5, 'Z001', 'amelia.verdi@experiacoffee.it', '29Z', '1988-10-30');
-
--- TABELLA FORNITORE --
 
 INSERT INTO tbl_fornitore (P_IVA, NOME, CITTA, VIA, CAP) VALUES('000180023NA',
                                                                 'Borbone Caffè', 'Caivano ', 'Agglomerato ASI Pascarola, NA', '80023');
@@ -410,6 +402,37 @@ Delle Belle Donne, 22, Firenze');
 INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
                         INDIRIZZO_SPEDIZIONE) VALUES('ORD-020', 'INVOICE-003-MI', 1, 'CRT - 0020', 'Via
 Principale, 1, Milano');
+
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCBXCOFFEE', 'CRT - 0001');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0002');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0003');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0004');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('DLY-BCGOLD','CRT - 0005');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BCSJ','CRT - 0006');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PLL-BLUX','CRT - 0007');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BBCF','CRT - 0001');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('TCH-BRM','CRT - 0004');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0005');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BBCF','CRT - 0007');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PLL-BDEF', 'CRT - 0005');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BGE', 'CRT - 0004');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BGOLD','CRT - 0007');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0003');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0008');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0009');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0010');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0011');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('ILY-BIDCF','CRT - 0012');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0013');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('ILY-BIDCF','CRT - 0014');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BPLT', 'CRT - 0014');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0015');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-QRED','CRT - 0016');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0017');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0018');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-QRED','CRT - 0019');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('VRG-BBDF','CRT - 0019');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0020');
 
 
 

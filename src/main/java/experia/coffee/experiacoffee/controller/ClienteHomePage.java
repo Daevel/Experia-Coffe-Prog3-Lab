@@ -4,10 +4,7 @@ import experia.coffee.experiacoffee.model.*;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -40,16 +37,28 @@ public class ClienteHomePage implements Initializable {
     @FXML
     public TableColumn<Prodotto, Integer> col_QUANTITA;
 
+
+    @FXML
+    public TableView<Prodotto> cartView = new TableView<>();
+
+    @FXML
+    public TableColumn<Prodotto, String> colCART_NOME_PRODOTTO;
+
+    @FXML
+    public TableColumn<Prodotto, Float> colCART_PREZZO_PRODOTTO;
+
+    @FXML
+    public TableColumn<Prodotto, Integer> colCART_QUANTITA_PRODOTTO;
+
+
     @FXML
     public void returnToLoginPage() throws IOException {
         new SceneSwitch(ClienteHomePageAnchor, "loginPage.fxml");
     }
-
     @FXML
     public void goToProfilePage() throws  IOException {
         new SceneSwitch(ClienteHomePageAnchor, "profilePage.fxml");
     }
-
     @FXML
     private void showProducts() {
         experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
@@ -63,7 +72,15 @@ public class ClienteHomePage implements Initializable {
         productView.setItems(list);
     }
 
-    private Prodotto prodotto;
+    @FXML
+    public void showCart(String emailCliente) {
+        experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
+        ObservableList<Prodotto> list = query.getUserCartList(emailCliente);
+        colCART_NOME_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("NOME_PRODOTTO"));
+        colCART_PREZZO_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Float>("PREZZO_PRODOTTO"));
+        colCART_QUANTITA_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Integer>("QUANTITA"));
+        cartView.setItems(list);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,14 +93,14 @@ public class ClienteHomePage implements Initializable {
 
             String nome = utente.getNAME();
             String cognome = utente.getSURNAME();
+            String email = utente.getEMAIL();
+
+            showCart(email);
 
             welcomeLabel.setText("Benvenuto, " + nome + " " + cognome + "!");
 
         } else {
             System.out.println("L'utente e' null nella Home page");
         }
-
-
-
     }
 }

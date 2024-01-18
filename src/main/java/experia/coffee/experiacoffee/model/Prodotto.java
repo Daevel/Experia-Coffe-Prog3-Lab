@@ -1,5 +1,7 @@
 package experia.coffee.experiacoffee.model;
 
+import javafx.beans.value.ObservableValue;
+
 public class Prodotto {
     private String NOME_PRODOTTO;
     private Float PREZZO_PRODOTTO;
@@ -71,4 +73,5 @@ public class Prodotto {
     public void setID_PRODOTTO(String ID_PRODOTTO) {
         this.ID_PRODOTTO = ID_PRODOTTO;
     }
+
 }

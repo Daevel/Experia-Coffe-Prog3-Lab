@@ -56,11 +56,11 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TableView layoutX="851.0" layoutY="339.0" prefHeight="430.0" prefWidth="407.0">
+      <TableView fx:id="cartView" layoutX="851.0" layoutY="339.0" prefHeight="430.0" prefWidth="407.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Nome" />
-            <TableColumn prefWidth="75.0" text="Prezzo" />
-            <TableColumn prefWidth="75.0" text="Q.tà" />
+            <TableColumn fx:id="colCART_NOME_PRODOTTO" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colCART_PREZZO_PRODOTTO" prefWidth="75.0" text="Prezzo" />
+            <TableColumn fx:id="colCART_QUANTITA_PRODOTTO" prefWidth="75.0" text="Q.tà" />
             <TableColumn prefWidth="75.0" text="Pezzi disponibili" />
          </columns>
          <columnResizePolicy>
