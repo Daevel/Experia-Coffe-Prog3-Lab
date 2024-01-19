@@ -13,10 +13,14 @@ import java.util.ResourceBundle;
 public class CheckoutPageController implements Initializable {
 
     @FXML
-    AnchorPane checkoutPane;
+    private AnchorPane checkoutPane;
 
     @FXML
     public Button returnToHomePageButton, proceedOrder;
+
+    @FXML
+    public Label subTotalProducts,travelFees,retrieveFees,ivaPercentage,totalProducts;
+
 
     @FXML
     public void onReturnHomePage() throws IOException {
