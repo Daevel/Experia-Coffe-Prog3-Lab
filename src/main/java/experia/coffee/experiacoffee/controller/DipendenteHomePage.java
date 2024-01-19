@@ -28,13 +28,18 @@ public class DipendenteHomePage implements Initializable {
         new SceneSwitch(DipendenteHomePageAnchor, "loginPage.fxml");
     }
 
+    @FXML
+    public void goToProfilePage() throws IOException {
+        new SceneSwitch(DipendenteHomePageAnchor, "profilePage.fxml");
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         UtenteSingleton singleton = UtenteSingleton.getInstance();
         Utente utente = singleton.getUtente();
 
         if (utente != null) {
-            String fiscalCode = utente.getFISCAL_CODE();
+            String fiscalCode = utente.getCODICE_FISCALE();
 
             welcomeLabel.setText("Autenticato come " + fiscalCode);
 

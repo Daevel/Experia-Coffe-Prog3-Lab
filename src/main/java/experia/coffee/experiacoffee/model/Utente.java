@@ -18,7 +18,6 @@ public class Utente {
     private String INTESTATARIO_CARTA;
     private String SCADENZA_CARTA;
     private String RUOLO;
-
     private String DATA_DI_NASCITA;
     private String CODICE_FISCALE;
 
