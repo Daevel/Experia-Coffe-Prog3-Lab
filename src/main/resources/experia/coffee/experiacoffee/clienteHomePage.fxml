@@ -71,7 +71,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="186.0" text="Checkout" />
+      <Button fx:id="checkoutPageButton" layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" onAction="#openCheckoutPage" prefHeight="40.0" prefWidth="186.0" text="Checkout" />
       <Label fx:id="welcomeLabel111" layoutX="852.0" layoutY="740.0" prefHeight="40.0" prefWidth="215.0" text="Totale: € 25.00" textFill="#fffdd0">
          <font>
             <Font size="18.0" />

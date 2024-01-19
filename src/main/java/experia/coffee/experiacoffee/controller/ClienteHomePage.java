@@ -20,7 +20,7 @@ public class ClienteHomePage implements Initializable {
     public Button returnToLoginPageButton;
 
     @FXML
-    public Button profilePageButton;
+    public Button profilePageButton, checkoutPageButton;
 
     @FXML
     public Label welcomeLabel;
@@ -36,7 +36,6 @@ public class ClienteHomePage implements Initializable {
 
     @FXML
     public TableColumn<Prodotto, Integer> col_QUANTITA;
-
 
     @FXML
     public TableView<Prodotto> cartView = new TableView<>();
@@ -80,6 +79,11 @@ public class ClienteHomePage implements Initializable {
         colCART_PREZZO_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Float>("PREZZO_PRODOTTO"));
         colCART_QUANTITA_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Integer>("QUANTITA"));
         cartView.setItems(list);
+    }
+
+    @FXML
+    public void openCheckoutPage() throws IOException {
+        new SceneSwitch(ClienteHomePageAnchor, "checkoutPage.fxml");
     }
 
     @Override

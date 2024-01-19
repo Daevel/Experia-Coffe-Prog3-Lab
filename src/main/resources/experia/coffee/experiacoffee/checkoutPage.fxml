@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.CheckoutPage">
+<AnchorPane fx:id="checkoutPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.CheckoutPageController">
    <children>
       <Label layoutX="28.0" layoutY="27.0" prefHeight="80.0" prefWidth="266.0" text="Riepilogo ordine">
          <font>
@@ -35,8 +34,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="returnToClienteHomePageButton" layoutX="517.0" layoutY="418.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="39.0" prefWidth="99.0" text="Anulla" />
-      <Button fx:id="proceedCheckoutButton" layoutX="404.0" layoutY="418.0" mnemonicParsing="false" onAction="#onSubmitOrder" prefHeight="39.0" prefWidth="99.0" text="Procedi" />
+      <Button fx:id="returnToHomePageButton" layoutX="517.0" layoutY="418.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="39.0" prefWidth="99.0" text="Anulla" />
+      <Button fx:id="proceedOrder" layoutX="404.0" layoutY="418.0" mnemonicParsing="false" onAction="#onSubmitOrder" prefHeight="39.0" prefWidth="99.0" text="Procedi" />
       <Label fx:id="ivaPercentage" layoutX="28.0" layoutY="304.0" prefHeight="45.0" prefWidth="266.0" text="IVA(20%)">
          <font>
             <Font size="18.0" />
