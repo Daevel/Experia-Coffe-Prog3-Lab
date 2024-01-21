@@ -49,6 +49,10 @@ public class ClienteHomePage implements Initializable {
     @FXML
     public TableColumn<Prodotto, Integer> colCART_QUANTITA_PRODOTTO;
 
+    private ObservableList<Prodotto> productlist;
+
+    private ObservableList<Prodotto> cartList;
+
 
     @FXML
     public void returnToLoginPage() throws IOException {
@@ -61,24 +65,51 @@ public class ClienteHomePage implements Initializable {
     @FXML
     private void showProducts() {
         experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
-        ObservableList<Prodotto> list = query.getProductList();
+
+        productlist = query.getProductList();
+
+        productView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Prodotto prodottoSelezionato = productView.getSelectionModel().getSelectedItem();
+                if(prodottoSelezionato != null) {
+                    cartList.add(prodottoSelezionato);
+                }
+            }
+        });
+
         col_ID_FORNITURA.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("ID_FORNITURA"));
         col_ID_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("ID_PRODOTTO"));
         col_PROVENIENZA.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("PROVENIENZA"));
         col_QUANTITA.setCellValueFactory(new PropertyValueFactory<Prodotto, Integer>("QUANTITA"));
         col_PREZZO_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Float>("PREZZO_PRODOTTO"));
         colNOME_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("NOME_PRODOTTO"));
-        productView.setItems(list);
+        productView.setItems(productlist);
     }
 
     @FXML
     public void showCart(String emailCliente) {
         experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
-        ObservableList<Prodotto> list = query.getUserCartList(emailCliente);
+        cartList = query.getUserCartList(emailCliente);
+
+        cartView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Prodotto prodottoSelezionato = cartView.getSelectionModel().getSelectedItem();
+                if(prodottoSelezionato != null) {
+                    cartList.remove(prodottoSelezionato);
+                }
+            }
+        });
+
         colCART_NOME_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, String>("NOME_PRODOTTO"));
         colCART_PREZZO_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Float>("PREZZO_PRODOTTO"));
         colCART_QUANTITA_PRODOTTO.setCellValueFactory(new PropertyValueFactory<Prodotto, Integer>("QUANTITA"));
-        cartView.setItems(list);
+        cartView.setItems(cartList);
+    }
+
+    @FXML
+    public void showTotalAmount(String emailCliente) {
+        experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
+        ObservableList<Prodotto> list = query.getTotalAmount(emailCliente);
     }
 
     @FXML
@@ -94,7 +125,7 @@ public class ClienteHomePage implements Initializable {
         showProducts();
 
         if (utente != null) {
-
+            System.out.println();
             String nome = utente.getNAME();
             String cognome = utente.getSURNAME();
             String email = utente.getEMAIL();

@@ -53,14 +53,20 @@ public class LoginPageController implements Initializable {
         Utente userLogged = query.loginUser(utente.build());
 
         if(userLogged != null) {
+
             String ruoloUtente = userLogged.getRUOLO();
             String nomeUtente = userLogged.getNAME();
             String cognomeUtente = userLogged.getSURNAME();
+            String codiceFiscale = userLogged.getCODICE_FISCALE();
+            String dataDiNascita = userLogged.getDATA_DI_NASCITA();
+
             UtenteSingleton utenteSingleton = UtenteSingleton.getInstance();
             utenteSingleton.setUtente(utente
                     .setRUOLO(ruoloUtente)
                     .setNAME(nomeUtente)
                     .setSURNAME(cognomeUtente)
+                    .setCODICE_FISCALE(codiceFiscale)
+                    .setDATA_DI_NASCITA(dataDiNascita)
                     .build());
 
             if ("cliente".equals(ruoloUtente)) {

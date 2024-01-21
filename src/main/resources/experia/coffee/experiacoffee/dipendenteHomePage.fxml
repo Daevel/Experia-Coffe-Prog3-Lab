@@ -47,14 +47,14 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TableView layoutX="15.0" layoutY="486.0" prefHeight="300.0" prefWidth="1250.0">
+      <TableView fx:id="orderList" layoutX="15.0" layoutY="486.0" prefHeight="300.0" prefWidth="1250.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID ORDINE" />
-          <TableColumn prefWidth="75.0" text="NUMERO ORDINE" />
-            <TableColumn prefWidth="75.0" text="ORDINATO DA" />
-            <TableColumn prefWidth="75.0" text="DESTINAZIONE" />
-            <TableColumn prefWidth="75.0" text="FILIALE IN CARICO" />
-            <TableColumn prefWidth="75.0" text="CORRIERE IN CARICO" />
+          <TableColumn fx:id="colID_ORDINE" prefWidth="75.0" text="ID ORDINE" />
+          <TableColumn fx:id="colNUMERO_ORDINE" prefWidth="75.0" text="NUMERO ORDINE" />
+            <TableColumn fx:id="colORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />
+            <TableColumn fx:id="colDESTINAZIONE" prefWidth="75.0" text="DESTINAZIONE" />
+            <TableColumn fx:id="colFILIALE_IN_CARICO" prefWidth="75.0" text="FILIALE IN CARICO" />
+            <TableColumn fx:id="colCORRIERE_IN_CARICO" prefWidth="75.0" text="CORRIERE IN CARICO" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -103,20 +103,18 @@
             <TextField GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <TableView layoutX="718.0" layoutY="207.0" prefHeight="205.0" prefWidth="548.0">
+      <TableView fx:id="wareHouseTable" layoutX="570.0" layoutY="207.0" prefHeight="214.0" prefWidth="696.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="ID ORDINE" />
-            <TableColumn prefWidth="75.0" text="NUMERO ORDINE" />
-            <TableColumn prefWidth="75.0" text="ORDINATO DA" />
-            <TableColumn prefWidth="75.0" text="DESTINAZIONE" />
-            <TableColumn prefWidth="75.0" text="FILIALE IN CARICO" />
-            <TableColumn prefWidth="75.0" text="CORRIERE IN CARICO" />
+            <TableColumn fx:id="col_WAREHOUSE_ID_PRODOTTO" prefWidth="75.0" text="ID PRODOTTO" />
+            <TableColumn fx:id="col_WAREHOUSE_NOME_PRODOTTO" prefWidth="75.0" text="NOME PRODOTTO" />
+            <TableColumn fx:id="col_WAREHOUSE_QUANTITA_PRODOTTO" prefWidth="75.0" text="QUANTITA" />
+            <TableColumn fx:id="col_WAREHOUSE_NOME_MAGAZZINO" prefWidth="75.0" text="NOME MAGAZZINO" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel111" alignment="CENTER" layoutX="718.0" layoutY="135.0" prefHeight="65.0" prefWidth="359.0" text="Disponibilità prodotti" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel111" alignment="CENTER" layoutX="739.0" layoutY="140.0" prefHeight="65.0" prefWidth="359.0" text="Disponibilità prodotti" textFill="#fffdd0">
          <font>
             <Font size="36.0" />
          </font>

@@ -403,36 +403,143 @@ INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
                         INDIRIZZO_SPEDIZIONE) VALUES('ORD-020', 'INVOICE-003-MI', 1, 'CRT - 0020', 'Via
 Principale, 1, Milano');
 
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCBXCOFFEE', 'CRT - 0001');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0002');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0003');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0004');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('DLY-BCGOLD','CRT - 0005');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BCSJ','CRT - 0006');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PLL-BLUX','CRT - 0007');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BBCF','CRT - 0001');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('TCH-BRM','CRT - 0004');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PRD-CCMBXCOFFEE', 'CRT - 0005');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('MLT-BBCF','CRT - 0007');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('PLL-BDEF', 'CRT - 0005');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BGE', 'CRT - 0004');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BGOLD','CRT - 0007');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0003');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0008');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0009');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0010');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0011');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('ILY-BIDCF','CRT - 0012');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0013');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('ILY-BIDCF','CRT - 0014');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BPLT', 'CRT - 0014');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0015');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-QRED','CRT - 0016');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('JM-BAS', 'CRT - 0017');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('KMB-BTF', 'CRT - 0018');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-QRED','CRT - 0019');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('VRG-BBDF','CRT - 0019');
-INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES('LVZ-BCEG','CRT - 0020');
+INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES
+                                                           ('PRD-CCBXCOFFEE', 'CRT - 0001'),
+                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0002'),
+                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0003'),
+                                                           ('JM-BAS', 'CRT - 0004'),
+                                                           ('DLY-BCGOLD', 'CRT - 0005'),
+                                                           ('MLT-BCSJ', 'CRT - 0006'),
+                                                           ('PLL-BLUX', 'CRT - 0007'),
+                                                           ('MLT-BBCF', 'CRT - 0001'),
+                                                           ('TCH-BRM', 'CRT - 0004'),
+                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0005'),
+                                                           ('MLT-BBCF', 'CRT - 0007'),
+                                                           ('PLL-BDEF', 'CRT - 0005'),
+                                                           ('LVZ-BGE', 'CRT - 0004'),
+                                                           ('KMB-BGOLD', 'CRT - 0007'),
+                                                           ('KMB-BTF', 'CRT - 0003'),
+                                                           ('JM-BAS', 'CRT - 0008'),
+                                                           ('LVZ-BCEG', 'CRT - 0009'),
+                                                           ('KMB-BTF', 'CRT - 0010'),
+                                                           ('KMB-BTF', 'CRT - 0011'),
+                                                           ('ILY-BIDCF', 'CRT - 0012'),
+                                                           ('KMB-BTF', 'CRT - 0013'),
+                                                           ('ILY-BIDCF', 'CRT - 0014'),
+                                                           ('JM-BPLT', 'CRT - 0014'),
+                                                           ('LVZ-BCEG', 'CRT - 0015'),
+                                                           ('LVZ-QRED', 'CRT - 0016'),
+                                                           ('JM-BAS', 'CRT - 0017'),
+                                                           ('KMB-BTF', 'CRT - 0018'),
+                                                           ('LVZ-QRED', 'CRT - 0019'),
+                                                           ('VRG-BBDF', 'CRT - 0019'),
+                                                           ('LVZ-BCEG', 'CRT - 0020');
+
+
+INSERT INTO tbl_corriere (P_IVA, NOME, TELEFONO, EMAIL) VALUES
+                                                            ('04209680158', 'DHL EXPRESS (ITALY) S.R.L.', '199 199 345', 'dhlexpress@expresspec.dhl.it'),
+                                                            ('04507990150', 'BRT S.P.A.', '06 2273 7311', 'brt@pec.brt.it'),
+                                                            ('08537690151', 'UPS ITALIA SRL', '02 30 30 30 39', 'amministrazione.ups@pec.it'),
+                                                            ('12144660151', 'GLS ITALY S.P.A', '06 4161 7001', 'gls-italy@pec.glspec.com');
+
+
+INSERT INTO tbl_gestito_da (ID_FILIALE, CODICE_ORDINE) VALUES
+                                                           ('Z003', 'ORD-001'),
+                                                           ('Z001', 'ORD-002'),
+                                                           ('Z002', 'ORD-003'),
+                                                           ('Z001', 'ORD-004'),
+                                                           ('Z004', 'ORD-005'),
+                                                           ('Z004', 'ORD-006'),
+                                                           ('Z001', 'ORD-007'),
+                                                           ('Z005', 'ORD-008'),
+                                                           ('Z005', 'ORD-009'),
+                                                           ('Z003', 'ORD-010'),
+                                                           ('Z003', 'ORD-011'),
+                                                           ('Z001', 'ORD-012'),
+                                                           ('Z002', 'ORD-013'),
+                                                           ('Z001', 'ORD-014'),
+                                                           ('Z004', 'ORD-015'),
+                                                           ('Z003', 'ORD-016'),
+                                                           ('Z005', 'ORD-017'),
+                                                           ('Z003', 'ORD-018'),
+                                                           ('Z004', 'ORD-019'),
+                                                           ('Z003', 'ORD-020');
+
+INSERT INTO tbl_spedizione (NUMERO_TRACCIAMENTO, P_IVA_CORRIERE, NUMERO_ORDINE, DATA_PARTENZA, DATA_ARRIVO)
+VALUES
+    ('SPZ-21503DKK', '04209680158', 'ORD-21503DKK', DATE '2023-05-09', DATE '2023-05-10'),
+    ('SPZ-34457ARS', '04209680158', 'ORD-34457ARS', DATE '2023-05-01', DATE '2023-05-04'),
+    ('SPZ-38450DKK', '12144660151', 'ORD-38450DKK', DATE '2023-05-07', DATE '2023-05-08'),
+    ('SPZ-55563EDD', '08537690151', 'ORD-55563EDD', DATE '2023-05-22', DATE '2023-05-26'),
+    ('SPZ-55904AST', '04209680158', 'ORD-55904AST', DATE '2023-04-28', DATE '2023-05-02'),
+    ('SPZ-63789JPP', '08537690151', 'ORD-63789JPP', DATE '2023-04-19', DATE '2023-04-27'),
+    ('SPZ-69342DKK', '04507990150', 'ORD-69342DKK', DATE '2023-05-23', DATE '2023-05-27'),
+    ('SPZ-73849DKK', '12144660151', 'ORD-73849DKK', DATE '2023-05-08', DATE '2023-05-09'),
+    ('SPZ-77734DKK', '08537690151', 'ORD-77734RMT', DATE '2023-05-03', DATE '2023-05-05'),
+    ('SPZ-92617DKK', '04507990150', 'ORD-92617DKK', DATE '2023-05-06', DATE '2023-05-07'),
+    ('SPZ-12345ABC', '04209680158', 'ORD-12345ABC', DATE '2023-03-11', DATE '2023-03-15'),
+    ('SPZ-67890DEF', '04507990150', 'ORD-67890DEF', DATE '2023-04-01', DATE '2023-04-04'),
+    ('SPZ-54321GHI', '12144660151', 'ORD-54321GHI', DATE '2023-02-02', DATE '2023-02-08'),
+    ('SPZ-98765JKL', '08537690151', 'ORD-98765JKL', DATE '2023-04-22', DATE '2023-04-26'),
+    ('SPZ-24680MNO', '04507990150', 'ORD-24680MNO', DATE '2023-06-01', DATE '2023-06-05'),
+    ('SPZ-13579PQR', '04209680158', 'ORD-13579PQR', DATE '2023-02-22', DATE '2023-02-24'),
+    ('SPZ-86420STU', '04507990150', 'ORD-86420STU', DATE '2023-01-17', DATE '2023-01-20'),
+    ('SPZ-24680VWX', '04209680158', 'ORD-24680VWX', DATE '2023-01-20', DATE '2023-01-23'),
+    ('SPZ-97531YZA', '08537690151', 'ORD-97531YZA', DATE '2023-02-18', DATE '2023-02-20'),
+    ('SPZ-80246BCD', '04507990150', 'ORD-80246BCD', DATE '2023-03-01', DATE '2023-03-03');
+
+
+INSERT INTO tbl_emette_spedizione (CODICE_ZONA_FILIALE, NUMERO_TRACCIAMENTO)
+VALUES
+    ('Z003', 'SPZ-55563EDD'),
+    ('Z001', 'SPZ-69342DKK'),
+    ('Z002', 'SPZ-77734DKK'),
+    ('Z001', 'SPZ-21503DKK'),
+    ('Z003', 'SPZ-34457ARS'),
+    ('Z002', 'SPZ-38450DKK'),
+    ('Z001', 'SPZ-55904AST'),
+    ('Z001', 'SPZ-63789JPP'),
+    ('Z003', 'SPZ-73849DKK'),
+    ('Z002', 'SPZ-92617DKK'),
+    ('Z002', 'SPZ-12345ABC'),
+    ('Z001', 'SPZ-67890DEF'),
+    ('Z003', 'SPZ-54321GHI'),
+    ('Z001', 'SPZ-98765JKL'),
+    ('Z002', 'SPZ-24680MNO'),
+    ('Z003', 'SPZ-13579PQR'),
+    ('Z001', 'SPZ-86420STU'),
+    ('Z001', 'SPZ-24680VWX'),
+    ('Z001', 'SPZ-97531YZA'),
+    ('Z002', 'SPZ-80246BCD');
+
+INSERT INTO tbl_magazzino (CODICE_MAGAZZINO, ID_PRODOTTO, QUANTITA_PRODOTTO, NOME_PRODOTTO, NOME_MAGAZZINO)
+VALUES
+    ('Z003', 'LVZ-BCEG', 30, 'Box Crema e Gusto', 'Experia Coffee Warehouse - Milan'),
+    ('Z003', 'LVZ-BGE', 30, 'Box Gran Espresso', 'Experia Coffee Warehouse - Milan'),
+    ('Z003', 'LVZ-BSC', 30, 'Box Super Crema', 'Experia Coffee Warehouse - Milan'),
+    ('Z003', 'LVZ-DDC', 30, 'Box Dek Decaffeinato', 'Experia Coffee Warehouse - Milan'),
+    ('Z003', 'LVZ-QRED', 30, 'Box Qualità Rossa', 'Experia Coffee Warehouse - Milan'),
+    ('Z001', 'KMB-BTF', 20, 'Box Top Flavour', 'Experia Coffee Warehouse - Naples'),
+    ('Z001', 'KMB-BPR', 20, 'Box Prestige', 'Experia Coffee Warehouse - Naples'),
+    ('Z001', 'KMB-BNP', 20, 'Box Napoli', 'Experia Coffee Warehouse - Naples'),
+    ('Z001', 'KMB-BGOLD', 20, 'Box Aroma Gold', 'Experia Coffee Warehouse - Naples'),
+    ('Z001', 'KMB-BEX', 20, 'Box Extra Cream', 'Experia Coffee Warehouse - Naples'),
+    ('Z004', 'JM-BVB', 25, 'Box Vienna Blend', 'Experia Coffee Warehouse - Florence'),
+    ('Z004', 'JM-BRYL', 25, 'Box Vienna Blend', 'Experia Coffee Warehouse - Florence'),
+    ('Z004', 'JM-BPLT', 25, 'Box Platinum', 'Experia Coffee Warehouse - Florence'),
+    ('Z004', 'JM-BJB', 25, 'Box Jubilee Blend', 'Experia Coffee Warehouse - Florence'),
+    ('Z004', 'JM-BAS', 25, 'Box Amabili Sensi', 'Experia Coffee Warehouse - Florence'),
+    ('Z002', 'ILY-BIM', 20, 'Box illy Monoarabica', 'Experia Coffee Warehouse - Rome'),
+    ('Z002', 'ILY-BII', 20, 'Box illy Intenso', 'Experia Coffee Warehouse - Rome'),
+    ('Z002', 'ILY-BIDCF', 20, 'Box illy Decaffeinato', 'Experia Coffee Warehouse - Rome'),
+    ('Z002', 'ILY-BIC', 20, 'Box illy Classico', 'Experia Coffee Warehouse - Rome'),
+    ('Z002', 'ILY-BIB', 20, 'Box illy Blend', 'Experia Coffee Warehouse - Rome'),
+    ('Z005', 'DLY-BPD', 20, 'Box Prodomo', 'Experia Coffee Warehouse - Palermo'),
+    ('Z005', 'DLY-BMNC', 20, 'Box Monaco', 'Experia Coffee Warehouse - Palermo'),
+    ('Z005', 'DLY-BETP', 20, 'Box Ethiopia', 'Experia Coffee Warehouse - Palermo'),
+    ('Z005', 'DLY-BCL', 20, 'Box Classic', 'Experia Coffee Warehouse - Palermo'),
+    ('Z005', 'DLY-BCGOLD', 20, 'Box Crema Oro', 'Experia Coffee Warehouse - Palermo');
+
 
 
 

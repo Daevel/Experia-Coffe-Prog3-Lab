@@ -17,7 +17,7 @@ public class App extends Application {
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost/information_schema";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "password";
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {

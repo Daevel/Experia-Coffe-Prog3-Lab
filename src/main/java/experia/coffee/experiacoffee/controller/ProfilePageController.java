@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.Utente;
 import experia.coffee.experiacoffee.model.UtenteSingleton;
@@ -7,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -24,6 +27,36 @@ public class ProfilePageController implements Initializable {
     @FXML
     public Button profileLogoutButton;
 
+    // CHANGE EMAIL PROCEDURE
+    @FXML
+    public Button changeEmailButton, changeEmail_ConfirmButton;
+    @FXML
+    public Separator changeEmail_Separator;
+    @FXML
+    public TextField changeEmail_TextField;
+    @FXML
+    public Label changeEmail_Label;
+
+    // RESET PASSWORD PROCEDURE
+    @FXML
+    public Button resetPasswordButton, resetPassword_ConfirmButton;
+    @FXML
+    public Separator resetPassword_Separator;
+    @FXML
+    public TextField resetPassword_TextField;
+    @FXML
+    public TextField resetPassword_repeatPassword_TextField;
+
+    @FXML
+    public Label resetPassword_repeatPassword_Label;
+    @FXML
+    public Label resetPassword_Label;
+
+    @FXML
+    public Label passwordMismatchText;
+
+    // ALTRO
+
     @FXML
     public Label profileName;
     @FXML
@@ -35,10 +68,29 @@ public class ProfilePageController implements Initializable {
     @FXML
     public Label profileBirthDate;
 
+    private String userRole;
+    private String userFiscalCode;
+    private String userEmail;
+
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
         UtenteSingleton singleton = UtenteSingleton.getInstance();
         Utente utente = singleton.getUtente();
+
+        changeEmail_TextField.setVisible(false);
+        changeEmail_Label.setVisible(false);
+        changeEmail_Separator.setVisible(false);
+        changeEmail_ConfirmButton.setVisible(false);
+
+        resetPassword_TextField.setVisible(false);
+        resetPassword_Label.setVisible(false);
+        resetPassword_Separator.setVisible(false);
+        resetPassword_ConfirmButton.setVisible(false);
+        resetPassword_repeatPassword_TextField.setVisible(false);
+        resetPassword_repeatPassword_Label.setVisible(false);
+        passwordMismatchText.setVisible(true);
+
+
 
         if (utente != null) {
             String nome = utente.getNAME();
@@ -46,6 +98,16 @@ public class ProfilePageController implements Initializable {
             String email = utente.getEMAIL();
             String fiscalCode = utente.getCODICE_FISCALE();
             String birthDate = utente.getDATA_DI_NASCITA();
+            String role = utente.getRUOLO();
+
+            userRole = role;
+            userFiscalCode = fiscalCode;
+            userEmail = email;
+
+            if (role.equalsIgnoreCase("dipendente")) {
+                // i dipendenti non devono cambiare la mail, ma solo la password
+                changeEmailButton.setVisible(false);
+            }
 
             profileName.setText("Nome: " + nome);
             profileSurname.setText("Cognome: " + cognome);
@@ -53,22 +115,101 @@ public class ProfilePageController implements Initializable {
             profileFiscalCode.setText("Codice fiscale: " + fiscalCode);
             profileBirthDate.setText("Data di nascita: " + birthDate);
 
-
         } else {
             System.out.println("L'utente e' null nella Home page");
         }
     }
 
-
-
-
     @FXML
     public void onTurnToHome() throws IOException {
-        new SceneSwitch(profilePageAnchorPane, "prova.fxml");
+        if (userRole.equalsIgnoreCase("cliente")) {
+            new SceneSwitch(profilePageAnchorPane, "clienteHomePage.fxml");
+        } else if (userRole.equalsIgnoreCase("dipendente")) {
+            new SceneSwitch(profilePageAnchorPane, "dipendenteHomePage.fxml");
+        } else {
+            new SceneSwitch(profilePageAnchorPane, ".fxml");
+        }
     }
 
     @FXML
     public void onLogout() throws IOException {
         new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
+    }
+
+    @FXML
+    public void openResetPasswordPopup() {
+        resetPassword_TextField.setVisible(true);
+        resetPassword_Label.setVisible(true);
+        resetPassword_Separator.setVisible(true);
+        resetPassword_ConfirmButton.setVisible(true);
+        resetPassword_repeatPassword_TextField.setVisible(true);
+        resetPassword_repeatPassword_Label.setVisible(true);
+    }
+
+    @FXML
+    public void closeResetPasswordPopup() {
+        resetPassword_TextField.setVisible(false);
+        resetPassword_Label.setVisible(false);
+        resetPassword_Separator.setVisible(false);
+        resetPassword_ConfirmButton.setVisible(false);
+        resetPassword_repeatPassword_TextField.setVisible(false);
+        resetPassword_repeatPassword_Label.setVisible(false);
+        passwordMismatchText.setVisible(false);
+    }
+
+    @FXML
+    public void openChangeEmailPopup() {
+        changeEmail_TextField.setVisible(true);
+        changeEmail_Label.setVisible(true);
+        changeEmail_Separator.setVisible(true);
+        changeEmail_ConfirmButton.setVisible(true);
+    }
+
+    @FXML
+    public void closeChangeEmailPopup() {
+        changeEmail_TextField.setVisible(false);
+        changeEmail_Label.setVisible(false);
+        changeEmail_Separator.setVisible(false);
+        changeEmail_ConfirmButton.setVisible(false);
+    }
+
+    @FXML
+    public void onChangeEmail() throws IOException {
+       String email = changeEmail_TextField.getText();
+       String fiscalCode = userFiscalCode;
+
+        experia.coffee.experiacoffee.data.UserQuery query = new experia.coffee.experiacoffee.data.UserQuery();
+        if(query.changeEmail(email, fiscalCode)) {
+            closeChangeEmailPopup();
+            new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
+        } else {
+            System.out.println("Errore nel cambio email");
+        }
+
+    }
+
+    @FXML
+    public void onResetPassword() throws IOException {
+        String email = userEmail;
+        String password = resetPassword_TextField.getText();
+        String repeatPassword = resetPassword_repeatPassword_TextField.getText();
+        String role = userRole;
+
+        experia.coffee.experiacoffee.data.UserQuery query = new UserQuery();
+
+        if (passwordMismatchCheck(password, repeatPassword)) {
+            if(query.resetPassword(email, password, role)) {
+                closeResetPasswordPopup();
+                new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
+            } else {
+                System.out.println("Errore nel cambio password");
+            }
+        } else {
+            passwordMismatchText.setText("Le password non coincidono, riprovare.");
+        }
+    }
+
+    public boolean passwordMismatchCheck(String password, String repeatPassword) {
+        return password.equalsIgnoreCase(repeatPassword);
     }
 }

@@ -15,7 +15,7 @@ public class DBConnection {
                     try {
                         String url = "jdbc:mysql://localhost/experia_coffee";
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        setCon(DriverManager.getConnection(url, "root", ""));
+                        setCon(DriverManager.getConnection(url, "root", "password"));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

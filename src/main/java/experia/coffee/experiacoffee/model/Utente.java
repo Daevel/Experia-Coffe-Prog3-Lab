@@ -79,6 +79,7 @@ public class Utente {
     public String getCODICE_FISCALE() {
         return CODICE_FISCALE;
     }
+
     public String getRUOLO() {
         return RUOLO;
     }
