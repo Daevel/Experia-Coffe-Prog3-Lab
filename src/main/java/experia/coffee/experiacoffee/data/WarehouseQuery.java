@@ -13,14 +13,22 @@ public class WarehouseQuery {
     public ObservableList<Magazzino> getWarehouseList () {
         ObservableList<experia.coffee.experiacoffee.model.Magazzino> warehouseList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT * FROM tbl_magazzino;";
+            String query = "SELECT\n" +
+                    "    f.NOME_FILIALE,\n" +
+                    "    m.ID_PRODOTTO,\n" +
+                    "    m.NOME_PRODOTTO,\n" +
+                    "    m.QUANTITA_PRODOTTO\n" +
+                    "FROM\n" +
+                    "    tbl_filiale f\n" +
+                    "JOIN\n" +
+                    "    tbl_magazzino m ON f.CODICE_ZONA_FILIALE = m.CODICE_MAGAZZINO;\n";
             c.getDBConn();
             Statement st = c.getCon().createStatement();
             ResultSet rs = st.executeQuery(query);
             experia.coffee.experiacoffee.model.Magazzino s;
 
             while (rs.next()) {
-                s = new experia.coffee.experiacoffee.model.Magazzino(rs.getString("CODICE_MAGAZZINO"), rs.getString("ID_PRODOTTO"), rs.getInt("QUANTITA_PRODOTTO"), rs.getString("NOME_PRODOTTO"), rs.getString("NOME_MAGAZZINO"));
+                s = new experia.coffee.experiacoffee.model.Magazzino(rs.getString("NOME_FILIALE"), rs.getString("ID_PRODOTTO"), rs.getString("NOME_PRODOTTO"), rs.getInt("QUANTITA_PRODOTTO"));
                 warehouseList.add(s);
             }
 

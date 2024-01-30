@@ -1,8 +1,10 @@
 package experia.coffee.experiacoffee.model;
 
-import javafx.beans.value.ObservableValue;
 
-public class Prodotto {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Prodotto implements ProductSubject {
     private String NOME_PRODOTTO;
     private Float PREZZO_PRODOTTO;
     private Integer QUANTITA;
@@ -17,6 +19,7 @@ public class Prodotto {
         this.setPROVENIENZA(PROVENIENZA);
         this.setID_FORNITURA(ID_FORNITURA);
         this.setID_PRODOTTO(ID_PRODOTTO);
+        this.observers = new ArrayList<>();
     }
     public Prodotto(String NOME_PRODOTTO, Float PREZZO_PRODOTTO, Integer QUANTITA, String PROVENIENZA, String ID_FORNITURA) {
         this.setNOME_PRODOTTO(NOME_PRODOTTO);
@@ -72,6 +75,56 @@ public class Prodotto {
 
     public void setID_PRODOTTO(String ID_PRODOTTO) {
         this.ID_PRODOTTO = ID_PRODOTTO;
+    }
+
+    private List<ProductObserver> observers;
+    private String message;
+    private boolean changed;
+    private final Object MUTEX = new Object();
+
+    @Override
+    public void register(ProductObserver obj) {
+        if(obj == null)
+            throw new NullPointerException("Null Observer");
+        synchronized (MUTEX) {
+            if(!observers.contains(obj))
+                observers.add(obj);
+        }
+    }
+
+    @Override
+    public void unregister(ProductObserver obj) {
+        synchronized (MUTEX) {
+            observers.remove(obj);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+        List<ProductObserver> observerLocal = null;
+        synchronized (MUTEX) {
+            if(!changed)
+                return;
+            observerLocal = new ArrayList<>(this.observers);
+            this.changed = false;
+        }
+        for (ProductObserver obj: observerLocal) {
+            obj.update();
+        }
+    }
+
+    @Override
+    public Object getUpdate(ProductObserver obj) {
+        return this.message;
+    }
+
+
+    public String postMessage(String msg) {
+        System.out.println("Message Posted to Topic:"+msg);
+        this.message = msg;
+        this.changed = true;
+        notifyObservers();
+        return msg;
     }
 
 }

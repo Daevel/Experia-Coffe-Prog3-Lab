@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class ClienteHomePage implements Initializable {
@@ -18,41 +19,31 @@ public class ClienteHomePage implements Initializable {
     private AnchorPane ClienteHomePageAnchor;
     @FXML
     public Button returnToLoginPageButton;
-
     @FXML
-    public Button profilePageButton, checkoutPageButton;
-
+    public Button profilePageButton, checkoutPageButton, orderPageButton;
     @FXML
     public Label welcomeLabel;
-
+    @FXML
+    public Label totalAmount;
     @FXML
     public TableView<Prodotto> productView = new TableView<>();
-
     @FXML
     public TableColumn<Prodotto, String> colNOME_PRODOTTO, col_PROVENIENZA, col_ID_PRODOTTO, col_ID_FORNITURA;
-
     @FXML
     public TableColumn<Prodotto, Float> col_PREZZO_PRODOTTO;
-
     @FXML
     public TableColumn<Prodotto, Integer> col_QUANTITA;
-
     @FXML
     public TableView<Prodotto> cartView = new TableView<>();
-
     @FXML
     public TableColumn<Prodotto, String> colCART_NOME_PRODOTTO;
-
     @FXML
     public TableColumn<Prodotto, Float> colCART_PREZZO_PRODOTTO;
-
     @FXML
     public TableColumn<Prodotto, Integer> colCART_QUANTITA_PRODOTTO;
-
     private ObservableList<Prodotto> productlist;
-
     private ObservableList<Prodotto> cartList;
-
+    private float valoreTotale = 0.0f;
 
     @FXML
     public void returnToLoginPage() throws IOException {
@@ -62,6 +53,11 @@ public class ClienteHomePage implements Initializable {
     public void goToProfilePage() throws  IOException {
         new SceneSwitch(ClienteHomePageAnchor, "profilePage.fxml");
     }
+    @FXML
+    public void goToOrderPage() throws IOException {
+        new SceneSwitch(ClienteHomePageAnchor, "orderStatusPage.fxml");
+    }
+
     @FXML
     private void showProducts() {
         experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
@@ -73,6 +69,9 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = productView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.add(prodottoSelezionato);
+
+                    valoreTotale += prodottoSelezionato.getPREZZO_PRODOTTO();
+                    updateTotalAmount();
                 }
             }
         });
@@ -96,6 +95,11 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = cartView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.remove(prodottoSelezionato);
+
+                    valoreTotale -= prodottoSelezionato.getPREZZO_PRODOTTO();
+                    updateTotalAmount();
+                    prodottoSelezionato.postMessage("Prodotto rimosso dal carrello: " + prodottoSelezionato.getNOME_PRODOTTO());
+
                 }
             }
         });
@@ -107,13 +111,8 @@ public class ClienteHomePage implements Initializable {
     }
 
     @FXML
-    public void showTotalAmount(String emailCliente) {
-        experia.coffee.experiacoffee.data.ProductQuery query = new experia.coffee.experiacoffee.data.ProductQuery();
-        ObservableList<Prodotto> list = query.getTotalAmount(emailCliente);
-    }
-
-    @FXML
     public void openCheckoutPage() throws IOException {
+        ValoreTotaleSingleton.getInstance().setValoreTotale(valoreTotale);
         new SceneSwitch(ClienteHomePageAnchor, "checkoutPage.fxml");
     }
 
@@ -122,10 +121,11 @@ public class ClienteHomePage implements Initializable {
         UtenteSingleton singleton = UtenteSingleton.getInstance();
         Utente utente = singleton.getUtente();
 
+        updateTotalAmount();
         showProducts();
 
         if (utente != null) {
-            System.out.println();
+
             String nome = utente.getNAME();
             String cognome = utente.getSURNAME();
             String email = utente.getEMAIL();
@@ -137,5 +137,10 @@ public class ClienteHomePage implements Initializable {
         } else {
             System.out.println("L'utente e' null nella Home page");
         }
+    }
+
+    private void updateTotalAmount() {
+        DecimalFormat decimalFormat = new DecimalFormat("#0.0");
+        totalAmount.setText("Totale: €" + decimalFormat.format(valoreTotale));
     }
 }

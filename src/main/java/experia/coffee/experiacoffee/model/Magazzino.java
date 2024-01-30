@@ -2,6 +2,7 @@ package experia.coffee.experiacoffee.model;
 
 public class Magazzino {
 
+    private String NOME_FILIALE;
     private String CODICE_MAGAZZINO;
     private String ID_PRODOTTO;
 
@@ -17,6 +18,12 @@ public class Magazzino {
         this.setQUANTITA_PRODOTTO(QUANTITA_PRODOTTO);
         this.setNOME_PRODOTTO(NOME_PRODOTTO);
         this.setNOME_MAGAZZINO(NOME_MAGAZZINO);
+    }
+    public Magazzino(String NOME_FILIALE, String ID_PRODOTTO, String NOME_PRODOTTO, Integer QUANTITA_PRODOTTO) {
+        this.setNOME_FILIALE(NOME_FILIALE);
+        this.setID_PRODOTTO(ID_PRODOTTO);
+        this.setNOME_PRODOTTO(NOME_PRODOTTO);
+        this.setQUANTITA_PRODOTTO(QUANTITA_PRODOTTO);
     }
 
     public String getCODICE_MAGAZZINO() {
@@ -57,5 +64,13 @@ public class Magazzino {
 
     public void setNOME_MAGAZZINO(String NOME_MAGAZZINO) {
         this.NOME_MAGAZZINO = NOME_MAGAZZINO;
+    }
+
+    public String getNOME_FILIALE() {
+        return NOME_FILIALE;
+    }
+
+    public void setNOME_FILIALE(String NOME_FILIALE) {
+        this.NOME_FILIALE = NOME_FILIALE;
     }
 }

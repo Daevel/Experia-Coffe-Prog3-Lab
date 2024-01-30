@@ -48,7 +48,7 @@
       </ButtonBar>
       <PasswordField fx:id="repeatPwd" layoutX="261.0" layoutY="512.0" prefHeight="52.0" prefWidth="179.0" />
       <Label layoutX="260.0" layoutY="495.0" text="Ripeti password" textFill="#fffdd0" />
-      <Label layoutX="556.0" layoutY="395.0" prefHeight="44.0" prefWidth="589.0" text="Metodo di pagamaneto" textFill="#fffdd0">
+      <Label layoutX="556.0" layoutY="395.0" prefHeight="44.0" prefWidth="589.0" text="Metodo di pagamento" textFill="#fffdd0">
          <font>
             <Font size="36.0" />
          </font>

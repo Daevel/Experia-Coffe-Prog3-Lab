@@ -90,8 +90,6 @@ public class ProfilePageController implements Initializable {
         resetPassword_repeatPassword_Label.setVisible(false);
         passwordMismatchText.setVisible(true);
 
-
-
         if (utente != null) {
             String nome = utente.getNAME();
             String cognome = utente.getSURNAME();

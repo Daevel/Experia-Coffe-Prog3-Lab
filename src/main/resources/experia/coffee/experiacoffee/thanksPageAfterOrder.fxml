@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="thanksPageAfterOrderAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ThanksPageAfterOrderController">
+   <children>
+      <Label alignment="CENTER" layoutX="158.0" layoutY="327.0" prefHeight="44.0" prefWidth="940.0" text="Grazie per il tuo ordine." textFill="#fffdd0">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="573.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/ExperiaFavicon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="returnToHomepageButton" layoutX="486.0" layoutY="420.0" mnemonicParsing="false" onAction="#returnToHomePage" prefHeight="52.0" prefWidth="145.0" text="Torna alla homepage" />
+      <Button fx:id="showOpenPageButton" layoutX="658.0" layoutY="420.0" mnemonicParsing="false" onAction="#openOrderPage" prefHeight="52.0" prefWidth="145.0" text="Visualizza stato ordine" />
+   </children>
+</AnchorPane>

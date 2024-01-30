@@ -9,14 +9,16 @@ public class Ordine {
     private String FILIALE_IN_CARICO;
 
     private String CORRIERE_IN_CARICO;
+    private String STATO_ORDINE;
 
-    public Ordine(String ID_ORDINE, Integer NUMERO_ORDINE, String ORDINATO_DA, String DESTINAZIONE, String FILIALE_IN_CARICO, String CORRIERE_IN_CARICO) {
+    public Ordine(String ID_ORDINE, Integer NUMERO_ORDINE, String ORDINATO_DA, String DESTINAZIONE, String FILIALE_IN_CARICO, String CORRIERE_IN_CARICO, String STATO_ORDINE) {
        this.setID_ORDINE(ID_ORDINE);
        this.setNUMERO_ORDINE(NUMERO_ORDINE);
        this.setORDINATO_DA(ORDINATO_DA);
        this.setDESTINAZIONE(DESTINAZIONE);
        this.setFILIALE_IN_CARICO(FILIALE_IN_CARICO);
        this.setCORRIERE_IN_CARICO(CORRIERE_IN_CARICO);
+       this.setSTATO_ORDINE(STATO_ORDINE);
     }
 
     public String getID_ORDINE() {
@@ -65,5 +67,13 @@ public class Ordine {
 
     public void setCORRIERE_IN_CARICO(String CORRIERE_IN_CARICO) {
         this.CORRIERE_IN_CARICO = CORRIERE_IN_CARICO;
+    }
+
+    public String getSTATO_ORDINE() {
+        return STATO_ORDINE;
+    }
+
+    public void setSTATO_ORDINE(String STATO_ORDINE) {
+        this.STATO_ORDINE = STATO_ORDINE;
     }
 }

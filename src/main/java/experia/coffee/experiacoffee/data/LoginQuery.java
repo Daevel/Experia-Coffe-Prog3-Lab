@@ -65,6 +65,15 @@ public class LoginQuery {
                                 String cognome = resultSet.getString("COGNOME");
                                 String codiceFiscale = resultSet.getString("CODICE_FISCALE");
                                 String dataDiNascita = resultSet.getString("DATA_DI_NASCITA");
+                                String cellulare = resultSet.getString("CELLULARE");
+                                String citta = resultSet.getString("CITTA");
+                                String via = resultSet.getString("VIA");
+                                String n_civico = resultSet.getString("N_CIVICO");
+                                String cap = resultSet.getString("CAP");
+                                String num_carta = resultSet.getString("NUM_CARTA");
+                                String cvv_carta = resultSet.getString("CVV_CARTA");
+                                String intestatario_carta = resultSet.getString("INTESTATARIO_CARTA");
+                                String scadenza_carta = resultSet.getString("SCADENZA_CARTA");
 
                             Utente resultUtente = new Utente.UtenteBuilder(utente.getEMAIL(), utente.getPASSWORD())
                                     .setRUOLO(ruolo)
@@ -72,6 +81,15 @@ public class LoginQuery {
                                     .setSURNAME(cognome)
                                     .setCODICE_FISCALE(codiceFiscale)
                                     .setDATA_DI_NASCITA(dataDiNascita)
+                                    .setCELLULARE(cellulare)
+                                    .setCITTA(citta)
+                                    .setVIA(via)
+                                    .setN_CIVICO(n_civico)
+                                    .setCAP(cap)
+                                    .setNUM_CARTA(num_carta)
+                                    .setCVV_CARTA(cvv_carta)
+                                    .setINTESTATARIO_CARTA(intestatario_carta)
+                                    .setSCADENZA_CARTA(scadenza_carta)
                                     .build();
                             return new LoginResult(true, resultUtente).getUser();
                         } else {

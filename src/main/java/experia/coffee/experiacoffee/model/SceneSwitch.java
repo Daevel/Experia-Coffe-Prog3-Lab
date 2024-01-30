@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.model;
 
 import experia.coffee.experiacoffee.App;
+import experia.coffee.experiacoffee.controller.CheckoutPageController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
