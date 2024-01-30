@@ -5,41 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="added CheckoutPageController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/OrderStatusPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ThanksPageAfterOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/CartQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/CartSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/OrderState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ProdottoSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ProductObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ProductSubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ValoreTotaleSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/orderStatusPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/thanksPageAfterOrder.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/WarehouseQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/WarehouseQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Magazzino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Magazzino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Ordine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/Prodotto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/SceneSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/SceneSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ToastMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/checkoutPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/checkoutPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/OrderState.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/styles/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

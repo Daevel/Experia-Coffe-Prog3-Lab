@@ -22,6 +22,9 @@ public class DipendenteHomePage implements Initializable {
     @FXML
     public Button returnToLoginPageButton;
 
+    @FXML
+    public ToggleButton makeOrderInTransitButton, makeOrderInQueueButton, makeOrderDeliveredButton;
+
     // TABELLA ORDINI
     @FXML
     public TableView<Ordine> orderList = new TableView<>();
@@ -94,7 +97,34 @@ public class DipendenteHomePage implements Initializable {
         colFILIALE_IN_CARICO.setCellValueFactory(new PropertyValueFactory<Ordine, String>("FILIALE_IN_CARICO"));
         colCORRIERE_IN_CARICO.setCellValueFactory(new PropertyValueFactory<Ordine, String>("CORRIERE_IN_CARICO"));
         colSTATO_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("STATO_ORDINE"));
+
+        orderList.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Ordine orderSelected = orderList.getSelectionModel().getSelectedItem();
+                if(orderSelected != null) {
+                    orderList.refresh();
+                    System.out.println(orderSelected.getSTATO_ORDINE());
+                }
+            }
+        });
+
+
         orderList.setItems(list);
+    }
+
+    @FXML
+    public void setOrderToComplete() {
+        handleToggleButtonAction();
+    }
+
+    @FXML
+    public void setOrderToInTransit() {
+        handleToggleButtonAction();
+    }
+
+    @FXML
+    public void setOrderToInQueue() {
+        handleToggleButtonAction();
     }
 
     @FXML
@@ -143,6 +173,18 @@ public class DipendenteHomePage implements Initializable {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleToggleButtonAction() {
+        if(makeOrderDeliveredButton.isSelected()) {
+            makeOrderDeliveredButton.getText();
+            System.out.println("completed is selected");
+        } else if (makeOrderInTransitButton.isSelected()) {
+            System.out.println("in transit is selected");
+        } else if (makeOrderInQueueButton.isSelected()) {
+            System.out.println("In queue is selected");
         }
     }
 

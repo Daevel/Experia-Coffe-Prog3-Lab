@@ -10,14 +10,16 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.Base64;
 
 
 public class App extends Application {
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost/information_schema";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "password";
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
