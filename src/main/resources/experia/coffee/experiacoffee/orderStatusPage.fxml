@@ -16,16 +16,21 @@
       </Label>
       <Button fx:id="clienteHomePageButton" layoutX="1076.0" layoutY="17.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="40.0" prefWidth="90.0" text="Home" />
       <Button fx:id="logoutButton" layoutX="1172.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
-      <TableView layoutX="22.0" layoutY="98.0" prefHeight="262.0" prefWidth="1240.0">
+      <TableView fx:id="orderList" layoutX="22.0" layoutY="98.0" prefHeight="262.0" prefWidth="1240.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID ORDINE" />
-          <TableColumn prefWidth="75.0" text="DESTINAZIONE" />
-            <TableColumn prefWidth="75.0" text="STATO TRANSITO" />
-            <TableColumn prefWidth="75.0" text="TOTALE PAGATO" />
+          <TableColumn fx:id="statusOrder_ID" prefWidth="75.0" text="ID ORDINE" />
+          <TableColumn fx:id="statusOrder_ORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />
+            <TableColumn fx:id="statusOrder_DESTINAZIONE" prefWidth="75.0" text="DESTINAZIONE" />
+            <TableColumn fx:id="statusOrder_STATO_ORDINE" prefWidth="75.0" text="STATO ORDINE" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Label fx:id="totalePagatoLabel" alignment="CENTER_RIGHT" layoutX="997.0" layoutY="372.0" prefHeight="30.0" prefWidth="264.0" textFill="#fffdd0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

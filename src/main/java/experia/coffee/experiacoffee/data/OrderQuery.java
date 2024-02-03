@@ -12,14 +12,46 @@ public class OrderQuery {
 
     private DBConnection c = new DBConnection();
 
-    /*
+
     public ObservableList<Ordine> getOrderListByClient(String email) {
         ObservableList<experia.coffee.experiacoffee.model.Ordine> orderStatus = FXCollections.observableArrayList();
         try {
-           // String query = "SELECT "
+            c.getDBConn();
+            String query = "SELECT \n" +
+                    "o.ID_ORDINE,\n" +
+                    "    c.EMAIL AS ORDINATO_DA,\n" +
+                    "    c.VIA AS DESTINAZIONE,\n" +
+                    "    o.STATO_ORDINE\n" +
+                    "FROM\n" +
+                    "tbl_cliente c\n" +
+                    "JOIN tbl_carrello crt ON c.EMAIL = crt.EMAIL_CLIENTE\n" +
+                    "JOIN tbl_ordine o ON crt.ID = o.ID_CARRELLO\n" +
+                    "\tWHERE c.EMAIL = ?;";
+            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+
+                preparedStatement.setString(1, email);
+
+                try (ResultSet rs = preparedStatement.executeQuery()) {
+                    while (rs.next()) {
+                        experia.coffee.experiacoffee.model.Ordine s;
+                        s = new experia.coffee.experiacoffee.model.Ordine(rs.getString("ID_ORDINE"), null, rs.getString("ORDINATO_DA"), rs.getString("DESTINAZIONE"), null, null, rs.getString("STATO_ORDINE"));
+                        orderStatus.add(s);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    c.closeConnection();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return orderStatus;
     }
-    */
+
 
     public ObservableList<Ordine> getOrderList () {
         ObservableList<experia.coffee.experiacoffee.model.Ordine> productList = FXCollections.observableArrayList();

@@ -26,7 +26,7 @@ public class ThanksPageAfterOrderController implements Initializable {
 
     @FXML
     public void openOrderPage () throws IOException {
-        new SceneSwitch(thanksPageAfterOrderAnchor, "orderPage.fxml");
+        new SceneSwitch(thanksPageAfterOrderAnchor, "orderStatusPage.fxml");
     }
 
     @Override
