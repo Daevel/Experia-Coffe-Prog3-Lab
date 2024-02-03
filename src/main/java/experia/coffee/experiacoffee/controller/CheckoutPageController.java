@@ -1,9 +1,11 @@
 package experia.coffee.experiacoffee.controller;
 
-import experia.coffee.experiacoffee.data.CartQuery;
 import experia.coffee.experiacoffee.data.OrderQuery;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.*;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
+import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -29,12 +31,9 @@ public class CheckoutPageController implements Initializable {
             retrieveFees,
             ivaPercentage,
             totalProducts,
-
             checkoutAddress,
-
             checkoutNumberAddress,
             checkoutMobilePhone,
-
             checkoutCreditNumber,
             checkoutExpirationDateCard;
 
@@ -79,8 +78,6 @@ public class CheckoutPageController implements Initializable {
         } else {
             System.out.println("Utente null");
         }
-
-
         travelFees.setText("Costi di trasposto: FREE");
         retrieveFees.setText("Costi di spedizione: FREE");
         subTotalProducts.setText("Prodotto: €" + decimalFormat.format(valoreTotale));
@@ -93,9 +90,8 @@ public class CheckoutPageController implements Initializable {
        return (subTotale * IVA_PERCENTAGE)/(100);
     }
 
-
     private void createOrder(String userID, String userEmail) throws IOException {
-        String cartId = "ORD - " + userID;
+        String cartId = "ORD-" + userID;
         experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
         boolean isOrderSuccessful = query.createOrder(cartId, userEmail);
         if (isOrderSuccessful) {

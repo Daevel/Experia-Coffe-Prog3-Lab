@@ -1,5 +1,8 @@
 package experia.coffee.experiacoffee.model;
 
+import experia.coffee.experiacoffee.model.StatePattern.OrderState;
+import javafx.scene.Node;
+
 public class Ordine {
     private String ID_ORDINE;
     private Integer NUMERO_ORDINE;
@@ -10,6 +13,8 @@ public class Ordine {
 
     private String CORRIERE_IN_CARICO;
     private String STATO_ORDINE;
+
+    private OrderState state;
 
     public Ordine(String ID_ORDINE, Integer NUMERO_ORDINE, String ORDINATO_DA, String DESTINAZIONE, String FILIALE_IN_CARICO, String CORRIERE_IN_CARICO, String STATO_ORDINE) {
        this.setID_ORDINE(ID_ORDINE);
@@ -75,5 +80,15 @@ public class Ordine {
 
     public void setSTATO_ORDINE(String STATO_ORDINE) {
         this.STATO_ORDINE = STATO_ORDINE;
+    }
+
+    public void setState(OrderState state) {
+        this.state = state;
+    }
+
+    public void applyStateStyle(Node node) {
+        if (state != null) {
+            state.applyStateStyle(node);
+        }
     }
 }

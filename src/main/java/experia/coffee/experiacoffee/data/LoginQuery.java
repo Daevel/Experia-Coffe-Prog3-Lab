@@ -1,11 +1,10 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.LoginResult;
-import experia.coffee.experiacoffee.model.Utente;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 
 public class LoginQuery {
 

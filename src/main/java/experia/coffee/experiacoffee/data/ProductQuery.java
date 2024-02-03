@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.data;
 
+import experia.coffee.experiacoffee.model.ObserverPattern.Prodotto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -9,16 +10,16 @@ import java.sql.Statement;
 
 public class ProductQuery {
     private DBConnection c = new DBConnection();
-    public ObservableList<experia.coffee.experiacoffee.model.Prodotto> getProductList () {
-        ObservableList<experia.coffee.experiacoffee.model.Prodotto> productList = FXCollections.observableArrayList();
+    public ObservableList<Prodotto> getProductList () {
+        ObservableList<Prodotto> productList = FXCollections.observableArrayList();
         try {
             String query = "select * from tbl_prodotto order by NOME_PRODOTTO asc";
             c.getDBConn();
             Statement st = c.getCon().createStatement();
             ResultSet rs = st.executeQuery(query);
-            experia.coffee.experiacoffee.model.Prodotto s;
+            Prodotto s;
             while (rs.next()) {
-                s = new experia.coffee.experiacoffee.model.Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),rs.getString("PROVENIENZA"),rs.getString("ID_FORNITURA"), rs.getString("ID_PRODOTTO"));
+                s = new Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),rs.getString("PROVENIENZA"),rs.getString("ID_FORNITURA"), rs.getString("ID_PRODOTTO"));
                 productList.add(s);
             }
             rs.close();
@@ -30,8 +31,8 @@ public class ProductQuery {
         return productList;
     }
 
-    public ObservableList<experia.coffee.experiacoffee.model.Prodotto> getUserCartList (String emailCliente) {
-        ObservableList<experia.coffee.experiacoffee.model.Prodotto> productList = FXCollections.observableArrayList();
+    public ObservableList<Prodotto> getUserCartList (String emailCliente) {
+        ObservableList<Prodotto> productList = FXCollections.observableArrayList();
         try {
             String query = "SELECT\n" +
                     "    tbl_prodotto.NOME_PRODOTTO,\n" +
@@ -52,9 +53,9 @@ public class ProductQuery {
                 preparedStatement.setString(1, emailCliente);
 
                 try (ResultSet rs = preparedStatement.executeQuery()) {
-                    experia.coffee.experiacoffee.model.Prodotto s;
+                    Prodotto s;
                     while (rs.next()) {
-                        s = new experia.coffee.experiacoffee.model.Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
+                        s = new Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
                         productList.add(s);
                     }
                 }
@@ -66,8 +67,8 @@ public class ProductQuery {
         return productList;
     }
 
-    public ObservableList<experia.coffee.experiacoffee.model.Prodotto> getTotalAmount (String emailCliente) {
-        ObservableList<experia.coffee.experiacoffee.model.Prodotto> amountProduct = FXCollections.observableArrayList();
+    public ObservableList<Prodotto> getTotalAmount (String emailCliente) {
+        ObservableList<Prodotto> amountProduct = FXCollections.observableArrayList();
         try {
             String query = "SELECT\n" +
                     "    tbl_prodotto.NOME_PRODOTTO,\n" +
@@ -88,9 +89,9 @@ public class ProductQuery {
                 preparedStatement.setString(1, emailCliente);
 
                 try (ResultSet rs = preparedStatement.executeQuery()) {
-                    experia.coffee.experiacoffee.model.Prodotto s;
+                    Prodotto s;
                     while (rs.next()) {
-                        s = new experia.coffee.experiacoffee.model.Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
+                        s = new Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
                         amountProduct.add(s);
                     }
                 }

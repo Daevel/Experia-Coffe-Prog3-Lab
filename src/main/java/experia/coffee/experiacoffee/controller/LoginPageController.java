@@ -1,10 +1,9 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.data.LoginQuery;
-import experia.coffee.experiacoffee.model.LoginResult;
 import experia.coffee.experiacoffee.model.SceneSwitch;
-import experia.coffee.experiacoffee.model.Utente;
-import experia.coffee.experiacoffee.model.UtenteSingleton;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,7 +17,6 @@ import java.util.ResourceBundle;
 
 
 public class LoginPageController implements Initializable {
-
 
     @FXML
     private AnchorPane scene2AnchorPane;
@@ -86,7 +84,6 @@ public class LoginPageController implements Initializable {
             }
         } else {
             errorInvalidCredentials.setText("Credenziali errate o non valide, riprovare.");
-            System.out.println("Credenziali errate riprovare");
         }
     }
 

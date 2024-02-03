@@ -4,7 +4,7 @@ import experia.coffee.experiacoffee.data.CartQuery;
 import experia.coffee.experiacoffee.data.SignupQuery;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
-import experia.coffee.experiacoffee.model.Utente;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

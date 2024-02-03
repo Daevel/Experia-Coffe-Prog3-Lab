@@ -2,8 +2,8 @@ package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
-import experia.coffee.experiacoffee.model.Utente;
-import experia.coffee.experiacoffee.model.UtenteSingleton;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

@@ -77,6 +77,11 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="productObserverMessage" layoutX="36.0" layoutY="740.0" prefHeight="40.0" prefWidth="488.0" textFill="#fffdd0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
    <opaqueInsets>
       <Insets />

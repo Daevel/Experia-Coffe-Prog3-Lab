@@ -1,4 +1,4 @@
-package experia.coffee.experiacoffee.model;
+package experia.coffee.experiacoffee.model.ObserverPattern;
 
 public class ProdottoSubscriber implements ProductObserver {
 

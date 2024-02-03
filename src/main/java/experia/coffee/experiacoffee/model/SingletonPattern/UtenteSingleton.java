@@ -1,4 +1,6 @@
-package experia.coffee.experiacoffee.model;
+package experia.coffee.experiacoffee.model.SingletonPattern;
+
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 
 public class UtenteSingleton {
     private static UtenteSingleton instance;

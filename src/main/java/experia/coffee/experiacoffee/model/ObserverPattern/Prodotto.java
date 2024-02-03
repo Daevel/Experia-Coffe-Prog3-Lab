@@ -1,4 +1,4 @@
-package experia.coffee.experiacoffee.model;
+package experia.coffee.experiacoffee.model.ObserverPattern;
 
 
 import java.util.ArrayList;

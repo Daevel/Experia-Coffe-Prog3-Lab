@@ -1,6 +1,10 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.model.*;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.model.ObserverPattern.Prodotto;
+import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
+import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +30,8 @@ public class ClienteHomePage implements Initializable {
     @FXML
     public Label totalAmount;
     @FXML
+    public Label productObserverMessage;
+    @FXML
     public TableView<Prodotto> productView = new TableView<>();
     @FXML
     public TableColumn<Prodotto, String> colNOME_PRODOTTO, col_PROVENIENZA, col_ID_PRODOTTO, col_ID_FORNITURA;
@@ -44,6 +50,29 @@ public class ClienteHomePage implements Initializable {
     private ObservableList<Prodotto> productlist;
     private ObservableList<Prodotto> cartList;
     private float valoreTotale = 0.0f;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        UtenteSingleton singleton = UtenteSingleton.getInstance();
+        Utente utente = singleton.getUtente();
+
+        updateTotalAmount();
+        showProducts();
+
+        if (utente != null) {
+
+            String nome = utente.getNAME();
+            String cognome = utente.getSURNAME();
+            String email = utente.getEMAIL();
+
+            showCart(email);
+
+            welcomeLabel.setText("Benvenuto, " + nome + " " + cognome + "!");
+
+        } else {
+            System.out.println("L'utente e' null nella Home page");
+        }
+    }
 
     @FXML
     public void returnToLoginPage() throws IOException {
@@ -69,7 +98,7 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = productView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.add(prodottoSelezionato);
-
+                    productObserverMessage.setText(prodottoSelezionato.postMessage("Aggiunto il seguente prodotto: " + prodottoSelezionato.getNOME_PRODOTTO()));
                     valoreTotale += prodottoSelezionato.getPREZZO_PRODOTTO();
                     updateTotalAmount();
                 }
@@ -95,11 +124,9 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = cartView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.remove(prodottoSelezionato);
-
+                    productObserverMessage.setText(prodottoSelezionato.postMessage("Rimosso il seguente prodotto: " + prodottoSelezionato.getNOME_PRODOTTO()));
                     valoreTotale -= prodottoSelezionato.getPREZZO_PRODOTTO();
                     updateTotalAmount();
-                    prodottoSelezionato.postMessage("Prodotto rimosso dal carrello: " + prodottoSelezionato.getNOME_PRODOTTO());
-
                 }
             }
         });
@@ -114,29 +141,6 @@ public class ClienteHomePage implements Initializable {
     public void openCheckoutPage() throws IOException {
         ValoreTotaleSingleton.getInstance().setValoreTotale(valoreTotale);
         new SceneSwitch(ClienteHomePageAnchor, "checkoutPage.fxml");
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        UtenteSingleton singleton = UtenteSingleton.getInstance();
-        Utente utente = singleton.getUtente();
-
-        updateTotalAmount();
-        showProducts();
-
-        if (utente != null) {
-
-            String nome = utente.getNAME();
-            String cognome = utente.getSURNAME();
-            String email = utente.getEMAIL();
-
-            showCart(email);
-
-            welcomeLabel.setText("Benvenuto, " + nome + " " + cognome + "!");
-
-        } else {
-            System.out.println("L'utente e' null nella Home page");
-        }
     }
 
     private void updateTotalAmount() {

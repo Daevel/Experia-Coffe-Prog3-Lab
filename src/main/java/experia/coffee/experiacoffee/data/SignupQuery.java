@@ -1,6 +1,6 @@
 package experia.coffee.experiacoffee.data;
 
-import experia.coffee.experiacoffee.model.Utente;
+import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 
 import java.sql.PreparedStatement;
 

@@ -12,6 +12,15 @@ public class OrderQuery {
 
     private DBConnection c = new DBConnection();
 
+    /*
+    public ObservableList<Ordine> getOrderListByClient(String email) {
+        ObservableList<experia.coffee.experiacoffee.model.Ordine> orderStatus = FXCollections.observableArrayList();
+        try {
+           // String query = "SELECT "
+        }
+    }
+    */
+
     public ObservableList<Ordine> getOrderList () {
         ObservableList<experia.coffee.experiacoffee.model.Ordine> productList = FXCollections.observableArrayList();
         try {
@@ -60,6 +69,7 @@ public class OrderQuery {
         return productList;
     }
 
+
     public boolean createOrder (String cartId, String userEmail) {
         try {
             c.getDBConn();
@@ -89,20 +99,31 @@ public class OrderQuery {
         return false;
     }
 
-    public boolean updateOrder(String emailUser, int numeroOrdine, String filialeInCarico, String corriereInCarico) {
+    public boolean updateOrder(String emailUser, int numeroOrdine, String filialeInCarico, String corriereInCarico, String statoOrdine) {
         try {
             c.getDBConn();
-            String sql = "UPDATE tbl_gestito_da\n" +
-                    "JOIN tbl_filiale ON tbl_gestito_da.ID_FILIALE = tbl_filiale.CODICE_ZONA\n"+
-                    "JOIN tbl_ordine ON tbl_gestito_da.CODICE_ORDINE = tbl_ordine.ID_ORDINE\n" +
-                    "JOIN tbl_corriere ON tbl_ordine.ID_CARRELLO = tbl_corriere.P_IVA" +
-                    " SET tbl_ordine.NUMERO_ORDINE = ?, tbl_filiale.NOME_FILIALE = ?, tbl_corriere.NOME = ? WHERE tbl_cliente.EMAIL = ?;";
+            String sql = "UPDATE tbl_cliente c\n" +
+                    "JOIN tbl_carrello ca ON c.EMAIL = ca.EMAIL_CLIENTE\n" +
+                    "JOIN tbl_ordine o ON ca.ID = o.ID_CARRELLO\n" +
+                    "JOIN tbl_gestito_da gda ON o.ID_ORDINE = gda.CODICE_ORDINE\n" +
+                    "JOIN tbl_filiale f ON gda.ID_FILIALE = f.CODICE_ZONA_FILIALE\n" +
+                    "JOIN tbl_emette_spedizione ems ON f.CODICE_ZONA_FILIALE = ems.CODICE_ZONA_FILIALE\n" +
+                    "JOIN tbl_spedizione s ON ems.NUMERO_TRACCIAMENTO = s.NUMERO_TRACCIAMENTO\n" +
+                    "JOIN tbl_corriere cor ON cor.P_IVA = s.P_IVA_CORRIERE\n" +
+                    "\n" +
+                    "SET\n" +
+                    "    o.NUMERO_ORDINE = ?,\n" +
+                    "    o.STATO_ORDINE = ?,\n" +
+                    "    f.NOME_FILIALE = ?,\n" +
+                    "    cor.NOME = ?\n" +
+                    "WHERE c.EMAIL = ?";
             try (PreparedStatement preparedStatement = c.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setInt(1, numeroOrdine);
-                preparedStatement.setString(2, filialeInCarico);
-                preparedStatement.setString(3, corriereInCarico);
-                preparedStatement.setString(4, emailUser);
+                preparedStatement.setString(2, statoOrdine);
+                preparedStatement.setString(3, filialeInCarico);
+                preparedStatement.setString(4, corriereInCarico);
+                preparedStatement.setString(5, emailUser);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 

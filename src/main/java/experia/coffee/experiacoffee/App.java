@@ -19,7 +19,7 @@ public class App extends Application {
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost/information_schema";
     private static final String USER = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "";
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
@@ -50,8 +50,12 @@ public class App extends Application {
         try (Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
         Statement statement = connection.createStatement()) {
 
-            ResultSet resultSet = statement.executeQuery("SELECT 1 FROM information_schema.schemata WHERE schema_name = 'experia-coffee'");
-            return resultSet.next();
+            ResultSet resultSet = statement.executeQuery("SELECT 1 FROM information_schema.schemata WHERE schema_name = 'experia_coffee'");
+            boolean dbExists = resultSet.next();
+            if (dbExists) {
+                return true;
+            }
+            return false;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
