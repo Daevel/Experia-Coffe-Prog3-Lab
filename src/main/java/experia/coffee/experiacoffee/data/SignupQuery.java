@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 public class SignupQuery {
 
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
     public boolean signUpUser(Utente utente) {
         try {
@@ -29,7 +29,7 @@ public class SignupQuery {
                     "`DATA_DI_NASCITA`)\n" +
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
                 preparedStatement.setString(1, utente.getNAME());
                 preparedStatement.setString(2, utente.getSURNAME());
                 preparedStatement.setString(3, utente.getEMAIL());

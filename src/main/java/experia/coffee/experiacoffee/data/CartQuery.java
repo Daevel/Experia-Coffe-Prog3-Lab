@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 
 public class CartQuery {
 
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
     public void createCart(String cartId, String userEmail) {
         try {
             c.getDBConn();
             String sql = "INSERT INTO tbl_carrello (ID, EMAIL_CLIENTE, PREZZO_TOTALE, QUANTITA_PRODOTTO, DATA_ACQUISTO) VALUES (?, ?, 0, 0, '1990-01-01')";
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(sql)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                  preparedStatement.setString(1, cartId);
                  preparedStatement.setString(2, userEmail);

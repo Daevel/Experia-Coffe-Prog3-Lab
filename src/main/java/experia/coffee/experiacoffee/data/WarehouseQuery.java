@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class WarehouseQuery {
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
     public ObservableList<Magazzino> getWarehouseList () {
         ObservableList<experia.coffee.experiacoffee.model.Magazzino> warehouseList = FXCollections.observableArrayList();
@@ -23,7 +23,7 @@ public class WarehouseQuery {
                     "JOIN\n" +
                     "    tbl_magazzino m ON f.CODICE_ZONA_FILIALE = m.CODICE_MAGAZZINO;\n";
             c.getDBConn();
-            Statement st = c.getCon().createStatement();
+            Statement st = DBConnection.getCon().createStatement();
             ResultSet rs = st.executeQuery(query);
             experia.coffee.experiacoffee.model.Magazzino s;
 
@@ -35,7 +35,7 @@ public class WarehouseQuery {
             rs.close();
             st.close();
 
-            c.closeConnection();
+            DBConnection.closeConnection();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,7 +2,7 @@ package experia.coffee.experiacoffee.model.ObserverPattern;
 
 public class ProdottoSubscriber implements ProductObserver {
 
-    private String name;
+    private final String name;
     private ProductSubject topic;
 
     public ProdottoSubscriber(String nm) {

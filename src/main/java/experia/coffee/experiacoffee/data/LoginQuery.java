@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 public class LoginQuery {
 
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
     public Utente loginUser(Utente utente) {
         try {
@@ -20,7 +20,7 @@ public class LoginQuery {
 
             // se nella mail è presente il dominio @experiacoffee allora è un dipendente
             if (utente.getEMAIL().contains("@experiacoffee")) {
-                try (PreparedStatement employeePreparedStatement = c.getCon().prepareStatement(employeeQuery)) {
+                try (PreparedStatement employeePreparedStatement = DBConnection.getCon().prepareStatement(employeeQuery)) {
 
                     employeePreparedStatement.setString(1, utente.getEMAIL());
                     employeePreparedStatement.setString(2, utente.getPASSWORD());
@@ -52,7 +52,7 @@ public class LoginQuery {
                     return new LoginResult(false, null).getUser();
                 }
             } else {
-                try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+                try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
 
                     preparedStatement.setString(1, utente.getEMAIL());
                     preparedStatement.setString(2, utente.getPASSWORD());

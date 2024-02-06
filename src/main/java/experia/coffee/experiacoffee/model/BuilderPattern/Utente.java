@@ -2,28 +2,29 @@ package experia.coffee.experiacoffee.model.BuilderPattern;
 public class Utente {
 
     // required
-    private String EMAIL;
-    private String PASSWORD;
+    private final String EMAIL;
+    private final String PASSWORD;
 
     // optionals
-    private String NAME;
-    private String SURNAME;
-    private String CELLULARE;
-    private String CITTA;
-    private String VIA;
-    private String N_CIVICO;
-    private String CAP;
-    private String NUM_CARTA;
-    private String CVV_CARTA;
-    private String INTESTATARIO_CARTA;
-    private String SCADENZA_CARTA;
-    private String RUOLO;
-    private String DATA_DI_NASCITA;
-    private String CODICE_FISCALE;
+    private final String NAME;
+    private final String SURNAME;
+    private final String CELLULARE;
+    private final String CITTA;
+    private final String VIA;
+    private final String N_CIVICO;
+    private final String CAP;
+    private final String NUM_CARTA;
+    private final String CVV_CARTA;
+    private final String INTESTATARIO_CARTA;
+    private final String SCADENZA_CARTA;
+    private final String RUOLO;
+    private final String DATA_DI_NASCITA;
+    private final String CODICE_FISCALE;
 
     public String getEMAIL() {
         return EMAIL;
     }
+    
     public String getPASSWORD() {
         return PASSWORD;
     }
@@ -105,8 +106,8 @@ public class Utente {
     public static class UtenteBuilder {
 
         // required
-        private String EMAIL;
-        private String PASSWORD;
+        private final String EMAIL;
+        private final String PASSWORD;
 
         // optionals
 

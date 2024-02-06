@@ -9,13 +9,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ProductQuery {
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
     public ObservableList<Prodotto> getProductList () {
         ObservableList<Prodotto> productList = FXCollections.observableArrayList();
         try {
             String query = "select * from tbl_prodotto order by NOME_PRODOTTO asc";
             c.getDBConn();
-            Statement st = c.getCon().createStatement();
+            Statement st = DBConnection.getCon().createStatement();
             ResultSet rs = st.executeQuery(query);
             Prodotto s;
             while (rs.next()) {
@@ -24,7 +24,7 @@ public class ProductQuery {
             }
             rs.close();
             st.close();
-            c.closeConnection();
+            DBConnection.closeConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class ProductQuery {
                     "    tbl_carrello.EMAIL_CLIENTE = ? ;\n";
             c.getDBConn();
 
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
 
                 preparedStatement.setString(1, emailCliente);
 
@@ -60,7 +60,7 @@ public class ProductQuery {
                     }
                 }
             }
-            c.closeConnection();
+            DBConnection.closeConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class ProductQuery {
                     "    tbl_carrello.EMAIL_CLIENTE = ? ;\n";
             c.getDBConn();
 
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
 
                 preparedStatement.setString(1, emailCliente);
 
@@ -96,7 +96,7 @@ public class ProductQuery {
                     }
                 }
             }
-            c.closeConnection();
+            DBConnection.closeConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }

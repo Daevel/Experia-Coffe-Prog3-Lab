@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="Added toggleButton">
+    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="Before javadoc composite">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/OrderStatusPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/OrderStatusPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ThanksPageAfterOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ThanksPageAfterOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/CartQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/CartQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/LoginQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/orderStatusPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/orderStatusPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/ProductQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/ProductQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/SignupQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/SignupQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/WarehouseQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/WarehouseQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/BuilderPattern/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/BuilderPattern/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/LoginResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/LoginResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProdottoSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProdottoSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProductObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProductObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProductSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/ObserverPattern/ProductSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/SingletonPattern/UtenteSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/SingletonPattern/UtenteSingleton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +106,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -212,7 +229,9 @@
       <workItem from="1706600611901" duration="12974000" />
       <workItem from="1706775317113" duration="4952000" />
       <workItem from="1706781464463" duration="16655000" />
-      <workItem from="1706952190480" duration="6217000" />
+      <workItem from="1706952190480" duration="9892000" />
+      <workItem from="1707040614310" duration="2541000" />
+      <workItem from="1707251924897" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="added all the functionalities for add, update, delete products">
       <option name="closed" value="true" />
@@ -222,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704814208463</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Before javadoc composite">
+      <option name="closed" value="true" />
+      <created>1706959316686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706959316686</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +257,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added all the functionalities for add, update, delete products" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all the functionalities for add, update, delete products" />
+    <MESSAGE value="Before javadoc composite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before javadoc composite" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -52,10 +52,7 @@ public class App extends Application {
 
             ResultSet resultSet = statement.executeQuery("SELECT 1 FROM information_schema.schemata WHERE schema_name = 'experia_coffee'");
             boolean dbExists = resultSet.next();
-            if (dbExists) {
-                return true;
-            }
-            return false;
+            return dbExists;
         } catch (Exception e) {
             e.printStackTrace();
             return false;

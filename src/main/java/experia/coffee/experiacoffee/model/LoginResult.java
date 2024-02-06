@@ -3,8 +3,8 @@ package experia.coffee.experiacoffee.model;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 
 public class LoginResult {
-    private boolean success;
-    private Utente user;
+    private final boolean success;
+    private final Utente user;
 
     public LoginResult(boolean success, Utente user) {
         this.success = success;

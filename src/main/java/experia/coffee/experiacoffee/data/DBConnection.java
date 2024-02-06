@@ -11,7 +11,7 @@ public class DBConnection {
     public void getDBConn() {
         synchronized ("") {
             try {
-                if (this.getCon() == null || this.getCon().isClosed()) {
+                if (getCon() == null || getCon().isClosed()) {
                     try {
                         String url = "jdbc:mysql://localhost/experia_coffee";
                         Class.forName("com.mysql.cj.jdbc.Driver");

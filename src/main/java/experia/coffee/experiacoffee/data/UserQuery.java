@@ -8,13 +8,13 @@ import java.sql.SQLException;
 
 
 public class UserQuery {
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
     public int getUserID (Utente utente) {
         String getIDSQL = "SELECT ID FROM tbl_cliente WHERE EMAIL = ?";
         c.getDBConn();
 
-        try (PreparedStatement preparedStatement = c.getCon().prepareStatement(getIDSQL)) {
+        try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(getIDSQL)) {
             preparedStatement.setString(1, utente.getEMAIL());
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -33,7 +33,7 @@ public class UserQuery {
         try {
             c.getDBConn();
             String sql = "SELECT ID FROM tbl_cliente WHERE EMAIL = ?";
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(sql)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setString(1, userEmail);
 
@@ -58,21 +58,17 @@ public class UserQuery {
             String query = "UPDATE tbl_cliente SET EMAIL = ? WHERE CODICE_FISCALE = ?";
             c.getDBConn();
 
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
                 preparedStatement.setString(1, email);
                 preparedStatement.setString(2, fiscalCode);
                 int rowsAffected = preparedStatement.executeUpdate();
 
-                if (rowsAffected > 0) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return rowsAffected > 0;
             } catch (SQLException e) {
                 e.printStackTrace();
                 return false;
             } finally {
-                c.closeConnection();
+                DBConnection.closeConnection();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,21 +83,17 @@ public class UserQuery {
                 String query = "UPDATE tbl_cliente SET UTENTE_PASSWORD = ? WHERE EMAIL = ?";
                 c.getDBConn();
 
-                try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+                try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
                     preparedStatement.setString(1, password);
                     preparedStatement.setString(2, email);
                     int rowsAffected = preparedStatement.executeUpdate();
 
-                    if(rowsAffected >0) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                    return rowsAffected > 0;
                 } catch (SQLException e) {
                     e.printStackTrace();
                     return false;
                 } finally {
-                    c.closeConnection();
+                    DBConnection.closeConnection();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -112,21 +104,17 @@ public class UserQuery {
                 String query = "UPDATE tbl_dipendente SET UTENTE_PASSWORD = ? WHERE EMAIL = ?";
                 c.getDBConn();
 
-                try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+                try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
                     preparedStatement.setString(1, password);
                     preparedStatement.setString(2, email);
                     int rowsAffected = preparedStatement.executeUpdate();
 
-                    if(rowsAffected >0) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                    return rowsAffected > 0;
                 } catch (SQLException e) {
                     e.printStackTrace();
                     return false;
                 } finally {
-                    c.closeConnection();
+                    DBConnection.closeConnection();
                 }
             } catch (Exception e) {
                 e.printStackTrace();

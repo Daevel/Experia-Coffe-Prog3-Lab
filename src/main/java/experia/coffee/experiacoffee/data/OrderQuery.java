@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class OrderQuery {
 
-    private DBConnection c = new DBConnection();
+    private final DBConnection c = new DBConnection();
 
 
     public ObservableList<Ordine> getOrderListByClient(String email) {
@@ -27,7 +27,7 @@ public class OrderQuery {
                     "JOIN tbl_carrello crt ON c.EMAIL = crt.EMAIL_CLIENTE\n" +
                     "JOIN tbl_ordine o ON crt.ID = o.ID_CARRELLO\n" +
                     "\tWHERE c.EMAIL = ?;";
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(query)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
 
                 preparedStatement.setString(1, email);
 
@@ -40,7 +40,7 @@ public class OrderQuery {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    c.closeConnection();
+                    DBConnection.closeConnection();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -81,7 +81,7 @@ public class OrderQuery {
                     "LEFT JOIN\n" +
                     "    tbl_corriere co ON s.P_IVA_CORRIERE = co.P_IVA;\n";
             c.getDBConn();
-            Statement st = c.getCon().createStatement();
+            Statement st = DBConnection.getCon().createStatement();
             ResultSet rs = st.executeQuery(query);
             experia.coffee.experiacoffee.model.Ordine s;
 
@@ -93,7 +93,7 @@ public class OrderQuery {
             rs.close();
             st.close();
 
-            c.closeConnection();
+            DBConnection.closeConnection();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -106,7 +106,7 @@ public class OrderQuery {
         try {
             c.getDBConn();
             String sql = "INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO, INDIRIZZO_SPEDIZIONE) VALUES (?, 'EMPTY', 0, (SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?), (SELECT VIA from tbl_cliente WHERE EMAIL = ?))";
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(sql)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setString(1, cartId);
                 preparedStatement.setString(2, userEmail);
@@ -149,7 +149,7 @@ public class OrderQuery {
                     "    f.NOME_FILIALE = ?,\n" +
                     "    cor.NOME = ?\n" +
                     "WHERE c.EMAIL = ?";
-            try (PreparedStatement preparedStatement = c.getCon().prepareStatement(sql)) {
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setInt(1, numeroOrdine);
                 preparedStatement.setString(2, statoOrdine);
