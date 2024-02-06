@@ -3,6 +3,8 @@ package experia.coffee.experiacoffee.controller;
 import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.ObserverPattern.Prodotto;
+import experia.coffee.experiacoffee.model.ObserverPattern.ProdottoSubscriber;
+import experia.coffee.experiacoffee.model.ObserverPattern.ProductObserver;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import javafx.collections.ObservableList;
@@ -98,6 +100,10 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = productView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.add(prodottoSelezionato);
+                    ProductObserver addPrd = new ProdottoSubscriber("addlabel");
+                    prodottoSelezionato.register(addPrd);
+                    addPrd.setSubject(prodottoSelezionato);
+                    addPrd.update();
                     productObserverMessage.setText(prodottoSelezionato.postMessage("Aggiunto il seguente prodotto: " + prodottoSelezionato.getNOME_PRODOTTO()));
                     valoreTotale += prodottoSelezionato.getPREZZO_PRODOTTO();
                     updateTotalAmount();
@@ -124,6 +130,10 @@ public class ClienteHomePage implements Initializable {
                 Prodotto prodottoSelezionato = cartView.getSelectionModel().getSelectedItem();
                 if(prodottoSelezionato != null) {
                     cartList.remove(prodottoSelezionato);
+                    ProductObserver removePrd = new ProdottoSubscriber("rmvLabel");
+                    prodottoSelezionato.register(removePrd);
+                    removePrd.setSubject(prodottoSelezionato);
+                    removePrd.update();
                     productObserverMessage.setText(prodottoSelezionato.postMessage("Rimosso il seguente prodotto: " + prodottoSelezionato.getNOME_PRODOTTO()));
                     valoreTotale -= prodottoSelezionato.getPREZZO_PRODOTTO();
                     updateTotalAmount();

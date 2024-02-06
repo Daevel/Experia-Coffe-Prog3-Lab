@@ -54,6 +54,7 @@ public class CheckoutPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         float valoreTotale = ValoreTotaleSingleton.getInstance().getValoreTotale();
+        
         DecimalFormat decimalFormat = new DecimalFormat("#0.0");
 
         UtenteSingleton singleton = UtenteSingleton.getInstance();
