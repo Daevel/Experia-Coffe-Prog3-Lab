@@ -10,16 +10,14 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.sql.*;
-import java.util.Base64;
 
 
 public class App extends Application {
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost/information_schema";
     private static final String USER = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "";
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
@@ -28,15 +26,7 @@ public class App extends Application {
             createAndPopulateDatabase();
         }
 
-        String os = System.getProperty("os.name").toLowerCase();
-
-        if (os.contains("win")) {
-            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.ico")));
-        } else if (os.contains("mac")) {
-            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.icns")));
-        } else {
-            stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.png")));
-        }
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("assets/ExperiaFavicon.png")));
 
         Scene scene = new Scene(loadFXML("loginPage"));
 
