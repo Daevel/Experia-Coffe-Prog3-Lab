@@ -6,6 +6,6 @@ public class DefaultState implements OrderState {
 
     @Override
     public void applyStateStyle(Node node) {
-        node.setStyle("-fx-background-color: white;");
+        node.setStyle("-fx-background-color: gray;");
     }
 }

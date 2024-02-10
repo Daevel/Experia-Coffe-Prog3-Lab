@@ -74,6 +74,6 @@
       </Label>
       <Button fx:id="changeEmail_ConfirmButton" layoutX="556.0" layoutY="598.0" mnemonicParsing="false" onAction="#onChangeEmail" prefHeight="48.0" prefWidth="218.0" text="Conferma" />
       <TextField fx:id="changeEmail_TextField" layoutX="556.0" layoutY="398.0" prefHeight="48.0" prefWidth="218.0" />
-      <Label fx:id="passwordMismatchText" layoutX="832.0" layoutY="451.0" prefHeight="17.0" prefWidth="218.0" textFill="RED" />
+      <Label fx:id="passwordMismatchText" layoutX="832.0" layoutY="451.0" prefHeight="17.0" prefWidth="218.0" textFill="#fffdd0" />
    </children>
 </AnchorPane>
