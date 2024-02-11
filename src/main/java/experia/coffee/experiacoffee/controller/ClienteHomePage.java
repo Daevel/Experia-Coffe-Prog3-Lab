@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -23,6 +24,8 @@ public class ClienteHomePage implements Initializable {
 
     @FXML
     private AnchorPane ClienteHomePageAnchor;
+    @FXML
+    public ImageView favicon;
     @FXML
     public Button returnToLoginPageButton;
     @FXML

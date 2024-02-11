@@ -131,7 +131,7 @@ public class OrderQuery {
         return false;
     }
 
-    public boolean updateOrder(String emailUser, int numeroOrdine, String filialeInCarico, String corriereInCarico, String statoOrdine) {
+    public boolean updateOrder(String idOrdine, int numeroOrdine, String filialeInCarico, String corriereInCarico, String statoOrdine) {
         try {
             c.getDBConn();
             String sql = "UPDATE tbl_cliente c\n" +
@@ -148,14 +148,14 @@ public class OrderQuery {
                     "    o.STATO_ORDINE = ?,\n" +
                     "    f.NOME_FILIALE = ?,\n" +
                     "    cor.NOME = ?\n" +
-                    "WHERE c.EMAIL = ?";
+                    "WHERE o.ID_ORDINE = ?";
             try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setInt(1, numeroOrdine);
                 preparedStatement.setString(2, statoOrdine);
                 preparedStatement.setString(3, filialeInCarico);
                 preparedStatement.setString(4, corriereInCarico);
-                preparedStatement.setString(5, emailUser);
+                preparedStatement.setString(5, idOrdine);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 
@@ -173,5 +173,22 @@ public class OrderQuery {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public boolean deleteOrder(String idOrdine) {
+        c.getDBConn();
+        String sql = "DELETE FROM tbl_ordine WHERE ID_ORDINE = ?";
+
+        try(PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
+
+            preparedStatement.setString(1, idOrdine);
+            int rowsDeleted = preparedStatement.executeUpdate();
+
+            return rowsDeleted > 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

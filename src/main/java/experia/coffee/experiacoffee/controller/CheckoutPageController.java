@@ -92,7 +92,7 @@ public class CheckoutPageController implements Initializable {
     }
 
     private void createOrder(String userID, String userEmail) throws IOException {
-        String cartId = "ORD-" + userID;
+        String cartId = "ORD - 00" + userID;
         experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
         boolean isOrderSuccessful = query.createOrder(cartId, userEmail);
         if (isOrderSuccessful) {

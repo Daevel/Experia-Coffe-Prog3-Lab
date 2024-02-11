@@ -11,12 +11,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DipendenteHomePage implements Initializable {
 
@@ -24,7 +26,8 @@ public class DipendenteHomePage implements Initializable {
     private AnchorPane DipendenteHomePageAnchor;
     @FXML
     public Button returnToLoginPageButton;
-
+    @FXML
+    public ImageView favicon;
     // TABELLA ORDINI
     @FXML
     public TableView<Ordine> orderList = new TableView<>();
@@ -71,10 +74,13 @@ public class DipendenteHomePage implements Initializable {
     public Label welcomeLabel;
 
     @FXML
+    public Label ordineEvaso;
+
+    @FXML
     public Button clearFieldsButton, updateOrderButton;
 
     @FXML
-    public TextField updateOrder_EMAIL_CLIENTE, updateOrder_NUMERO_ORDINE, updateOrder_FILIALE_IN_CARICO, updateOrder_CORRIERE_IN_CARICO;
+    public TextField updateOrder_ID_ORDINE, updateOrder_NUMERO_ORDINE, updateOrder_FILIALE_IN_CARICO, updateOrder_CORRIERE_IN_CARICO;
 
     @FXML
     public ToggleButton makeOrderInTransitButton, makeOrderInQueueButton, makeOrderDeliveredButton;
@@ -172,7 +178,7 @@ public class DipendenteHomePage implements Initializable {
 
     @FXML
     private void clearFields() {
-        this.updateOrder_EMAIL_CLIENTE.setText("");
+        this.updateOrder_ID_ORDINE.setText("");
         this.updateOrder_CORRIERE_IN_CARICO.setText("");
         this.updateOrder_FILIALE_IN_CARICO.setText("");
         this.updateOrder_NUMERO_ORDINE.setText("");
@@ -184,18 +190,40 @@ public class DipendenteHomePage implements Initializable {
             experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
 
             int orderNumber = Integer.parseInt(updateOrder_NUMERO_ORDINE.getText());
-            String emailUser = updateOrder_EMAIL_CLIENTE.getText();
+            String idOrdine = updateOrder_ID_ORDINE.getText();
             String filialeInCarico = updateOrder_FILIALE_IN_CARICO.getText();
             String corriereInCarico = updateOrder_CORRIERE_IN_CARICO.getText();
             String statoOrdine = handleToggleButtonAction();
 
             OrderState orderState = getStateInstance(statoOrdine);
 
-            boolean updateSuccessfull = query.updateOrder(emailUser, orderNumber, filialeInCarico, corriereInCarico, statoOrdine);
+            boolean updateSuccessfull = query.updateOrder(idOrdine, orderNumber, filialeInCarico, corriereInCarico, statoOrdine);
             if (updateSuccessfull) {
                 clearFields();
                 orderState.applyStateStyle(orderList);
+                ordineEvaso.setText("Ordine modificato correttamente");
                 showOrderList();
+
+                if ("Consegnato".equalsIgnoreCase(statoOrdine)) {
+                    // Se lo stato e' consegnato cancella l'ordine dopo 3 secondi
+
+                    ordineEvaso.setText("Ordine evaso correttamente");
+
+                    Timer timer = new Timer();
+
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            boolean deleteSuccess = query.deleteOrder(idOrdine);
+                            if (deleteSuccess) {
+                                ordineEvaso.setVisible(false);
+                                showOrderList();
+                            } else {
+                                System.out.println("Errore durante l'eliminazione dell'ordine");
+                            }
+                        }
+                    }, 3000);
+                }
             }
     }
 

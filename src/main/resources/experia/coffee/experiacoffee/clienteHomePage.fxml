@@ -23,7 +23,7 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Separator>
-            <ImageView fitHeight="40.0" fitWidth="1056.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="favicon" fitHeight="40.0" fitWidth="1056.0" onMouseClicked="#returnToLoginPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/ExperiaFavicon.png" />
                </image>

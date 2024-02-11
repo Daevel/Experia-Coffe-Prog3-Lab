@@ -173,11 +173,11 @@ public class ProfilePageController implements Initializable {
 
     @FXML
     public void onChangeEmail() throws IOException {
-       String email = changeEmail_TextField.getText();
-       String fiscalCode = userFiscalCode;
+       String newEmail = changeEmail_TextField.getText();
+       String oldEmail = userEmail;
 
         experia.coffee.experiacoffee.data.UserQuery query = new experia.coffee.experiacoffee.data.UserQuery();
-        if(query.changeEmail(email, fiscalCode)) {
+        if(query.changeEmail(newEmail, oldEmail)) {
             closeChangeEmailPopup();
             new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
         } else {

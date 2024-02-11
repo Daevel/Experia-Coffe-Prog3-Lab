@@ -28,7 +28,7 @@
                   <Insets />
                </opaqueInsets>
             </Separator>
-            <ImageView fitHeight="40.0" fitWidth="1056.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="favicon" fitHeight="40.0" fitWidth="1056.0" onMouseClicked="#returnToLoginPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/ExperiaFavicon.png" />
                </image>
@@ -92,12 +92,12 @@
             <TextField fx:id="updateOrder_NUMERO_ORDINE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="updateOrder_FILIALE_IN_CARICO" layoutX="199.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="updateOrder_CORRIERE_IN_CARICO" layoutX="199.0" layoutY="34.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label prefHeight="66.0" prefWidth="189.0" text="Email cliente" textFill="#fffdd0">
+            <Label prefHeight="66.0" prefWidth="189.0" text="ID Ordine" textFill="#fffdd0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="updateOrder_EMAIL_CLIENTE" GridPane.columnIndex="1" />
+            <TextField fx:id="updateOrder_ID_ORDINE" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <TableView fx:id="wareHouseTable" layoutX="570.0" layoutY="193.0" prefHeight="229.0" prefWidth="696.0">
@@ -129,6 +129,11 @@
       <Label fx:id="welcomeLabel11" alignment="CENTER" layoutX="18.0" layoutY="122.0" prefHeight="65.0" prefWidth="488.0" text="Gestisci ordine" textFill="#fffdd0">
          <font>
             <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="ordineEvaso" layoutX="985.0" layoutY="445.0" prefHeight="34.0" prefWidth="280.0" textFill="#fffdd0">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
       

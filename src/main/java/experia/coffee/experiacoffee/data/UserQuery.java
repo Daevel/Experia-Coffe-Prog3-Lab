@@ -53,14 +53,14 @@ public class UserQuery {
         return cartID;
     }
 
-    public boolean changeEmail (String email, String fiscalCode) {
+    public boolean changeEmail (String newEmail, String oldEmail) {
         try {
-            String query = "UPDATE tbl_cliente SET EMAIL = ? WHERE CODICE_FISCALE = ?";
+            String query = "UPDATE tbl_cliente SET EMAIL = ? WHERE EMAIL = ?;";
             c.getDBConn();
 
             try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
-                preparedStatement.setString(1, email);
-                preparedStatement.setString(2, fiscalCode);
+                preparedStatement.setString(1, newEmail);
+                preparedStatement.setString(2, oldEmail);
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 return rowsAffected > 0;
