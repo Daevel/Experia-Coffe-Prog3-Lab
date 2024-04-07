@@ -5,6 +5,7 @@ import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.*;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -216,13 +217,26 @@ public class DipendenteHomePage implements Initializable {
                         public void run() {
                             boolean deleteSuccess = query.deleteOrder(idOrdine);
                             if (deleteSuccess) {
-                                ordineEvaso.setVisible(false);
+                                ordineEvaso.setVisible(true);
                                 showOrderList();
+
+                                TimerTask hideOrderEvaso = new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        Platform.runLater(() -> {
+                                            ordineEvaso.setVisible(false);
+                                        });
+                                    };
+                                };
+                                timer.schedule(hideOrderEvaso, 2000);
+
                             } else {
                                 System.out.println("Errore durante l'eliminazione dell'ordine");
                             }
                         }
                     }, 3000);
+
+
                 }
             }
     }

@@ -6,6 +6,6 @@ public class PendingState implements OrderState {
 
     @Override
     public void applyStateStyle(Node node) {
-        node.setStyle("-fx-background-color: red;");
+        node.setStyle("-fx-text-fill: red;");
     }
 }

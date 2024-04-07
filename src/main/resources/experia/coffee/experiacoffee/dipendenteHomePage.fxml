@@ -21,8 +21,8 @@
    <children>
       <ToolBar layoutY="8.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;">
          <items>
-            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
-            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" text="Profile" />
+            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
+            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Profile" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="998.0">
                <opaqueInsets>
                   <Insets />
@@ -38,17 +38,17 @@
             <Insets />
          </opaqueInsets>
       </ToolBar>
-      <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="41.0" prefHeight="34.0" prefWidth="1280.0" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="77.0" prefHeight="34.0" prefWidth="1280.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="welcomeLabel1" alignment="CENTER" layoutX="15.0" layoutY="412.0" prefHeight="65.0" prefWidth="243.0" text="Ordini in arrivo" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel1" alignment="CENTER" layoutX="15.0" layoutY="422.0" prefHeight="65.0" prefWidth="243.0" text="Ordini in arrivo" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="orderList" layoutX="15.0" layoutY="486.0" prefHeight="300.0" prefWidth="1250.0">
+      <TableView fx:id="orderList" layoutX="15.0" layoutY="486.0" prefHeight="300.0" prefWidth="1250.0" stylesheets="@styles/style.css">
         <columns>
           <TableColumn fx:id="colID_ORDINE" prefWidth="75.0" text="ID ORDINE" />
           <TableColumn fx:id="colNUMERO_ORDINE" prefWidth="75.0" text="NUMERO ORDINE" />
@@ -89,18 +89,18 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="updateOrder_NUMERO_ORDINE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="updateOrder_FILIALE_IN_CARICO" layoutX="199.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="updateOrder_CORRIERE_IN_CARICO" layoutX="199.0" layoutY="34.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="updateOrder_NUMERO_ORDINE" promptText="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="updateOrder_FILIALE_IN_CARICO" layoutX="199.0" layoutY="10.0" promptText="Experia Coffee Naples" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="updateOrder_CORRIERE_IN_CARICO" layoutX="199.0" layoutY="34.0" promptText="BRT S.P.A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label prefHeight="66.0" prefWidth="189.0" text="ID Ordine" textFill="#fffdd0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="updateOrder_ID_ORDINE" GridPane.columnIndex="1" />
+            <TextField fx:id="updateOrder_ID_ORDINE" promptText="ORD-001" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <TableView fx:id="wareHouseTable" layoutX="570.0" layoutY="193.0" prefHeight="229.0" prefWidth="696.0">
+      <TableView fx:id="wareHouseTable" layoutX="570.0" layoutY="193.0" prefHeight="229.0" prefWidth="696.0" stylesheets="@styles/style.css">
          <columns>
             <TableColumn fx:id="col_WAREHOUSE_NOME_FILIALE" prefWidth="75.0" text="FILIALE" />
             <TableColumn fx:id="col_WAREHOUSE_NOME_PRODOTTO" prefWidth="75.0" text="NOME PRODOTTO" />
@@ -111,24 +111,24 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel111" alignment="CENTER" layoutX="738.0" layoutY="122.0" prefHeight="65.0" prefWidth="359.0" text="Disponibilità prodotti" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel111" alignment="CENTER" layoutX="739.0" layoutY="128.0" prefHeight="65.0" prefWidth="359.0" text="Disponibilità prodotti" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="updateOrderButton" layoutX="432.0" layoutY="193.0" mnemonicParsing="false" onAction="#updateOrder" prefHeight="74.0" prefWidth="73.0" text="Aggiorna" />
-      <Button fx:id="clearFieldsButton" layoutX="432.0" layoutY="283.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="74.0" prefWidth="73.0" text="Cancella" />
-      <ToggleButton fx:id="makeOrderDeliveredButton" layoutX="217.0" layoutY="370.0" mnemonicParsing="false" onAction="#setOrderToComplete" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: green;" text="Consegnato" textFill="WHITE" />
-      <ToggleButton fx:id="makeOrderInTransitButton" layoutX="321.0" layoutY="370.0" mnemonicParsing="false" onAction="#setOrderToInTransit" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="In Transito" />
-      <ToggleButton fx:id="makeOrderInQueueButton" layoutX="433.0" layoutY="370.0" mnemonicParsing="false" onAction="#setOrderToInQueue" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: red;" text="In Attesa" textFill="WHITE" />
+      <Button fx:id="updateOrderButton" layoutX="432.0" layoutY="193.0" mnemonicParsing="false" onAction="#updateOrder" prefHeight="74.0" prefWidth="73.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Aggiorna" />
+      <Button fx:id="clearFieldsButton" layoutX="432.0" layoutY="283.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="74.0" prefWidth="73.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Cancella" />
+      <ToggleButton fx:id="makeOrderDeliveredButton" layoutX="216.0" layoutY="371.0" mnemonicParsing="false" onAction="#setOrderToComplete" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: green;" stylesheets="@styles/style.css" text="Consegnato" textFill="WHITE" />
+      <ToggleButton fx:id="makeOrderInTransitButton" layoutX="318.0" layoutY="371.0" mnemonicParsing="false" onAction="#setOrderToInTransit" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: yellow;" stylesheets="@styles/style.css" text="In Transito" />
+      <ToggleButton fx:id="makeOrderInQueueButton" layoutX="420.0" layoutY="371.0" mnemonicParsing="false" onAction="#setOrderToInQueue" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: red;" stylesheets="@styles/style.css" text="In Attesa" textFill="WHITE" />
       <Label layoutX="18.0" layoutY="366.0" prefHeight="34.0" prefWidth="189.0" text="Aggiorna stato" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="welcomeLabel11" alignment="CENTER" layoutX="18.0" layoutY="122.0" prefHeight="65.0" prefWidth="488.0" text="Gestisci ordine" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel11" alignment="CENTER" layoutX="18.0" layoutY="128.0" prefHeight="65.0" prefWidth="488.0" text="Gestisci ordine" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <Label fx:id="ordineEvaso" layoutX="985.0" layoutY="445.0" prefHeight="34.0" prefWidth="280.0" textFill="#fffdd0">

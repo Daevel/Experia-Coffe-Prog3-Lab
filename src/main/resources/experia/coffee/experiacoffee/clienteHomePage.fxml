@@ -16,9 +16,9 @@
    <children>
       <ToolBar layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;">
         <items>
-            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
-            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" text="Profile" />
-            <Button fx:id="orderPageButton" layoutX="105.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToOrderPage" prefHeight="40.0" prefWidth="90.0" text="Ordini" />
+            <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
+            <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Profile" />
+            <Button fx:id="orderPageButton" layoutX="105.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToOrderPage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Ordini" />
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="905.0">
                <opaqueInsets>
                   <Insets />
@@ -38,7 +38,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TableView fx:id="productView" layoutX="36.0" layoutY="296.0" prefHeight="430.0" prefWidth="793.0">
+      <TableView fx:id="productView" layoutX="36.0" layoutY="296.0" prefHeight="430.0" prefWidth="793.0" styleClass="column-header-background" stylesheets="@styles/style.css">
         <columns>
           <TableColumn fx:id="colNOME_PRODOTTO" prefWidth="75.0" text="Nome" />
           <TableColumn fx:id="col_PREZZO_PRODOTTO" prefWidth="75.0" text="Prezzo" />
@@ -51,12 +51,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel1" alignment="CENTER" layoutX="36.0" layoutY="211.0" prefHeight="74.0" prefWidth="793.0" text="Articoli disponibili all'acquisto" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel1" layoutX="36.0" layoutY="211.0" prefHeight="74.0" prefWidth="793.0" text="I nostri prodotti disponibili" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="cartView" layoutX="851.0" layoutY="296.0" prefHeight="430.0" prefWidth="407.0">
+      <TableView fx:id="cartView" layoutX="851.0" layoutY="296.0" prefHeight="430.0" prefWidth="407.0" stylesheets="@styles/style.css">
          <columns>
             <TableColumn fx:id="colCART_NOME_PRODOTTO" prefWidth="75.0" text="Nome" />
             <TableColumn fx:id="colCART_PREZZO_PRODOTTO" prefWidth="75.0" text="Prezzo" />
@@ -66,18 +66,18 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel11" alignment="CENTER" layoutX="925.0" layoutY="211.0" prefHeight="74.0" prefWidth="259.0" text="Il tuo carrello" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel11" layoutX="851.0" layoutY="211.0" prefHeight="74.0" prefWidth="407.0" text="Il tuo carrello" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="checkoutPageButton" layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" onAction="#openCheckoutPage" prefHeight="40.0" prefWidth="186.0" text="Checkout" />
+      <Button fx:id="checkoutPageButton" layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" onAction="#openCheckoutPage" prefHeight="40.0" prefWidth="186.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Checkout" />
       <Label fx:id="totalAmount" layoutX="852.0" layoutY="740.0" prefHeight="40.0" prefWidth="215.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="productObserverMessage" layoutX="36.0" layoutY="740.0" prefHeight="40.0" prefWidth="488.0" textFill="#fffdd0">
+      <Label fx:id="productObserverMessage" layoutX="36.0" layoutY="740.0" prefHeight="40.0" prefWidth="793.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>

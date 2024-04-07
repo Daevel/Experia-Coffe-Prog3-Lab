@@ -15,7 +15,7 @@
    <children>
       <Label layoutX="27.0" layoutY="22.0" prefHeight="53.0" prefWidth="421.0" text="Registrati qui" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <TextField fx:id="name" layoutX="56.0" layoutY="259.0" prefHeight="52.0" prefWidth="179.0" />
@@ -30,7 +30,7 @@
       <PasswordField fx:id="pwd" layoutX="56.0" layoutY="512.0" prefHeight="52.0" prefWidth="179.0" />
       <Label layoutX="556.0" layoutY="22.0" prefHeight="44.0" prefWidth="710.0" text="Indirizzo di spedizione/fatturazione" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <TextField fx:id="streetAddress" layoutX="653.0" layoutY="167.0" prefHeight="52.0" prefWidth="179.0" />
@@ -42,15 +42,15 @@
       <Label layoutX="870.0" layoutY="150.0" text="Città" textFill="#fffdd0" />
       <ButtonBar layoutX="59.0" layoutY="664.0" prefHeight="113.0" prefWidth="359.0">
         <buttons>
-            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="48.0" prefWidth="190.0" text="Conferma registrazione" />
-            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="48.0" prefWidth="190.0" text="Annulla" />
+            <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="48.0" prefWidth="190.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Conferma registrazione" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#returnLoginPage" prefHeight="48.0" prefWidth="190.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Annulla" />
         </buttons>
       </ButtonBar>
       <PasswordField fx:id="repeatPwd" layoutX="261.0" layoutY="512.0" prefHeight="52.0" prefWidth="179.0" />
       <Label layoutX="260.0" layoutY="495.0" text="Ripeti password" textFill="#fffdd0" />
       <Label layoutX="556.0" layoutY="395.0" prefHeight="44.0" prefWidth="589.0" text="Metodo di pagamento" textFill="#fffdd0">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Label>
       <TextField fx:id="cardNumber" layoutX="653.0" layoutY="503.0" prefHeight="52.0" prefWidth="179.0" />

@@ -6,6 +6,6 @@ public class InTransitState implements OrderState {
 
     @Override
     public void applyStateStyle(Node node) {
-        node.setStyle("-fx-background-color: yellow;");
+        node.setStyle("-fx-text-fill: yellow;");
     }
 }

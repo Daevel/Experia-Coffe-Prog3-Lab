@@ -29,7 +29,7 @@ public class ProfilePageController implements Initializable {
 
     // CHANGE EMAIL PROCEDURE
     @FXML
-    public Button changeEmailButton, changeEmail_ConfirmButton;
+    public Button changeEmailButton, changeEmail_ConfirmButton, changeEmail_CloseButton;
     @FXML
     public Separator changeEmail_Separator;
     @FXML
@@ -39,7 +39,7 @@ public class ProfilePageController implements Initializable {
 
     // RESET PASSWORD PROCEDURE
     @FXML
-    public Button resetPasswordButton, resetPassword_ConfirmButton;
+    public Button resetPasswordButton, resetPassword_ConfirmButton, resetPassword_CloseButton;
     @FXML
     public Separator resetPassword_Separator;
     @FXML
@@ -81,13 +81,16 @@ public class ProfilePageController implements Initializable {
         changeEmail_Label.setVisible(false);
         changeEmail_Separator.setVisible(false);
         changeEmail_ConfirmButton.setVisible(false);
+        changeEmail_CloseButton.setVisible(false);
 
         resetPassword_TextField.setVisible(false);
         resetPassword_Label.setVisible(false);
         resetPassword_Separator.setVisible(false);
         resetPassword_ConfirmButton.setVisible(false);
+        resetPassword_CloseButton.setVisible(false);
         resetPassword_repeatPassword_TextField.setVisible(false);
         resetPassword_repeatPassword_Label.setVisible(false);
+
         passwordMismatchText.setVisible(true);
 
         if (utente != null) {
@@ -141,18 +144,8 @@ public class ProfilePageController implements Initializable {
         resetPassword_Separator.setVisible(true);
         resetPassword_ConfirmButton.setVisible(true);
         resetPassword_repeatPassword_TextField.setVisible(true);
+        resetPassword_CloseButton.setVisible(true);
         resetPassword_repeatPassword_Label.setVisible(true);
-    }
-
-    @FXML
-    public void closeResetPasswordPopup() {
-        resetPassword_TextField.setVisible(false);
-        resetPassword_Label.setVisible(false);
-        resetPassword_Separator.setVisible(false);
-        resetPassword_ConfirmButton.setVisible(false);
-        resetPassword_repeatPassword_TextField.setVisible(false);
-        resetPassword_repeatPassword_Label.setVisible(false);
-        passwordMismatchText.setVisible(false);
     }
 
     @FXML
@@ -161,14 +154,26 @@ public class ProfilePageController implements Initializable {
         changeEmail_Label.setVisible(true);
         changeEmail_Separator.setVisible(true);
         changeEmail_ConfirmButton.setVisible(true);
+        changeEmail_CloseButton.setVisible(true);
     }
 
     @FXML
-    public void closeChangeEmailPopup() {
+    public void closeDialogEmail() {
         changeEmail_TextField.setVisible(false);
         changeEmail_Label.setVisible(false);
         changeEmail_Separator.setVisible(false);
         changeEmail_ConfirmButton.setVisible(false);
+        changeEmail_CloseButton.setVisible(false);
+    }
+    @FXML
+    public void closeDialogPassword() {
+        resetPassword_TextField.setVisible(false);
+        resetPassword_Label.setVisible(false);
+        resetPassword_Separator.setVisible(false);
+        resetPassword_ConfirmButton.setVisible(false);
+        resetPassword_CloseButton.setVisible(false);
+        resetPassword_repeatPassword_TextField.setVisible(false);
+        resetPassword_repeatPassword_Label.setVisible(false);
     }
 
     @FXML
@@ -178,7 +183,7 @@ public class ProfilePageController implements Initializable {
 
         experia.coffee.experiacoffee.data.UserQuery query = new experia.coffee.experiacoffee.data.UserQuery();
         if(query.changeEmail(newEmail, oldEmail)) {
-            closeChangeEmailPopup();
+            closeDialogEmail();
             new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
         } else {
             System.out.println("Errore nel cambio email");
@@ -197,7 +202,7 @@ public class ProfilePageController implements Initializable {
 
         if (passwordMismatchCheck(password, repeatPassword)) {
             if(query.resetPassword(email, password, role)) {
-                closeResetPasswordPopup();
+                closeDialogPassword();
                 new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
             } else {
                 System.out.println("Errore nel cambio password");
@@ -206,6 +211,9 @@ public class ProfilePageController implements Initializable {
             passwordMismatchText.setText("Le password non coincidono, riprovare.");
         }
     }
+
+
+
 
     public boolean passwordMismatchCheck(String password, String repeatPassword) {
         return password.equalsIgnoreCase(repeatPassword);

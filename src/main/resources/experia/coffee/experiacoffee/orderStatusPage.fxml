@@ -14,9 +14,9 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="clienteHomePageButton" layoutX="1076.0" layoutY="17.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="40.0" prefWidth="90.0" text="Home" />
-      <Button fx:id="logoutButton" layoutX="1172.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
-      <TableView fx:id="orderList" layoutX="22.0" layoutY="98.0" prefHeight="262.0" prefWidth="1240.0">
+      <Button fx:id="clienteHomePageButton" layoutX="1076.0" layoutY="17.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Home" />
+      <Button fx:id="logoutButton" layoutX="1172.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
+      <TableView fx:id="orderList" layoutX="22.0" layoutY="98.0" prefHeight="262.0" prefWidth="1240.0" stylesheets="@styles/style.css">
         <columns>
           <TableColumn fx:id="statusOrder_ID" prefWidth="75.0" text="ID ORDINE" />
           <TableColumn fx:id="statusOrder_ORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />

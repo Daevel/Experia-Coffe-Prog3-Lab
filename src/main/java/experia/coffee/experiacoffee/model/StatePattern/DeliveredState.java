@@ -6,6 +6,6 @@ public class DeliveredState implements OrderState {
 
     @Override
     public void applyStateStyle(Node node) {
-        node.setStyle("-fx-background-color: green;");
+        node.setStyle("-fx-text-fill: green;");
     }
 }

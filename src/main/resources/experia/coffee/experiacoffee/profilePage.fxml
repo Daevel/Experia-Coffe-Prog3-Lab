@@ -36,8 +36,8 @@
          </font></Label>
       <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;">
         <items>
-          <Button fx:id="profileLogoutButton" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
-            <Button fx:id="turnToHomeButton" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#onTurnToHome" prefHeight="40.0" prefWidth="90.0" text="Home" />
+          <Button fx:id="profileLogoutButton" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
+            <Button fx:id="turnToHomeButton" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#onTurnToHome" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Home" />
         </items>
       </ToolBar>
       <ImageView fitHeight="138.0" fitWidth="134.0" layoutX="92.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
@@ -50,9 +50,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Separator fx:id="resetPassword_Separator" layoutX="804.0" layoutY="382.0" orientation="VERTICAL" prefHeight="293.0" prefWidth="6.0" style="-fx-background-color: gray;" />
-      <Button id="button" fx:id="changeEmailButton" layoutX="266.0" layoutY="184.0" mnemonicParsing="false" onAction="#openChangeEmailPopup" prefHeight="48.0" prefWidth="142.0" stylesheets="@styles/style.css" text="Modifica indirizzo email" />
-      <Button fx:id="resetPasswordButton" layoutX="266.0" layoutY="247.0" mnemonicParsing="false" onAction="#openResetPasswordPopup" prefHeight="48.0" prefWidth="142.0" text="Reset password" />
+      <Separator fx:id="resetPassword_Separator" layoutX="804.0" layoutY="382.0" orientation="VERTICAL" prefHeight="364.0" prefWidth="6.0" style="-fx-background-color: gray;" />
+      <Button id="button" fx:id="changeEmailButton" layoutX="266.0" layoutY="184.0" mnemonicParsing="false" onAction="#openChangeEmailPopup" prefHeight="48.0" prefWidth="172.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Modifica indirizzo email" />
+      <Button fx:id="resetPasswordButton" layoutX="266.0" layoutY="247.0" mnemonicParsing="false" onAction="#openResetPasswordPopup" prefHeight="48.0" prefWidth="172.0" styleClass="classic-button" text="Reset password" />
       <PasswordField fx:id="resetPassword_TextField" layoutX="831.0" layoutY="398.0" prefHeight="48.0" prefWidth="218.0" />
       <PasswordField fx:id="resetPassword_repeatPassword_TextField" layoutX="831.0" layoutY="513.0" prefHeight="48.0" prefWidth="218.0" />
       <Label fx:id="resetPassword_Label" layoutX="832.0" layoutY="347.0" text="Nuova password" textFill="#fffdd0">
@@ -65,15 +65,17 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="resetPassword_ConfirmButton" layoutX="832.0" layoutY="596.0" mnemonicParsing="false" onAction="#onResetPassword" prefHeight="48.0" prefWidth="218.0" text="Conferma" />
-      <Separator fx:id="changeEmail_Separator" layoutX="528.0" layoutY="384.0" orientation="VERTICAL" prefHeight="293.0" prefWidth="6.0" style="-fx-background-color: gray;" />
+      <Button fx:id="resetPassword_ConfirmButton" layoutX="832.0" layoutY="693.0" mnemonicParsing="false" onAction="#onResetPassword" prefHeight="48.0" prefWidth="218.0" styleClass="classic-button" text="Conferma" />
+      <Separator fx:id="changeEmail_Separator" layoutX="528.0" layoutY="384.0" orientation="VERTICAL" prefHeight="364.0" prefWidth="6.0" style="-fx-background-color: gray;" />
       <Label fx:id="changeEmail_Label" layoutX="556.0" layoutY="349.0" prefHeight="35.0" prefWidth="172.0" text="Nuova email" textFill="#fffdd0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="changeEmail_ConfirmButton" layoutX="556.0" layoutY="598.0" mnemonicParsing="false" onAction="#onChangeEmail" prefHeight="48.0" prefWidth="218.0" text="Conferma" />
+      <Button fx:id="changeEmail_ConfirmButton" layoutX="556.0" layoutY="693.0" mnemonicParsing="false" onAction="#onChangeEmail" prefHeight="48.0" prefWidth="218.0" styleClass="classic-button" text="Conferma" />
       <TextField fx:id="changeEmail_TextField" layoutX="556.0" layoutY="398.0" prefHeight="48.0" prefWidth="218.0" />
       <Label fx:id="passwordMismatchText" layoutX="832.0" layoutY="451.0" prefHeight="17.0" prefWidth="218.0" textFill="#fffdd0" />
+      <Button fx:id="changeEmail_CloseButton" layoutX="556.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeDialogEmail" prefHeight="48.0" prefWidth="218.0" styleClass="cancel-button" text="Annulla" />
+      <Button fx:id="resetPassword_CloseButton" layoutX="831.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeDialogPassword" prefHeight="48.0" prefWidth="218.0" styleClass="cancel-button" text="Annula" />
    </children>
 </AnchorPane>

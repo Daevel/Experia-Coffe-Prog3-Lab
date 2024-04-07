@@ -1,76 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="ANALYZE_INJECTED_CODE" value="false" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="some fixes">
+    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/DeliveredState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/DeliveredState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/InTransitState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/InTransitState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/PendingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/model/StatePattern/PendingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/checkoutPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/checkoutPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/orderStatusPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/orderStatusPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/profilePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/profilePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/thanksPageAfterOrder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/thanksPageAfterOrder.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaFXApplication" />
-        <option value="CSS File" />
-        <option value="FxmlFile" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Daevel&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="fa890b75-e42e-4ee3-a2e9-dca7bf477786" />
-        <option name="url" value="https://github.com/Daevel/Experia-Coffe-Prog3-Lab" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2ai6DYDYWs0I8xkOQLW8KAFEYVH" />
+  <component name="ProjectId" id="2dHkpWeOVCHahajLUF9CnGTd1JB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,87 +60,23 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in experiaCoffee.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.experiaCoffee [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.experiaCoffee [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.experiaCoffee [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.experiaCoffee [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.experiaCoffee [verify].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/luigiavitabile/IdeaProjects/Experia-Coffe-Prog3-Lab/src/main/resources/experia/coffee/experiacoffee/assets&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luigi/Desktop/demo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="experia.coffee.experiacoffee.controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/assets" />
-      <recent name="C:\Users\Luigi Avitabile\IdeaProjects\Experia Coffee\src\main\resources\experia\coffee\experiacoffee\assets" />
-      <recent name="$PROJECT_DIR$/src/main/resources/assets" />
-      <recent name="$PROJECT_DIR$/src/main/resources/fxml" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/assets" />
-      <recent name="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="experia.coffee.experiacoffee.App" />
-      <module name="experiaCoffee" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="experia.coffee.experiacoffee.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="experia.coffee.experiacoffee.controller.ProductController" />
-      <module name="experiaCoffee" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="experia.coffee.experiacoffee.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in experiaCoffee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="experiaCoffee" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Experia-Coffe-Prog3-Lab" />
       <method v="2">
@@ -173,100 +90,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.All in experiaCoffee" />
-        <item itemvalue="Application.ProductController" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-c0c073db" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a65cb7b4-acf4-47a5-9ef0-6ee62c5a3110" name="Changes" comment="" />
-      <created>1704788933779</created>
+      <changelist id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="" />
+      <created>1709672575058</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1704788933779</updated>
-      <workItem from="1704788936000" duration="16363000" />
-      <workItem from="1704815505002" duration="207000" />
-      <workItem from="1704872545457" duration="10747000" />
-      <workItem from="1704896277418" duration="1799000" />
-      <workItem from="1704964367175" duration="8546000" />
-      <workItem from="1705219859599" duration="9941000" />
-      <workItem from="1705328043681" duration="706000" />
-      <workItem from="1705566724360" duration="7939000" />
-      <workItem from="1705575639724" duration="4914000" />
-      <workItem from="1705678260166" duration="240000" />
-      <workItem from="1705678511704" duration="1038000" />
-      <workItem from="1705832355993" duration="6182000" />
-      <workItem from="1705840604308" duration="8114000" />
-      <workItem from="1706023511756" duration="22000" />
-      <workItem from="1706081913139" duration="6381000" />
-      <workItem from="1706195302501" duration="3426000" />
-      <workItem from="1706213798137" duration="6892000" />
-      <workItem from="1706599472153" duration="622000" />
-      <workItem from="1706600611901" duration="12974000" />
-      <workItem from="1706775317113" duration="4952000" />
-      <workItem from="1706781464463" duration="16655000" />
-      <workItem from="1706952190480" duration="9892000" />
-      <workItem from="1707040614310" duration="2541000" />
-      <workItem from="1707251924897" duration="1180000" />
-      <workItem from="1707383213323" duration="2846000" />
-      <workItem from="1707554065734" duration="641000" />
-      <workItem from="1707585770837" duration="2799000" />
+      <updated>1709672575058</updated>
+      <workItem from="1709672579023" duration="660000" />
+      <workItem from="1709715073762" duration="3229000" />
+      <workItem from="1711207834505" duration="666000" />
+      <workItem from="1711209495684" duration="21000" />
+      <workItem from="1712484449719" duration="396000" />
+      <workItem from="1712485462272" duration="36000" />
+      <workItem from="1712485507712" duration="164000" />
+      <workItem from="1712485684084" duration="104000" />
+      <workItem from="1712485797026" duration="10762000" />
     </task>
-    <task id="LOCAL-00001" summary="added all the functionalities for add, update, delete products">
-      <option name="closed" value="true" />
-      <created>1704814208463</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1704814208463</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Before javadoc composite">
-      <option name="closed" value="true" />
-      <created>1706959316686</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1706959316686</updated>
-    </task>
-    <task id="LOCAL-00003" summary="final changes before completion">
-      <option name="closed" value="true" />
-      <created>1707252009690</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1707252009690</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added all the functionalities for add, update, delete products" />
-    <MESSAGE value="Before javadoc composite" />
-    <MESSAGE value="final changes before completion" />
-    <option name="LAST_COMMIT_MESSAGE" value="final changes before completion" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

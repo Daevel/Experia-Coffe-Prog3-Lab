@@ -19,7 +19,7 @@
             <Image url="@assets/ExperiaFavicon.png" />
          </image>
       </ImageView>
-      <Button fx:id="returnToHomepageButton" layoutX="486.0" layoutY="420.0" mnemonicParsing="false" onAction="#returnToHomePage" prefHeight="52.0" prefWidth="145.0" text="Torna alla homepage" />
-      <Button fx:id="showOpenPageButton" layoutX="658.0" layoutY="420.0" mnemonicParsing="false" onAction="#openOrderPage" prefHeight="52.0" prefWidth="145.0" text="Visualizza stato ordine" />
+      <Button fx:id="returnToHomepageButton" layoutX="486.0" layoutY="420.0" mnemonicParsing="false" onAction="#returnToHomePage" prefHeight="52.0" prefWidth="145.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Torna alla homepage" />
+      <Button fx:id="showOpenPageButton" layoutX="658.0" layoutY="420.0" mnemonicParsing="false" onAction="#openOrderPage" prefHeight="52.0" prefWidth="145.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Visualizza stato ordine" />
    </children>
 </AnchorPane>
