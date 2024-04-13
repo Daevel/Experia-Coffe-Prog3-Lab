@@ -20,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class OrderStatusPageController implements Initializable {
@@ -66,13 +67,14 @@ public class OrderStatusPageController implements Initializable {
 
         ValoreTotaleSingleton valoreTotaleSingleton = ValoreTotaleSingleton.getInstance();
         float valoreTotale = valoreTotaleSingleton.getValoreTotale();
+        DecimalFormat decimalFormat = new DecimalFormat("#0.0");
 
         try {
             if (utente != null) {
                 String email = utente.getEMAIL();
                 emailUser = email;
                 showOrder();
-                totalePagatoLabel.setText("Totale pagato: €" + valoreTotale);
+                totalePagatoLabel.setText("Totale pagato: €" + decimalFormat.format(valoreTotale));
             } else {
                 totalePagatoLabel.setVisible(false);
             }
