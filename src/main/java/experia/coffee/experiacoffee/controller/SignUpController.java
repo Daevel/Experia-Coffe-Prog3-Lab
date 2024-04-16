@@ -5,13 +5,14 @@ import experia.coffee.experiacoffee.data.SignupQuery;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -116,7 +117,14 @@ public class SignUpController implements Initializable {
                 int retrieveUserID = userQuery.getUserID(utente.build());
                     if (retrieveUserID != -1) {
                         createCart(retrieveUserID, email.getText());
-                        new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
+
+                        PopupWindow.showAlert(Alert.AlertType.INFORMATION, "Registrazione avvenuta con successo. Redirect in corso...", "Registrazione");
+                            try {
+                                new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
+
                     } else {
                         System.out.println("retrieveUserID ha riportato un valore di -1");
                     }
