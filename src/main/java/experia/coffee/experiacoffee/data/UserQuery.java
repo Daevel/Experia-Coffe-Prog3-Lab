@@ -53,27 +53,26 @@ public class UserQuery {
         return cartID;
     }
 
-    public boolean changeEmail (String newEmail, String oldEmail) {
+    public int changeEmail (String newEmail, String oldEmail) {
         try {
-            String query = "UPDATE tbl_cliente SET EMAIL = ? WHERE EMAIL = ?;";
+            String query = "UPDATE tbl_cliente SET EMAIL = ? WHERE EMAIL = ?";
             c.getDBConn();
 
             try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(query)) {
                 preparedStatement.setString(1, newEmail);
                 preparedStatement.setString(2, oldEmail);
-                int rowsAffected = preparedStatement.executeUpdate();
 
-                return rowsAffected > 0;
+                int rowsAffected = preparedStatement.executeUpdate();
+                return rowsAffected;
             } catch (SQLException e) {
                 e.printStackTrace();
-                return false;
             } finally {
                 DBConnection.closeConnection();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return 0;
     }
 
 

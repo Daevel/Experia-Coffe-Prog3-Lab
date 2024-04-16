@@ -6,6 +6,9 @@ import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
+import experia.coffee.experiacoffee.validation.EmailValidation;
+import experia.coffee.experiacoffee.validation.PasswordValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -178,17 +181,20 @@ public class ProfilePageController implements Initializable {
 
     @FXML
     public void onChangeEmail() throws IOException {
-       String newEmail = changeEmail_TextField.getText();
-       String oldEmail = userEmail;
+        String newEmail = changeEmail_TextField.getText();
+        String oldEmail = userEmail;
 
-        experia.coffee.experiacoffee.data.UserQuery query = new experia.coffee.experiacoffee.data.UserQuery();
-        if(query.changeEmail(newEmail, oldEmail)) {
-            closeDialogEmail();
-            new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
+        if(EmailValidation.detectSameEmailError(newEmail, oldEmail)) {
+            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.PROFILE_PAGE_CHANGE_EMAIL_ERROR, Constants.PROFILE);
         } else {
-            System.out.println("Errore nel cambio email");
-        }
+            experia.coffee.experiacoffee.data.UserQuery query = new experia.coffee.experiacoffee.data.UserQuery();
 
+            if(query.changeEmail(newEmail, oldEmail) > 0) {
+                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.PROFILE_PAGE_CHANGE_EMAIL_SUCCESS, Constants.PROFILE);
+                closeDialogEmail();
+                new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
+            }
+        }
     }
 
     @FXML
@@ -200,22 +206,17 @@ public class ProfilePageController implements Initializable {
 
         experia.coffee.experiacoffee.data.UserQuery query = new UserQuery();
 
-        if (passwordMismatchCheck(password, repeatPassword)) {
+        if (PasswordValidation.checkPasswordIntegrity(password, repeatPassword)) {
             if(query.resetPassword(email, password, role)) {
+                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.PROFILE_PAGE_CHANGE_PASSWORD_SUCCESS, Constants.PROFILE);
                 closeDialogPassword();
                 new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
             } else {
                 System.out.println("Errore nel cambio password");
             }
         } else {
+            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.PASSWORD_MISMATCH_ERROR, Constants.PROFILE);
             passwordMismatchText.setText("Le password non coincidono, riprovare.");
         }
-    }
-
-
-
-
-    public boolean passwordMismatchCheck(String password, String repeatPassword) {
-        return password.equalsIgnoreCase(repeatPassword);
     }
 }

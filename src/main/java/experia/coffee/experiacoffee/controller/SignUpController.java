@@ -8,6 +8,7 @@ import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.utils.PopupWindow;
 import experia.coffee.experiacoffee.utils.PopupWindowError;
+import experia.coffee.experiacoffee.validation.PasswordValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -89,7 +90,7 @@ public class SignUpController implements Initializable {
 
     @FXML
     public void onSignUp() throws IOException {
-        if(passwordMismatchCheck(pwd.getText(), repeatPwd.getText())) {
+        if(PasswordValidation.checkPasswordIntegrity(pwd.getText(), repeatPwd.getText())) {
             Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
                     .setNAME(name.getText())
                     .setSURNAME(surname.getText())
@@ -139,10 +140,6 @@ public class SignUpController implements Initializable {
         String cartId = "CRT - " + userID;
         experia.coffee.experiacoffee.data.CartQuery query = new CartQuery();
         query.createCart(cartId, userEmail);
-    }
-
-    public boolean passwordMismatchCheck(String password, String repeatPassword) {
-        return password.equalsIgnoreCase(repeatPassword);
     }
 
 }
