@@ -1,11 +1,15 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.LoginQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
+import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -78,11 +82,14 @@ public class LoginPageController implements Initializable {
                     .build());
 
             if ("cliente".equals(ruoloUtente)) {
+                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGIN_SUCCESS, Constants.LOGIN);
                 new SceneSwitch(scene2AnchorPane, "clienteHomePage.fxml");
             } else if ("dipendente".equals(ruoloUtente)){
+                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGIN_SUCCESS, Constants.LOGIN);
                 new SceneSwitch(scene2AnchorPane, "dipendenteHomePage.fxml");
             }
         } else {
+            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.LOGIN_ERROR, Constants.LOGIN);
             errorInvalidCredentials.setText("Credenziali errate o non valide, riprovare.");
         }
     }

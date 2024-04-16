@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.ObserverPattern.Prodotto;
@@ -7,6 +8,7 @@ import experia.coffee.experiacoffee.model.ObserverPattern.ProdottoSubscriber;
 import experia.coffee.experiacoffee.model.ObserverPattern.ProductObserver;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
+import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -81,6 +83,7 @@ public class ClienteHomePage implements Initializable {
 
     @FXML
     public void returnToLoginPage() throws IOException {
+        PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGOUT_SUCCESS, Constants.LOGOUT);
         new SceneSwitch(ClienteHomePageAnchor, "loginPage.fxml");
     }
     @FXML

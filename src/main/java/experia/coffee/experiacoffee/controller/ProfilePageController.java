@@ -1,15 +1,14 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
+import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -134,6 +133,7 @@ public class ProfilePageController implements Initializable {
 
     @FXML
     public void onLogout() throws IOException {
+        PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGOUT_SUCCESS, Constants.LOGOUT);
         new SceneSwitch(profilePageAnchorPane, "loginPage.fxml");
     }
 

@@ -1,11 +1,13 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.CartQuery;
 import experia.coffee.experiacoffee.data.SignupQuery;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -118,7 +120,9 @@ public class SignUpController implements Initializable {
                     if (retrieveUserID != -1) {
                         createCart(retrieveUserID, email.getText());
 
-                        PopupWindow.showAlert(Alert.AlertType.INFORMATION, "Registrazione avvenuta con successo. Redirect in corso...", "Registrazione");
+                        // mostra messaggio di alert
+                        PopupWindow.showAlert(Alert.AlertType.INFORMATION,Constants.SIGNUP_CORRECT, Constants.SIGNUP);
+
                             try {
                                 new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
                             } catch (IOException ex) {
@@ -129,7 +133,7 @@ public class SignUpController implements Initializable {
                         System.out.println("retrieveUserID ha riportato un valore di -1");
                     }
             } else {
-                System.out.println("Registrazione fallita, riprovare");
+                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR,Constants.SIGNUP_ERROR, Constants.SIGNUP);
             }
         } else {
             errorMismatchPassword.setVisible(true);

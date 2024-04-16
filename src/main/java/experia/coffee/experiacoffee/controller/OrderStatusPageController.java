@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.OrderQuery;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.Ordine;
@@ -7,13 +8,11 @@ import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.*;
+import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
@@ -50,6 +49,7 @@ public class OrderStatusPageController implements Initializable {
 
     @FXML
     public void onLogout() throws IOException {
+        PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGOUT_SUCCESS, Constants.LOGOUT);
         new SceneSwitch(orderStatusAnchorPane, "loginPage.fxml");
     }
 

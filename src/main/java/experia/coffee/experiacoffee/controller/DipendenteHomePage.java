@@ -1,10 +1,12 @@
 package experia.coffee.experiacoffee.controller;
 
+import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.OrderQuery;
 import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.*;
+import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -122,6 +124,7 @@ public class DipendenteHomePage implements Initializable {
 
     @FXML
     public void returnToLoginPage() throws IOException {
+        PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.LOGOUT_SUCCESS, Constants.LOGOUT);
         new SceneSwitch(DipendenteHomePageAnchor, "loginPage.fxml");
     }
 
