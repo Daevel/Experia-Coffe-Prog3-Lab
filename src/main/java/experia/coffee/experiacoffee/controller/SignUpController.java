@@ -10,10 +10,7 @@ import experia.coffee.experiacoffee.utils.PopupWindow;
 import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
@@ -67,16 +64,13 @@ public class SignUpController implements Initializable {
     public TextField cvvNumber;
 
     @FXML
-    public TextField expirationDate;
+    public DatePicker expirationDate, birthDate;
 
     @FXML
     public TextField cardOwner;
 
     @FXML
     public TextField fiscalCode;
-
-    @FXML
-    public TextField birthDate;
 
     /* BUTTONS */
     @FXML
@@ -107,9 +101,9 @@ public class SignUpController implements Initializable {
                     .setNUM_CARTA(cardNumber.getText())
                     .setCVV_CARTA(cvvNumber.getText())
                     .setINTESTATARIO_CARTA(cardOwner.getText())
-                    .setSCADENZA_CARTA(expirationDate.getText())
+                    .setSCADENZA_CARTA(expirationDate.getValue().toString())
                     .setCODICE_FISCALE(fiscalCode.getText())
-                    .setDATA_DI_NASCITA(birthDate.getText());
+                    .setDATA_DI_NASCITA(birthDate.getValue().toString());
             experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
 
             boolean signUpSuccess = query.signUpUser(utente.build());

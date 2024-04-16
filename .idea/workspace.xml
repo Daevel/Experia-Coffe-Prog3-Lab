@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="added PopupWindow message component&#10;- implemented inside SignUpController&#10;after signup Event">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/utils/PopupWindowError.java" afterDir="false" />
+    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="added PopupWindowError message component&#10;- implemented inside DipendenteHomePage, LoginPageController, OrderStatusPageController, ProfilePageController, SignUpController&#10;- implemented Constants class for all common messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ClienteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/OrderStatusPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/OrderStatusPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/ProfilePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +136,8 @@
       <workItem from="1712485684084" duration="104000" />
       <workItem from="1712485797026" duration="11833000" />
       <workItem from="1712997197600" duration="987000" />
-      <workItem from="1713267967825" duration="2445000" />
+      <workItem from="1713267967825" duration="2573000" />
+      <workItem from="1713270857191" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="updated application style&#10;- added style.css stylesheet">
       <option name="closed" value="true" />
@@ -160,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713259222936</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added PopupWindowError message component&#10;- implemented inside DipendenteHomePage, LoginPageController, OrderStatusPageController, ProfilePageController, SignUpController&#10;- implemented Constants class for all common messages">
+      <option name="closed" value="true" />
+      <created>1713270499596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713270499596</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +172,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated application style&#10;- added style.css stylesheet" />
     <MESSAGE value="added PopupWindow message component&#10;- implemented inside SignUpController&#10;after signup Event" />
-    <option name="LAST_COMMIT_MESSAGE" value="added PopupWindow message component&#10;- implemented inside SignUpController&#10;after signup Event" />
+    <MESSAGE value="added PopupWindowError message component&#10;- implemented inside DipendenteHomePage, LoginPageController, OrderStatusPageController, ProfilePageController, SignUpController&#10;- implemented Constants class for all common messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added PopupWindowError message component&#10;- implemented inside DipendenteHomePage, LoginPageController, OrderStatusPageController, ProfilePageController, SignUpController&#10;- implemented Constants class for all common messages" />
   </component>
 </project>
