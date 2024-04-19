@@ -29,6 +29,8 @@ public class ClienteHomePage implements Initializable {
     @FXML
     public ImageView favicon;
     @FXML
+    public Hyperlink ticketingButton;
+    @FXML
     public Button returnToLoginPageButton;
     @FXML
     public Button profilePageButton, checkoutPageButton, orderPageButton;
@@ -94,6 +96,15 @@ public class ClienteHomePage implements Initializable {
     public void goToOrderPage() throws IOException {
         new SceneSwitch(ClienteHomePageAnchor, "orderStatusPage.fxml");
     }
+    @FXML
+    public void goToHomePage() throws IOException {
+        new SceneSwitch(ClienteHomePageAnchor, "clienteHomePage.fxml");
+    }
+    @FXML
+    public void goToTicketingPage() throws IOException {
+        new SceneSwitch(ClienteHomePageAnchor, "clienteTicketingPage.fxml");
+    }
+
 
     @FXML
     private void showProducts() {

@@ -5,7 +5,7 @@ import experia.coffee.experiacoffee.data.OrderQuery;
 import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
-import experia.coffee.experiacoffee.model.StatePattern.*;
+import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
 import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -28,7 +28,7 @@ public class DipendenteHomePage implements Initializable {
     @FXML
     private AnchorPane DipendenteHomePageAnchor;
     @FXML
-    public Button returnToLoginPageButton;
+    public Button returnToLoginPageButton, ticketingPageButton, profilePageButton;
     @FXML
     public ImageView favicon;
     // TABELLA ORDINI
@@ -131,6 +131,16 @@ public class DipendenteHomePage implements Initializable {
     @FXML
     public void goToProfilePage() throws IOException {
         new SceneSwitch(DipendenteHomePageAnchor, "profilePage.fxml");
+    }
+
+    @FXML
+    public void goToTicketingPage() throws IOException {
+        new SceneSwitch(DipendenteHomePageAnchor, "dipendenteTicketingPage.fxml");
+    }
+
+    @FXML
+    public void goToHomePage() throws IOException {
+        new SceneSwitch(DipendenteHomePageAnchor, "dipendenteHomePage.fxml");
     }
 
     @FXML

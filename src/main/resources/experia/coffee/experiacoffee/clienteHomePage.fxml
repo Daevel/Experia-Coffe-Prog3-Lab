@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -19,11 +20,11 @@
             <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
             <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Profile" />
             <Button fx:id="orderPageButton" layoutX="105.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToOrderPage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Ordini" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="905.0">
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="942.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Separator>
-            <ImageView fx:id="favicon" fitHeight="40.0" fitWidth="1056.0" onMouseClicked="#returnToLoginPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="favicon" fitHeight="40.0" fitWidth="300.0" onMouseClicked="#goToHomePage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/ExperiaFavicon.png" />
                </image>
@@ -51,7 +52,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel1" layoutX="36.0" layoutY="211.0" prefHeight="74.0" prefWidth="793.0" text="I nostri prodotti disponibili" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel1" layoutX="36.0" layoutY="168.0" prefHeight="74.0" prefWidth="793.0" text="I nostri prodotti disponibili" textFill="#fffdd0">
          <font>
             <Font size="30.0" />
          </font>
@@ -66,7 +67,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="welcomeLabel11" layoutX="851.0" layoutY="211.0" prefHeight="74.0" prefWidth="407.0" text="Il tuo carrello" textFill="#fffdd0">
+      <Label fx:id="welcomeLabel11" layoutX="851.0" layoutY="168.0" prefHeight="74.0" prefWidth="407.0" text="Il tuo carrello" textFill="#fffdd0">
          <font>
             <Font size="30.0" />
          </font>
@@ -77,11 +78,16 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="productObserverMessage" layoutX="36.0" layoutY="740.0" prefHeight="40.0" prefWidth="793.0" textFill="#fffdd0">
+      <Label fx:id="productObserverMessage" layoutX="36.0" layoutY="242.0" prefHeight="40.0" prefWidth="670.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Hyperlink fx:id="ticketingButton" layoutX="36.0" layoutY="747.0" onAction="#goToTicketingPage" text="Serve aiuto?" textFill="#fffdd0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
    </children>
    <opaqueInsets>
       <Insets />

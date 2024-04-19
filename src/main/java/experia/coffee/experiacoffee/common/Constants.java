@@ -20,5 +20,23 @@ public class Constants {
     public static final String PROFILE_PAGE_CHANGE_EMAIL_SUCCESS = "Cambio email avvenuto con successo, redirect verso la pagina di login in corso...";
     public static final String PROFILE_PAGE_CHANGE_EMAIL_ERROR = "Richiesta fallita. L'email inserità è già presente nei nostri sistemi, riprovare.";
     public static final String PASSWORD_MISMATCH_ERROR = "Le password inserite non coincidono, riprovare.";
+    public static final String TICKET_SEND_SUCCESS = "Ticket generato ed inviato correttamente, redirect in corso...";
+    public static final String TICKET_SEND_ERROR = "Errore nella generazione del ticket, riprovare.";
+    public static final String TICKET_UPDATE_SUCCESS = "Ticket aggiornato con successo, carico la tabella...";
+    public static final String TICKET_UPDATE_ERROR = "Errore nell'aggiornamento del seguente ticket, riprovare.";
+    public static final String TICKET_UPDATE_EMPTY_STATUS_OR_ID = "Errore nell'aggiornamento del ticket,Stato o ID non forniti. Riprovare";
+    public static final String TICKET_UPDATE_IN_PROGRESS = "Aggiornamento dello stato del ticker in corso...";
+    public static final String TICKET = "Assistenza Clienti";
+    public static final String TABLE_GENERIC_ERROR = "Errore generico della tabella, riprovare";
+    public static final String TICKET_STATUS_NOT_HANDLED = "Non gestito";
+    public static final String TICKET_STATUS_ESCAPED = "Evaso";
+    public static final String TICKET_STATUS_SUSPENDED = "In sospensione";
+    public static final String TICKET_STATUS_TAKEN_CHARDE = "Preso in carico";
+    public static final String TICKET_STATUS_WORKING = "In lavorazione";
+    public static final String TICKET_SELECTED = "Ticket selezionato";
+    public static final String TICKET_CREATED_BY = "Creato da";
+    public static final String TICKET_DESCRIPTION = "Descrizione";
+    public static final String TICKET_TITLE = "Titolo";
+    public static final String STATUS_SELECTED = "Stato selezionato";
 
 }

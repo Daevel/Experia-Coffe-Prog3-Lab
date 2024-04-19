@@ -1,6 +1,6 @@
 package experia.coffee.experiacoffee.model;
 
-import experia.coffee.experiacoffee.model.StatePattern.OrderState;
+import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.OrderState;
 import javafx.scene.Node;
 
 public class Ordine {

@@ -9,14 +9,14 @@
 
 <AnchorPane fx:id="orderStatusAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.OrderStatusPageController">
    <children>
-      <Label layoutX="22.0" layoutY="28.0" text="Stato dell'ordine" textFill="#fffdd0">
+      <Label layoutX="22.0" layoutY="28.0" text="Centro notifiche" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
       <Button fx:id="clienteHomePageButton" layoutX="1076.0" layoutY="17.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Home" />
       <Button fx:id="logoutButton" layoutX="1172.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
-      <TableView fx:id="orderList" layoutX="22.0" layoutY="98.0" prefHeight="262.0" prefWidth="1240.0" stylesheets="@styles/style.css">
+      <TableView fx:id="orderList" layoutX="651.0" layoutY="138.0" prefHeight="582.0" prefWidth="610.0" stylesheets="@styles/style.css">
         <columns>
           <TableColumn fx:id="statusOrder_ID" prefWidth="75.0" text="ID ORDINE" />
           <TableColumn fx:id="statusOrder_ORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />
@@ -27,9 +27,30 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="totalePagatoLabel" alignment="CENTER_RIGHT" layoutX="997.0" layoutY="372.0" prefHeight="30.0" prefWidth="264.0" textFill="#fffdd0">
+      <Label fx:id="totalePagatoLabel" alignment="CENTER_RIGHT" layoutX="997.0" layoutY="727.0" prefHeight="30.0" prefWidth="264.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ticketList" layoutX="22.0" layoutY="138.0" prefHeight="582.0" prefWidth="610.0" stylesheets="@styles/style.css">
+         <columns>
+            <TableColumn fx:id="ticketID" prefWidth="75.0" text="ID TICKET" />
+            <TableColumn fx:id="ticketTitle" prefWidth="75.0" text="TITOLO" />
+            <TableColumn fx:id="ticketManagedBy" prefWidth="75.0" text="GESTITO DA" />
+            <TableColumn fx:id="ticketStatus" prefWidth="75.0" text="STATO TICKET" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="22.0" layoutY="97.0" text="Le mie segnalazioni" textFill="#fffdd0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="651.0" layoutY="97.0" text="I miei ordini" textFill="#fffdd0">
+         <font>
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
    </children>

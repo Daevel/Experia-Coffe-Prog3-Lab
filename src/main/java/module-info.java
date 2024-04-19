@@ -21,8 +21,8 @@ module experia.coffee.experiacoffee {
     exports experia.coffee.experiacoffee.model;
     exports experia.coffee.experiacoffee.controller;
     opens experia.coffee.experiacoffee.controller to javafx.fxml;
-    exports experia.coffee.experiacoffee.model.StatePattern;
     exports experia.coffee.experiacoffee.model.SingletonPattern;
     exports experia.coffee.experiacoffee.model.BuilderPattern;
     exports experia.coffee.experiacoffee.model.ObserverPattern;
+    exports experia.coffee.experiacoffee.model.StatePattern.OrderStatus;
 }

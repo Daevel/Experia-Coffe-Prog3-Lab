@@ -1,4 +1,4 @@
-package experia.coffee.experiacoffee.model.StatePattern;
+package experia.coffee.experiacoffee.model.StatePattern.OrderStatus;
 
 import javafx.scene.Node;
 

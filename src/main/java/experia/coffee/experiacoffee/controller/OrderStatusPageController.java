@@ -1,13 +1,13 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.common.Constants;
-import experia.coffee.experiacoffee.data.OrderQuery;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.Ordine;
 import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
-import experia.coffee.experiacoffee.model.StatePattern.*;
+import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
+import experia.coffee.experiacoffee.model.Ticket;
 import experia.coffee.experiacoffee.utils.PopupWindow;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -46,6 +46,23 @@ public class OrderStatusPageController implements Initializable {
     @FXML
     public TableColumn<Ordine, String> statusOrder_STATO_ORDINE;
 
+    // TICKETING
+
+    @FXML
+    public TableView<Ticket> ticketList = new TableView<>();
+
+    @FXML
+    public TableColumn<Ticket, Integer> ticketID;
+
+    @FXML
+    public TableColumn<Ticket, String> ticketTitle;
+
+    @FXML
+    public TableColumn<Ticket, String> ticketManagedBy;
+
+    @FXML
+    public TableColumn<Ticket, String> ticketStatus;
+
 
     @FXML
     public void onLogout() throws IOException {
@@ -58,7 +75,7 @@ public class OrderStatusPageController implements Initializable {
         new SceneSwitch(orderStatusAnchorPane, "clienteHomePage.fxml");
     }
 
-    public String emailUser;
+    private String emailUser;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,10 +88,13 @@ public class OrderStatusPageController implements Initializable {
 
         try {
             if (utente != null) {
+
                 String email = utente.getEMAIL();
                 emailUser = email;
-                showOrder();
                 totalePagatoLabel.setText("Totale pagato: €" + decimalFormat.format(valoreTotale));
+
+                showOrder();
+                showTicketList();
             } else {
                 totalePagatoLabel.setVisible(false);
             }
@@ -111,6 +131,18 @@ public class OrderStatusPageController implements Initializable {
         statusOrder_STATO_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("STATO_ORDINE"));
 
         orderList.setItems(list);
+    }
+
+    public void showTicketList() {
+        experia.coffee.experiacoffee.data.TicketQuery query = new experia.coffee.experiacoffee.data.TicketQuery();
+        ObservableList<Ticket> list = query.getTicketListByEmail(emailUser);
+
+        ticketID.setCellValueFactory(new PropertyValueFactory<Ticket, Integer>("ID"));
+        ticketTitle.setCellValueFactory(new PropertyValueFactory<Ticket, String>("Title"));
+        ticketManagedBy.setCellValueFactory(new PropertyValueFactory<Ticket, String>("ManagedBy"));
+        ticketStatus.setCellValueFactory(new PropertyValueFactory<Ticket, String>("Status"));
+
+        ticketList.setItems(list);
     }
 
     private OrderState getStateInstance(String statoOrdine) {
