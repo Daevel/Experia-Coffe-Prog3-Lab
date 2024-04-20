@@ -7,8 +7,10 @@ import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
+import experia.coffee.experiacoffee.model.StatePattern.TicketingStatus.TicketingStatus;
 import experia.coffee.experiacoffee.model.Ticket;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.StatusImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,7 +24,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
-public class OrderStatusPageController implements Initializable {
+public class NotificationsCenterPageController implements Initializable {
     @FXML
     public AnchorPane orderStatusAnchorPane;
     @FXML
@@ -109,7 +111,8 @@ public class OrderStatusPageController implements Initializable {
                     super.updateItem(item, empty);
 
                     if (!isEmpty() && getItem() != null) {
-                        OrderState orderState = getStateInstance(getItem());
+                        StatusImpl impl = new StatusImpl();
+                        OrderState orderState = impl.getOrderStateInstance(getItem());
                         orderState.applyStateStyle(this);
                     } else {
                         setStyle("");
@@ -118,6 +121,22 @@ public class OrderStatusPageController implements Initializable {
             };
         });
 
+        ticketStatus.setCellFactory(column -> {
+            return new TextFieldTableCell<Ticket, String>() {
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+
+                    if (!isEmpty() && getItem() != null) {
+                        StatusImpl impl = new StatusImpl();
+                        TicketingStatus ticketingStatus = impl.getTicketingStatus(getItem());
+                        ticketingStatus.applyStateStyle(this);
+                    } else {
+                        setStyle("");
+                    }
+                }
+            };
+        });
 
     }
 
