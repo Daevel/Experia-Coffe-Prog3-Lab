@@ -7,6 +7,7 @@ import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.StatusImpl;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -111,7 +112,8 @@ public class DipendenteHomePage implements Initializable {
 
                     // Verifica se la riga corrente ha dati
                     if (!isEmpty() && getItem() != null) {
-                        OrderState orderState = getStateInstance(getItem());
+                        StatusImpl impl = new StatusImpl();
+                        OrderState orderState = impl.getOrderStateInstance(getItem());
                         orderState.applyStateStyle(this);
                     } else {
                         setStyle("");
@@ -165,21 +167,6 @@ public class DipendenteHomePage implements Initializable {
     }
 
     @FXML
-    public void setOrderToComplete() {
-        handleToggleButtonAction();
-    }
-
-    @FXML
-    public void setOrderToInTransit() {
-        handleToggleButtonAction();
-    }
-
-    @FXML
-    public void setOrderToInQueue() {
-        handleToggleButtonAction();
-    }
-
-    @FXML
     public void showWarehouseList () {
         experia.coffee.experiacoffee.data.WarehouseQuery query = new experia.coffee.experiacoffee.data.WarehouseQuery();
         ObservableList<Magazzino> list = query.getWarehouseList();
@@ -209,7 +196,8 @@ public class DipendenteHomePage implements Initializable {
             String corriereInCarico = updateOrder_CORRIERE_IN_CARICO.getText();
             String statoOrdine = handleToggleButtonAction();
 
-            OrderState orderState = getStateInstance(statoOrdine);
+            StatusImpl impl = new StatusImpl();
+            OrderState orderState = impl.getOrderStateInstance(statoOrdine);
 
             boolean updateSuccessfull = query.updateOrder(idOrdine, orderNumber, filialeInCarico, corriereInCarico, statoOrdine);
             if (updateSuccessfull) {
@@ -262,9 +250,7 @@ public class DipendenteHomePage implements Initializable {
             System.out.println("completed is selected");
             return makeOrderDeliveredButton.getText();
         } else if (makeOrderInTransitButton.isSelected()) {
-            makeOrderDeliveredButton.setSelected(false);
-            makeOrderInQueueButton.setSelected(false);
-            System.out.println("in transit is selected");
+
             return makeOrderInTransitButton.getText();
         } else if (makeOrderInQueueButton.isSelected()) {
             makeOrderDeliveredButton.setSelected(false);
@@ -275,16 +261,4 @@ public class DipendenteHomePage implements Initializable {
         return null;
     }
 
-    private OrderState getStateInstance(String statoOrdine) {
-        switch (statoOrdine) {
-            case "Consegnato":
-                return new DeliveredState();
-            case "In Transito":
-                return new InTransitState();
-            case "In Attesa":
-                return new PendingState();
-            default:
-                return new DefaultState();
-        }
-    }
 }

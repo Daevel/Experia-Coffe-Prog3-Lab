@@ -113,9 +113,6 @@ public class DipendenteTicketingPageController implements Initializable {
         Integer ticketId = ticketSelectedId;
         String ticketStatus = ticketSelectedStatus;
 
-        System.out.println(ticketId);
-        System.out.println(ticketStatus);
-
         if(ticketId != null && !ticketStatus.isEmpty()) {
             new PopupWindow(Alert.AlertType.INFORMATION, Constants.TICKET_UPDATE_IN_PROGRESS, Constants.TICKET).show();
             experia.coffee.experiacoffee.data.TicketQuery query = new TicketQuery();
@@ -196,25 +193,6 @@ public class DipendenteTicketingPageController implements Initializable {
         }
         return null;
     }
-
-    /*
-    private TicketingStatus getStateInstance(String ticketStatus) {
-        switch (ticketStatus) {
-            case "Non gestito":
-                return new NotHandledState();
-            case "Preso in carico":
-                return new TakenChargeStatus();
-            case "In lavorazione":
-                return new WorkingStatus();
-            case "In sospensione":
-                return new SuspendedStatus();
-            case "Evaso":
-                return new EscapedStatus();
-            default:
-                return new NotHandledState();
-        }
-    }
-    */
 
     private void resetSummary() {
         ticketStatusSelected.setText(Constants.STATUS_SELECTED + ": ");
