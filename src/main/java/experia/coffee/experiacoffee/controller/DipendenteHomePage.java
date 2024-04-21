@@ -7,6 +7,7 @@ import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import experia.coffee.experiacoffee.utils.StatusImpl;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -240,6 +241,8 @@ public class DipendenteHomePage implements Initializable {
 
 
                 }
+            } else {
+                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.ORDER_UPDATED_ERROR, Constants.ORDER);
             }
     }
 

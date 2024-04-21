@@ -57,7 +57,7 @@
     -fx-text-background-color: #fffdd0;
 }
 .table-view .table-cell{
-    -fx-border-color: transparent;
+    -fx-border-color: #fffdd0;
     -fx-padding: 2 0 2 10px;
     -fx-text-fill: #fffdd0;
 }

@@ -20,7 +20,7 @@
             <Button fx:id="returnToLoginPageButton" mnemonicParsing="false" onAction="#returnToLoginPage" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
             <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Profile" />
             <Button fx:id="orderPageButton" layoutX="105.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToOrderPage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Notifiche" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="942.0">
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="900.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Separator>

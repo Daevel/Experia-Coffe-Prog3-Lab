@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="implemented Ticket State Pattern&#10;- Ticket Queries related&#10;- Ticketing page for client and employee&#10;- added decimalFormatter to totalePagato">
+    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="fixed some issues about DipendenteHomePage and its status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/DipendenteHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +168,7 @@
       <workItem from="1713541123401" duration="15894000" />
       <workItem from="1713627405303" duration="806000" />
       <workItem from="1713628227812" duration="3079000" />
+      <workItem from="1713721432742" duration="1089000" />
     </task>
     <task id="LOCAL-00001" summary="updated application style&#10;- added style.css stylesheet">
       <option name="closed" value="true" />
@@ -209,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713558992481</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed some issues about DipendenteHomePage and its status">
+      <option name="closed" value="true" />
+      <created>1713721405971</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713721405971</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +230,7 @@
     <MESSAGE value="added PopupWindowError message component&#10;- implemented inside DipendenteHomePage, LoginPageController, OrderStatusPageController, ProfilePageController, SignUpController&#10;- implemented Constants class for all common messages" />
     <MESSAGE value="changed TextLabel for expirationDate and birthDate into Datepicker Type for SignUpController" />
     <MESSAGE value="implemented Ticket State Pattern&#10;- Ticket Queries related&#10;- Ticketing page for client and employee&#10;- added decimalFormatter to totalePagato" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Ticket State Pattern&#10;- Ticket Queries related&#10;- Ticketing page for client and employee&#10;- added decimalFormatter to totalePagato" />
+    <MESSAGE value="fixed some issues about DipendenteHomePage and its status" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some issues about DipendenteHomePage and its status" />
   </component>
 </project>
