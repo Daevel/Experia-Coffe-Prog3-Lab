@@ -39,4 +39,13 @@ public class Constants {
     public static final String TICKET_TITLE = "Titolo";
     public static final String STATUS_SELECTED = "Stato selezionato";
 
+    public static final String ORDER = "Ordini";
+    public static final String ORDER_STATUS_ON_THE_WAY = "In Transito";
+    public static final String ORDER_STATUS_ON_WAITING = "In Attesa";
+    public static final String ORDER_STATUS_ON_DELIVERED = "Consegnato";
+
+    public static final String ORDER_UPDATED_SUCCESS = "Ordine aggiornato correttamente";
+    public static final String ORDER_UPDATED_ERROR = "Aggiornamento dell'ordine fallito, riprovare.";
+
+
 }

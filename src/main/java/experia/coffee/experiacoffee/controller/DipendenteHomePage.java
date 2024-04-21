@@ -78,7 +78,7 @@ public class DipendenteHomePage implements Initializable {
     public Label welcomeLabel;
 
     @FXML
-    public Label ordineEvaso;
+    public Label ordineEvaso, orderStatusSelected;
 
     @FXML
     public Button clearFieldsButton, updateOrderButton;
@@ -88,6 +88,8 @@ public class DipendenteHomePage implements Initializable {
 
     @FXML
     public ToggleButton makeOrderInTransitButton, makeOrderInQueueButton, makeOrderDeliveredButton;
+
+    public String statusSelected;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -183,7 +185,6 @@ public class DipendenteHomePage implements Initializable {
         this.updateOrder_CORRIERE_IN_CARICO.setText("");
         this.updateOrder_FILIALE_IN_CARICO.setText("");
         this.updateOrder_NUMERO_ORDINE.setText("");
-        this.updateOrderButton.setText("null");
     }
 
     @FXML
@@ -194,7 +195,7 @@ public class DipendenteHomePage implements Initializable {
             String idOrdine = updateOrder_ID_ORDINE.getText();
             String filialeInCarico = updateOrder_FILIALE_IN_CARICO.getText();
             String corriereInCarico = updateOrder_CORRIERE_IN_CARICO.getText();
-            String statoOrdine = handleToggleButtonAction();
+            String statoOrdine = statusSelected;
 
             StatusImpl impl = new StatusImpl();
             OrderState orderState = impl.getOrderStateInstance(statoOrdine);
@@ -203,7 +204,7 @@ public class DipendenteHomePage implements Initializable {
             if (updateSuccessfull) {
                 clearFields();
                 orderState.applyStateStyle(orderList);
-                ordineEvaso.setText("Ordine modificato correttamente");
+                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.ORDER_UPDATED_SUCCESS, Constants.ORDER);
                 showOrderList();
 
                 if ("Consegnato".equalsIgnoreCase(statoOrdine)) {
@@ -245,18 +246,16 @@ public class DipendenteHomePage implements Initializable {
     @FXML
     private String handleToggleButtonAction() {
         if(makeOrderDeliveredButton.isSelected()) {
-            makeOrderInQueueButton.setSelected(false);
-            makeOrderInTransitButton.setSelected(false);
-            System.out.println("completed is selected");
-            return makeOrderDeliveredButton.getText();
+            orderStatusSelected.setText(Constants.STATUS_SELECTED + ": " + Constants.ORDER_STATUS_ON_DELIVERED);
+            statusSelected = Constants.ORDER_STATUS_ON_DELIVERED;
         } else if (makeOrderInTransitButton.isSelected()) {
-
-            return makeOrderInTransitButton.getText();
+            orderStatusSelected.setText(Constants.STATUS_SELECTED + ": " + Constants.ORDER_STATUS_ON_THE_WAY);
+            statusSelected = Constants.ORDER_STATUS_ON_THE_WAY;
         } else if (makeOrderInQueueButton.isSelected()) {
-            makeOrderDeliveredButton.setSelected(false);
-            makeOrderInTransitButton.setSelected(false);
-            System.out.println("In queue is selected");
-            return makeOrderInQueueButton.getText();
+            orderStatusSelected.setText(Constants.STATUS_SELECTED + ": " + Constants.ORDER_STATUS_ON_WAITING);
+            statusSelected = Constants.ORDER_STATUS_ON_WAITING;
+        } else {
+            orderStatusSelected.setText(Constants.STATUS_SELECTED + ": ");
         }
         return null;
     }
