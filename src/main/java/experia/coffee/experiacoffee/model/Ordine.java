@@ -4,7 +4,7 @@ import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.OrderState;
 import javafx.scene.Node;
 
 public class Ordine {
-    private String ID_ORDINE;
+    private Integer ID;
     private Integer NUMERO_ORDINE;
     private String DESTINAZIONE;
 
@@ -16,8 +16,8 @@ public class Ordine {
 
     private OrderState state;
 
-    public Ordine(String ID_ORDINE, Integer NUMERO_ORDINE, String ORDINATO_DA, String DESTINAZIONE, String FILIALE_IN_CARICO, String CORRIERE_IN_CARICO, String STATO_ORDINE) {
-       this.setID_ORDINE(ID_ORDINE);
+    public Ordine(Integer ID, Integer NUMERO_ORDINE, String ORDINATO_DA, String DESTINAZIONE, String FILIALE_IN_CARICO, String CORRIERE_IN_CARICO, String STATO_ORDINE) {
+        this.setID(ID);
        this.setNUMERO_ORDINE(NUMERO_ORDINE);
        this.setORDINATO_DA(ORDINATO_DA);
        this.setDESTINAZIONE(DESTINAZIONE);
@@ -26,12 +26,12 @@ public class Ordine {
        this.setSTATO_ORDINE(STATO_ORDINE);
     }
 
-    public String getID_ORDINE() {
-        return ID_ORDINE;
+    public Integer getID() {
+        return ID;
     }
 
-    public void setID_ORDINE(String ID_ORDINE) {
-        this.ID_ORDINE = ID_ORDINE;
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 
     public Integer getNUMERO_ORDINE() {

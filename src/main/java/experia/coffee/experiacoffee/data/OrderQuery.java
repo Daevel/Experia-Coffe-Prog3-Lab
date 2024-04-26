@@ -18,7 +18,7 @@ public class OrderQuery {
         try {
             c.getDBConn();
             String query = "SELECT \n" +
-                    "o.ID_ORDINE,\n" +
+                    "o.ID,\n" +
                     "    c.EMAIL AS ORDINATO_DA,\n" +
                     "    c.VIA AS DESTINAZIONE,\n" +
                     "    o.STATO_ORDINE\n" +
@@ -34,7 +34,7 @@ public class OrderQuery {
                 try (ResultSet rs = preparedStatement.executeQuery()) {
                     while (rs.next()) {
                         experia.coffee.experiacoffee.model.Ordine s;
-                        s = new experia.coffee.experiacoffee.model.Ordine(rs.getString("ID_ORDINE"), null, rs.getString("ORDINATO_DA"), rs.getString("DESTINAZIONE"), null, null, rs.getString("STATO_ORDINE"));
+                        s = new experia.coffee.experiacoffee.model.Ordine(rs.getInt("ID"), null, rs.getString("ORDINATO_DA"), rs.getString("DESTINAZIONE"), null, null, rs.getString("STATO_ORDINE"));
                         orderStatus.add(s);
                     }
                 } catch (Exception e) {
@@ -57,7 +57,7 @@ public class OrderQuery {
         ObservableList<experia.coffee.experiacoffee.model.Ordine> productList = FXCollections.observableArrayList();
         try {
             String query = "SELECT\n" +
-                    "    o.ID_ORDINE,\n" +
+                    "    o.ID,\n" +
                     "    o.NUMERO_ORDINE,\n" +
                     "    o.STATO_ORDINE,\n" +
                     "    c.EMAIL AS ORDINATO_DA,\n" +
@@ -71,7 +71,7 @@ public class OrderQuery {
                     "JOIN\n" +
                     "    tbl_cliente c ON ca.EMAIL_CLIENTE = c.EMAIL\n" +
                     "LEFT JOIN\n" +
-                    "    tbl_gestito_da g ON o.ID_ORDINE = g.CODICE_ORDINE\n" +
+                    "    tbl_gestito_da g ON o.ID = g.CODICE_ORDINE\n" +
                     "LEFT JOIN\n" +
                     "    tbl_filiale f ON g.ID_FILIALE = f.CODICE_ZONA_FILIALE\n" +
                     "LEFT JOIN\n" +
@@ -86,7 +86,7 @@ public class OrderQuery {
             experia.coffee.experiacoffee.model.Ordine s;
 
             while (rs.next()) {
-                s = new experia.coffee.experiacoffee.model.Ordine(rs.getString("ID_ORDINE"), rs.getInt("NUMERO_ORDINE"), rs.getString("ORDINATO_DA"), rs.getString("DESTINAZIONE"), rs.getString("FILIALE_IN_CARICO"), rs.getString("CORRIERE_IN_CARICO"), rs.getString("STATO_ORDINE"));
+                s = new experia.coffee.experiacoffee.model.Ordine(rs.getInt("ID"), rs.getInt("NUMERO_ORDINE"), rs.getString("ORDINATO_DA"), rs.getString("DESTINAZIONE"), rs.getString("FILIALE_IN_CARICO"), rs.getString("CORRIERE_IN_CARICO"), rs.getString("STATO_ORDINE"));
                 productList.add(s);
             }
 
@@ -102,15 +102,14 @@ public class OrderQuery {
     }
 
 
-    public boolean createOrder (String cartId, String userEmail) {
+    public boolean createOrder (String userEmail) {
         try {
             c.getDBConn();
-            String sql = "INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO, INDIRIZZO_SPEDIZIONE) VALUES (?, 'EMPTY', 0, (SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?), (SELECT VIA from tbl_cliente WHERE EMAIL = ?))";
+            String sql = "INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO, INDIRIZZO_SPEDIZIONE) VALUES ('EMPTY', 0, (SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?), (SELECT VIA from tbl_cliente WHERE EMAIL = ?))";
             try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
-                preparedStatement.setString(1, cartId);
+                preparedStatement.setString(1, userEmail);
                 preparedStatement.setString(2, userEmail);
-                preparedStatement.setString(3, userEmail);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 
@@ -131,13 +130,13 @@ public class OrderQuery {
         return false;
     }
 
-    public boolean updateOrder(String idOrdine, int numeroOrdine, String filialeInCarico, String corriereInCarico, String statoOrdine) {
+    public boolean updateOrder(int id, int numeroOrdine, String filialeInCarico, String corriereInCarico, String statoOrdine) {
         try {
             c.getDBConn();
             String sql = "UPDATE tbl_cliente c\n" +
                     "JOIN tbl_carrello ca ON c.EMAIL = ca.EMAIL_CLIENTE\n" +
                     "JOIN tbl_ordine o ON ca.ID = o.ID_CARRELLO\n" +
-                    "JOIN tbl_gestito_da gda ON o.ID_ORDINE = gda.CODICE_ORDINE\n" +
+                    "JOIN tbl_gestito_da gda ON o.ID = gda.CODICE_ORDINE\n" +
                     "JOIN tbl_filiale f ON gda.ID_FILIALE = f.CODICE_ZONA_FILIALE\n" +
                     "JOIN tbl_emette_spedizione ems ON f.CODICE_ZONA_FILIALE = ems.CODICE_ZONA_FILIALE\n" +
                     "JOIN tbl_spedizione s ON ems.NUMERO_TRACCIAMENTO = s.NUMERO_TRACCIAMENTO\n" +
@@ -148,14 +147,14 @@ public class OrderQuery {
                     "    o.STATO_ORDINE = ?,\n" +
                     "    f.NOME_FILIALE = ?,\n" +
                     "    cor.NOME = ?\n" +
-                    "WHERE o.ID_ORDINE = ?";
+                    "WHERE o.ID = ?";
             try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
                 preparedStatement.setInt(1, numeroOrdine);
                 preparedStatement.setString(2, statoOrdine);
                 preparedStatement.setString(3, filialeInCarico);
                 preparedStatement.setString(4, corriereInCarico);
-                preparedStatement.setString(5, idOrdine);
+                preparedStatement.setInt(5, id);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 
@@ -175,13 +174,13 @@ public class OrderQuery {
         return false;
     }
 
-    public boolean deleteOrder(String idOrdine) {
+    public boolean deleteOrder(int id) {
         c.getDBConn();
-        String sql = "DELETE FROM tbl_ordine WHERE ID_ORDINE = ?";
+        String sql = "DELETE FROM tbl_ordine WHERE ID = ?";
 
         try(PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
 
-            preparedStatement.setString(1, idOrdine);
+            preparedStatement.setInt(1, id);
             int rowsDeleted = preparedStatement.executeUpdate();
 
             return rowsDeleted > 0;

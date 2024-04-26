@@ -18,7 +18,7 @@
       <Button fx:id="logoutButton" layoutX="1172.0" layoutY="17.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
       <TableView fx:id="orderList" layoutX="651.0" layoutY="138.0" prefHeight="582.0" prefWidth="610.0" stylesheets="@styles/style.css">
         <columns>
-          <TableColumn fx:id="statusOrder_ID" prefWidth="75.0" text="ID ORDINE" />
+          <TableColumn fx:id="statusOrder_ID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="statusOrder_ORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />
             <TableColumn fx:id="statusOrder_DESTINAZIONE" prefWidth="75.0" text="DESTINAZIONE" />
             <TableColumn fx:id="statusOrder_STATO_ORDINE" prefWidth="75.0" text="STATO ORDINE" />

@@ -282,158 +282,158 @@ INSERT INTO tbl_prodotto (NOME_PRODOTTO, PREZZO_PRODOTTO, QUANTITA,
                                                                          15, 'Italia', 'FRNT-00-Z00200040RM', 'ZNT-BSC');
 
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-03', 25, 299.99,
-                                                                   'alessio.ferri@outlook.com', 'CRT - 0001');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-03', 25, 299.99,
+                                                                   'alessio.ferri@outlook.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-03', 15, 199.99,
-                                                                   'anna.russo@gmail.com', 'CRT - 0002');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-03', 15, 199.99,
+                                                                   'anna.russo@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-04', 10, 100,
-                                                                   'davide.barbieri@outlook.com', 'CRT - 0003');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-04', 10, 100,
+                                                                   'davide.barbieri@outlook.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-01', 5, 25.79,
-                                                                   'elena.fabbri@gmail.com', 'CRT - 0004');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-01', 5, 25.79,
+                                                                   'elena.fabbri@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-28', 19, 75.99,
-                                                                   'francesca.rizzo@gmail.com', 'CRT - 0005');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-28', 19, 75.99,
+                                                                   'francesca.rizzo@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-18', 7, 33.25,
-                                                                   'gennaro.verdi@gmail.com', 'CRT - 0006');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-18', 7, 33.25,
+                                                                   'gennaro.verdi@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-16', 21, 175.22,
-                                                                   'giovanna.verdi@libero.it', 'CRT - 0007');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-16', 21, 175.22,
+                                                                   'giovanna.verdi@libero.it');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-25', 3, 28.99,
-                                                                   'roberto.moretti@libero.it', 'CRT - 0008');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-25', 3, 28.99,
+                                                                   'roberto.moretti@libero.it');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-03-11', 5, 55.97,
-                                                                   'giovanni.mancini@outlook.com', 'CRT - 0009');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-03-11', 5, 55.97,
+                                                                   'giovanni.mancini@outlook.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-15', 10, 95.66,
-                                                                   'paola.ferrari@outlook.com', 'CRT - 0010');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-15', 10, 95.66,
+                                                                   'paola.ferrari@outlook.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-03', 14, 150.99,
-                                                                   'giuseppe.verdi@gmail.com', 'CRT - 0011');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-03', 14, 150.99,
+                                                                   'giuseppe.verdi@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-03', 6, 59.99,
-                                                                   'laura.conti@gmail.com', 'CRT - 0012');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-03', 6, 59.99,
+                                                                   'laura.conti@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-04', 19, 211.33,
-                                                                   'mario.rossi@gmail.com', 'CRT - 0013');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-04', 19, 211.33,
+                                                                   'mario.rossi@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-01', 3, 35.79,
-                                                                   'martina.lombardi@gmail.com', 'CRT - 0014');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-01', 3, 35.79,
+                                                                   'martina.lombardi@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-28', 10, 55.99,
-                                                                   'massimo.ricci@outlook.com', 'CRT - 0015');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-28', 10, 55.99,
+                                                                   'massimo.ricci@outlook.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-18', 13, 35.25,
-                                                                   'sergio.gatti@libero.it', 'CRT - 0016');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-18', 13, 35.25,
+                                                                   'sergio.gatti@libero.it');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-05-16', 12, 65.22,
-                                                                   'silvia.caruso@gmail.com', 'CRT - 0017');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-05-16', 12, 65.22,
+                                                                   'silvia.caruso@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-25', 9, 37.99,
-                                                                   'simona.marino@gmail.com', 'CRT - 0018');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-25', 9, 37.99,
+                                                                   'simona.marino@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-15', 7, 28.79,
-                                                                   'ernesto.brancaccio@gmail.com', 'CRT - 0019');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-15', 7, 28.79,
+                                                                   'ernesto.brancaccio@gmail.com');
 INSERT INTO tbl_carrello (DATA_ACQUISTO, QUANTITA_PRODOTTO,
-                          PREZZO_TOTALE, EMAIL_CLIENTE, ID) VALUES(DATE '2023-04-15', 2, 11.66,
-                                                                   'valentina.marchetti@gmail.com', 'CRT - 0020');
+                          PREZZO_TOTALE, EMAIL_CLIENTE) VALUES(DATE '2023-04-15', 2, 11.66,
+                                                                   'valentina.marchetti@gmail.com');
 
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-001', 'INVOICE-001-MI', 1, 'CRT - 0001', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-MI', 1, 1, 'Via
 Miano 23, Milano');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-002', 'INVOICE-002-NA', 1, 'CRT - 0002', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-NA', 1, 2, 'Via
 Domenico Fontana, Napoli');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-003', 'INVOICE-001-RM', 1, 'CRT - 0003', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-RM', 1, 3, 'Via
 delle Rose, Roma');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-004', 'INVOICE-001-NA', 1, 'CRT - 0004', 'Piazza
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-NA', 1, 4, 'Piazza
 del Plebiscito, 1, Napoli');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-005', 'INVOICE-001-FI', 1, 'CRT - 0005', 'Via del
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-FI', 1, 5, 'Via del
 Corso, 123, Firenze');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-006', 'INVOICE-001-BO', 1, 'CRT - 0006', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-BO', 1, 6, 'Via
 Indipendenza, 15, Bologna');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-007', 'INVOICE-002-FI', 1, 'CRT - 0007',
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-FI', 1, 7,
                                                      'Lungarno degli Acciaiuoli, 10, Firenze');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-008', 'INVOICE-001-CT', 1, 'CRT - 0008', 'via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-CT', 1, 8, 'via
 degli Specchi, 1/C, Caltanissetta');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-009', 'INVOICE-001-TP', 1, 'CRT - 0009', 'via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-TP', 1, 9, 'via
 della Vittoria, 15, Trapani');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-010', 'INVOICE-001-TO', 1, 'CRT - 0010', 'via dei
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-001-TO', 1, 10, 'via dei
 Monti, 22, Torino');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-011', 'INVOICE-002-MI', 1, 'CRT - 0011', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-MI', 1, 11, 'Via
 Roma,10, Milano');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-012', 'INVOICE-003-NA', 1, 'CRT - 0012', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-003-NA', 1, 12, 'Via
 delle Grazie,5, Napoli');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-013', 'INVOICE-002-RM', 1, 'CRT - 0013', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-RM', 1, 13, 'Via
 Appia,123, Roma');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-014', 'INVOICE-004-NA', 1, 'CRT - 0014', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-004-NA', 1, 14, 'Via
 Toledo, 75, Napoli');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-015', 'INVOICE-003-FI', 1, 'CRT - 0015', 'Via del
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-003-FI', 1, 15, 'Via del
 Corso, 123, Firenze');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-016', 'INVOICE-002-BO', 1, 'CRT - 0016', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-BO', 1, 16, 'Via
 della Repubblica, 30, Bologna');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-017', 'INVOICE-004-PA', 1, 'CRT - 0017', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-004-PA', 1, 17, 'Via
 Epomeo, 15, Palermo');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-018', 'INVOICE-002-TR', 1, 'CRT - 0018', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-002-TR', 1, 18, 'Via
 Zerbin, 2/D, Treviso');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-019', 'INVOICE-004-FI', 1, 'CRT - 0019', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-004-FI', 1, 19, 'Via
 Delle Belle Donne, 22, Firenze');
-INSERT INTO tbl_ordine (ID_ORDINE, FATTURA, NUMERO_ORDINE, ID_CARRELLO,
-                        INDIRIZZO_SPEDIZIONE) VALUES('ORD-020', 'INVOICE-003-MI', 1, 'CRT - 0020', 'Via
+INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO,
+                        INDIRIZZO_SPEDIZIONE) VALUES('INVOICE-003-MI', 1, 20, 'Via
 Principale, 1, Milano');
 
 INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES
-                                                           ('PRD-CCBXCOFFEE', 'CRT - 0001'),
-                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0002'),
-                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0003'),
-                                                           ('JM-BAS', 'CRT - 0004'),
-                                                           ('DLY-BCGOLD', 'CRT - 0005'),
-                                                           ('MLT-BCSJ', 'CRT - 0006'),
-                                                           ('PLL-BLUX', 'CRT - 0007'),
-                                                           ('MLT-BBCF', 'CRT - 0001'),
-                                                           ('TCH-BRM', 'CRT - 0004'),
-                                                           ('PRD-CCMBXCOFFEE', 'CRT - 0005'),
-                                                           ('MLT-BBCF', 'CRT - 0007'),
-                                                           ('PLL-BDEF', 'CRT - 0005'),
-                                                           ('LVZ-BGE', 'CRT - 0004'),
-                                                           ('KMB-BGOLD', 'CRT - 0007'),
-                                                           ('KMB-BTF', 'CRT - 0003'),
-                                                           ('JM-BAS', 'CRT - 0008'),
-                                                           ('LVZ-BCEG', 'CRT - 0009'),
-                                                           ('KMB-BTF', 'CRT - 0010'),
-                                                           ('KMB-BTF', 'CRT - 0011'),
-                                                           ('ILY-BIDCF', 'CRT - 0012'),
-                                                           ('KMB-BTF', 'CRT - 0013'),
-                                                           ('ILY-BIDCF', 'CRT - 0014'),
-                                                           ('JM-BPLT', 'CRT - 0014'),
-                                                           ('LVZ-BCEG', 'CRT - 0015'),
-                                                           ('LVZ-QRED', 'CRT - 0016'),
-                                                           ('JM-BAS', 'CRT - 0017'),
-                                                           ('KMB-BTF', 'CRT - 0018'),
-                                                           ('LVZ-QRED', 'CRT - 0019'),
-                                                           ('VRG-BBDF', 'CRT - 0019'),
-                                                           ('LVZ-BCEG', 'CRT - 0020');
+                                                           ('PRD-CCBXCOFFEE', 1),
+                                                           ('PRD-CCMBXCOFFEE', 2),
+                                                           ('PRD-CCMBXCOFFEE', 3),
+                                                           ('JM-BAS', 4),
+                                                           ('DLY-BCGOLD', 5),
+                                                           ('MLT-BCSJ', 6),
+                                                           ('PLL-BLUX', 7),
+                                                           ('MLT-BBCF', 1),
+                                                           ('TCH-BRM', 4),
+                                                           ('PRD-CCMBXCOFFEE', 5),
+                                                           ('MLT-BBCF', 7),
+                                                           ('PLL-BDEF', 5),
+                                                           ('LVZ-BGE', 4),
+                                                           ('KMB-BGOLD', 7),
+                                                           ('KMB-BTF', 3),
+                                                           ('JM-BAS', 8),
+                                                           ('LVZ-BCEG', 9),
+                                                           ('KMB-BTF', 10),
+                                                           ('KMB-BTF', 11),
+                                                           ('ILY-BIDCF', 12),
+                                                           ('KMB-BTF', 13),
+                                                           ('ILY-BIDCF', 14),
+                                                           ('JM-BPLT', 14),
+                                                           ('LVZ-BCEG', 15),
+                                                           ('LVZ-QRED', 16),
+                                                           ('JM-BAS', 17),
+                                                           ('KMB-BTF', 18),
+                                                           ('LVZ-QRED', 19),
+                                                           ('VRG-BBDF', 19),
+                                                           ('LVZ-BCEG', 20);
 
 
 INSERT INTO tbl_corriere (P_IVA, NOME, TELEFONO, EMAIL) VALUES
@@ -444,26 +444,26 @@ INSERT INTO tbl_corriere (P_IVA, NOME, TELEFONO, EMAIL) VALUES
 
 
 INSERT INTO tbl_gestito_da (ID_FILIALE, CODICE_ORDINE) VALUES
-                                                           ('Z003', 'ORD-001'),
-                                                           ('Z001', 'ORD-002'),
-                                                           ('Z002', 'ORD-003'),
-                                                           ('Z001', 'ORD-004'),
-                                                           ('Z004', 'ORD-005'),
-                                                           ('Z004', 'ORD-006'),
-                                                           ('Z001', 'ORD-007'),
-                                                           ('Z005', 'ORD-008'),
-                                                           ('Z005', 'ORD-009'),
-                                                           ('Z003', 'ORD-010'),
-                                                           ('Z003', 'ORD-011'),
-                                                           ('Z001', 'ORD-012'),
-                                                           ('Z002', 'ORD-013'),
-                                                           ('Z001', 'ORD-014'),
-                                                           ('Z004', 'ORD-015'),
-                                                           ('Z003', 'ORD-016'),
-                                                           ('Z005', 'ORD-017'),
-                                                           ('Z003', 'ORD-018'),
-                                                           ('Z004', 'ORD-019'),
-                                                           ('Z003', 'ORD-020');
+                                                           ('Z003', 1),
+                                                           ('Z001', 2),
+                                                           ('Z002', 3),
+                                                           ('Z001', 4),
+                                                           ('Z004', 5),
+                                                           ('Z004', 6),
+                                                           ('Z001', 7),
+                                                           ('Z005', 8),
+                                                           ('Z005', 9),
+                                                           ('Z003', 10),
+                                                           ('Z003', 11),
+                                                           ('Z001', 12),
+                                                           ('Z002', 13),
+                                                           ('Z001', 14),
+                                                           ('Z004', 15),
+                                                           ('Z003', 16),
+                                                           ('Z005', 17),
+                                                           ('Z003', 18),
+                                                           ('Z004', 19),
+                                                           ('Z003', 20);
 
 INSERT INTO tbl_spedizione (NUMERO_TRACCIAMENTO, P_IVA_CORRIERE, NUMERO_ORDINE, DATA_PARTENZA, DATA_ARRIVO)
 VALUES

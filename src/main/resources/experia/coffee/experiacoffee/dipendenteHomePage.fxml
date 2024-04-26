@@ -51,7 +51,7 @@
       </Label>
       <TableView fx:id="orderList" layoutX="15.0" layoutY="486.0" prefHeight="300.0" prefWidth="1250.0" stylesheets="@styles/style.css">
         <columns>
-          <TableColumn fx:id="colID_ORDINE" prefWidth="75.0" text="ID ORDINE" />
+          <TableColumn fx:id="colID_ORDINE" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colNUMERO_ORDINE" prefWidth="75.0" text="NUMERO ORDINE" />
             <TableColumn fx:id="colORDINATO_DA" prefWidth="75.0" text="ORDINATO DA" />
             <TableColumn fx:id="colDESTINAZIONE" prefWidth="75.0" text="DESTINAZIONE" />
@@ -93,7 +93,7 @@
             <TextField fx:id="updateOrder_NUMERO_ORDINE" promptText="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="updateOrder_FILIALE_IN_CARICO" layoutX="199.0" layoutY="10.0" promptText="Experia Coffee Naples" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="updateOrder_CORRIERE_IN_CARICO" layoutX="199.0" layoutY="34.0" promptText="BRT S.P.A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label prefHeight="66.0" prefWidth="189.0" text="ID Ordine" textFill="#fffdd0">
+            <Label prefHeight="66.0" prefWidth="189.0" text="ID" textFill="#fffdd0">
                <font>
                   <Font size="18.0" />
                </font>

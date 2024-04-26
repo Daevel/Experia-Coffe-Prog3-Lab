@@ -38,7 +38,7 @@ public class DipendenteHomePage implements Initializable {
     public TableView<Ordine> orderList = new TableView<>();
 
     @FXML
-    public TableColumn<Ordine, String> colID_ORDINE;
+    public TableColumn<Ordine, Integer> colID_ORDINE;
 
     @FXML
     public TableColumn<Ordine, String> colORDINATO_DA;
@@ -152,7 +152,7 @@ public class DipendenteHomePage implements Initializable {
     public void showOrderList() {
         experia.coffee.experiacoffee.data.OrderQuery query = new experia.coffee.experiacoffee.data.OrderQuery();
         ObservableList<Ordine> list = query.getOrderList();
-        colID_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("ID_ORDINE"));
+        colID_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, Integer>("ID"));
         colNUMERO_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, Integer>("NUMERO_ORDINE"));
         colORDINATO_DA.setCellValueFactory(new PropertyValueFactory<Ordine, String>("ORDINATO_DA"));
         colDESTINAZIONE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("DESTINAZIONE"));
@@ -193,7 +193,7 @@ public class DipendenteHomePage implements Initializable {
             experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
 
             int orderNumber = Integer.parseInt(updateOrder_NUMERO_ORDINE.getText());
-            String idOrdine = updateOrder_ID_ORDINE.getText();
+            int idOrdine = Integer.parseInt(updateOrder_ID_ORDINE.getText());
             String filialeInCarico = updateOrder_FILIALE_IN_CARICO.getText();
             String corriereInCarico = updateOrder_CORRIERE_IN_CARICO.getText();
             String statoOrdine = statusSelected;

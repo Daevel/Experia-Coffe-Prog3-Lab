@@ -10,7 +10,9 @@ public class Constants {
 
     public static final String SIGNUP = "Registrazione";
     public static final String SIGNUP_CORRECT = "Registrazione effettuata con successo, redirect in corso...";
-    public static final String SIGNUP_ERROR = "Registrazione fallita. Esiste già un account con questa email, riprovare con un'altra email.";
+    public static final String SIGNUP_ERROR_EMAIL_ALREADY_EXIST = "Registrazione fallita. Esiste già un account con questa email, riprovare con un'altra email.";
+    public static final String SIGNUP_ERROR_EMAIL_PATTERN_INVALID = "Registrazione fallita. L'email inserita non rispetta i criteri validi. Riprovare.";
+    public static final String SIGNUP_ERROR_EMAIL_PASSWORD_MISMATCH = "Registrazioe fallita. Le password inserite non coincidono, riprovare.";
 
     public static final String LOGOUT = "Logout";
     public static final String LOGOUT_SUCCESS = "Logout in corso, arrivederci.";

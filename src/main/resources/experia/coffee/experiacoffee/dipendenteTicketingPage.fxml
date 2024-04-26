@@ -38,7 +38,7 @@
             <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogout" prefHeight="40.0" prefWidth="90.0" styleClass="logout-button" stylesheets="@styles/style.css" text="Logout" textFill="WHITE" />
             <Button fx:id="profilePageButton" mnemonicParsing="false" onAction="#goToProfilePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Profile" />
             <Button fx:id="homePageButton" layoutX="104.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="40.0" prefWidth="90.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Home" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="942.0">
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="40.0" prefWidth="900.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

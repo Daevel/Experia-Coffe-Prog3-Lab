@@ -8,6 +8,7 @@ import experia.coffee.experiacoffee.model.SceneSwitch;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.utils.PopupWindow;
 import experia.coffee.experiacoffee.utils.PopupWindowError;
+import experia.coffee.experiacoffee.validation.EmailValidation;
 import experia.coffee.experiacoffee.validation.PasswordValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -91,55 +92,50 @@ public class SignUpController implements Initializable {
     @FXML
     public void onSignUp() throws IOException {
         if(PasswordValidation.checkPasswordIntegrity(pwd.getText(), repeatPwd.getText())) {
-            Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
-                    .setNAME(name.getText())
-                    .setSURNAME(surname.getText())
-                    .setCELLULARE(phoneNumber.getText())
-                    .setVIA(streetAddress.getText())
-                    .setN_CIVICO(streetNumber.getText())
-                    .setCITTA(city.getText())
-                    .setCAP(postalCode.getText())
-                    .setNUM_CARTA(cardNumber.getText())
-                    .setCVV_CARTA(cvvNumber.getText())
-                    .setINTESTATARIO_CARTA(cardOwner.getText())
-                    .setSCADENZA_CARTA(expirationDate.getValue().toString())
-                    .setCODICE_FISCALE(fiscalCode.getText())
-                    .setDATA_DI_NASCITA(birthDate.getValue().toString());
-            experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
+            if(EmailValidation.patternMatches(email.getText())) {
+                Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
+                        .setNAME(name.getText())
+                        .setSURNAME(surname.getText())
+                        .setCELLULARE(phoneNumber.getText())
+                        .setVIA(streetAddress.getText())
+                        .setN_CIVICO(streetNumber.getText())
+                        .setCITTA(city.getText())
+                        .setCAP(postalCode.getText())
+                        .setNUM_CARTA(cardNumber.getText())
+                        .setCVV_CARTA(cvvNumber.getText())
+                        .setINTESTATARIO_CARTA(cardOwner.getText())
+                        .setSCADENZA_CARTA(expirationDate.getValue().toString())
+                        .setCODICE_FISCALE(fiscalCode.getText())
+                        .setDATA_DI_NASCITA(birthDate.getValue().toString());
+                experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
 
-            boolean signUpSuccess = query.signUpUser(utente.build());
+                boolean signUpSuccess = query.signUpUser(utente.build());
 
-            if (signUpSuccess) {
-                experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
-                int retrieveUserID = userQuery.getUserID(utente.build());
-                    if (retrieveUserID != -1) {
-                        createCart(retrieveUserID, email.getText());
-
-                        // mostra messaggio di alert
+                if (signUpSuccess) {
+                    experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
+                        createCart(email.getText());
                         PopupWindow.showAlert(Alert.AlertType.INFORMATION,Constants.SIGNUP_CORRECT, Constants.SIGNUP);
-
-                            try {
-                                new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
-                            } catch (IOException ex) {
-                                throw new RuntimeException(ex);
-                            }
-
-                    } else {
-                        System.out.println("retrieveUserID ha riportato un valore di -1");
-                    }
+                        try {
+                            new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
+                        } catch (IOException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                } else {
+                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR,Constants.SIGNUP_ERROR_EMAIL_ALREADY_EXIST, Constants.SIGNUP);
+                }
             } else {
-                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR,Constants.SIGNUP_ERROR, Constants.SIGNUP);
+                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_ERROR_EMAIL_PATTERN_INVALID, Constants.SIGNUP);
             }
         } else {
+            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_ERROR_EMAIL_PASSWORD_MISMATCH, Constants.SIGNUP);
             errorMismatchPassword.setVisible(true);
             errorMismatchPassword.setText("Le password devono coincidere");
         }
     }
 
-    private void createCart(int userID, String userEmail) {
-        String cartId = "CRT - " + userID;
+    private void createCart(String userEmail) {
         experia.coffee.experiacoffee.data.CartQuery query = new CartQuery();
-        query.createCart(cartId, userEmail);
+        query.createCart(userEmail);
     }
 
 }

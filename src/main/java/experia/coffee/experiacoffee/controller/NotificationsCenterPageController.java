@@ -37,7 +37,7 @@ public class NotificationsCenterPageController implements Initializable {
     public TableView<Ordine> orderList = new TableView<>();
 
     @FXML
-    public TableColumn<Ordine, String> statusOrder_ID;
+    public TableColumn<Ordine, Integer> statusOrder_ID;
 
     @FXML
     public TableColumn<Ordine, String> statusOrder_ORDINATO_DA;
@@ -144,7 +144,7 @@ public class NotificationsCenterPageController implements Initializable {
         experia.coffee.experiacoffee.data.OrderQuery query = new experia.coffee.experiacoffee.data.OrderQuery();
         ObservableList<Ordine> list = query.getOrderListByClient(emailUser);
 
-        statusOrder_ID.setCellValueFactory(new PropertyValueFactory<Ordine, String>("ID_ORDINE"));
+        statusOrder_ID.setCellValueFactory(new PropertyValueFactory<Ordine, Integer>("ID"));
         statusOrder_ORDINATO_DA.setCellValueFactory(new PropertyValueFactory<Ordine, String>("ORDINATO_DA"));
         statusOrder_DESTINAZIONE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("DESTINAZIONE"));
         statusOrder_STATO_ORDINE.setCellValueFactory(new PropertyValueFactory<Ordine, String>("STATO_ORDINE"));

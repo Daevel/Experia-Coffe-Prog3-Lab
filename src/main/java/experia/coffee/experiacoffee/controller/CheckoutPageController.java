@@ -47,8 +47,13 @@ public class CheckoutPageController implements Initializable {
     @FXML
     public void onSubmitOrder() throws IOException {
         String email = singletonUser.getEMAIL();
-        String cartID = retrieveCartID(email);
-        createOrder(cartID, email);
+        //String cartID = retrieveCartID(email);
+        experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
+        boolean isOrderSuccessful = query.createOrder(email);
+        if (isOrderSuccessful) {
+            new SceneSwitch(checkoutPane, "thanksPageAfterOrder.fxml");
+        }
+        System.out.println("Errore nella creazione dell'ordine");
     }
 
     @Override
@@ -89,16 +94,6 @@ public class CheckoutPageController implements Initializable {
     private float calculateIVA(float subTotale) {
        final int IVA_PERCENTAGE = 20;
        return (subTotale * IVA_PERCENTAGE)/(100);
-    }
-
-    private void createOrder(String userID, String userEmail) throws IOException {
-        String cartId = "ORD - 00" + userID;
-        experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
-        boolean isOrderSuccessful = query.createOrder(cartId, userEmail);
-        if (isOrderSuccessful) {
-            new SceneSwitch(checkoutPane, "thanksPageAfterOrder.fxml");
-        }
-        System.out.println("Errore nella creazione dell'ordine");
     }
 
     private String retrieveCartID(String userEmail) {
