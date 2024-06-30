@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="clienteTicketingAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.ClienteTicketingPageController">
    <children>
       <Label alignment="CENTER" layoutY="14.0" prefHeight="45.0" prefWidth="1280.0" text="Assitenza clienti" textFill="#fffdd0">
@@ -16,84 +15,84 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Text fill="#fffdd0" layoutX="172.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compila il seguente form per inviare un ticket d'assistenza. I nostri tecnici ti risponderanno nel minor tempo possibile." wrappingWidth="534.13671875">
+      <Text fill="#fffdd0" layoutX="169.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compila il seguente form per inviare un ticket d'assistenza. I nostri tecnici ti risponderanno nel minor tempo possibile." wrappingWidth="936.0">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="ticketTitle" layoutX="172.0" layoutY="280.0" prefHeight="25.0" prefWidth="936.0" promptText="1 - Assistenza al mio account...">
+      <TextField fx:id="ticketTitle" layoutX="174.0" layoutY="179.0" prefHeight="25.0" prefWidth="936.0" promptText="1 - Assistenza al mio account...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="169.0" layoutY="253.0" text="Oggetto" textFill="#fffdd0">
+      <Label layoutX="171.0" layoutY="152.0" text="Oggetto" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="172.0" layoutY="332.0" text="Descrizione" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="231.0" text="Descrizione" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="ticketDescription" layoutX="172.0" layoutY="359.0" prefHeight="142.0" prefWidth="936.0" promptText="massimo 255 carratteri...">
+      <TextArea fx:id="ticketDescription" layoutX="174.0" layoutY="258.0" prefHeight="142.0" prefWidth="936.0" promptText="massimo 255 carratteri...">
          <font>
             <Font size="18.0" />
          </font>
       </TextArea>
-      <Button fx:id="sendTicketRequest" layoutX="1152.0" layoutY="736.0" mnemonicParsing="false" onAction="#onSendTicket" prefHeight="38.0" prefWidth="102.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Invia richiesta" />
+      <Button fx:id="sendTicketRequest" layoutX="1152.0" layoutY="697.0" mnemonicParsing="false" onAction="#onSendTicket" prefHeight="38.0" prefWidth="102.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Invia richiesta" />
       <Button fx:id="goBack" layoutX="1209.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="38.0" prefWidth="45.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="X" />
-      <Text fill="#fffdd0" layoutX="172.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ecco una piccola legenda che potrebbe aiutarti:" wrappingWidth="381.13671875">
+      <Text fill="#fffdd0" layoutX="174.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ecco una piccola legenda che potrebbe aiutarti:" wrappingWidth="381.13671875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Label layoutX="172.0" layoutY="574.0" prefHeight="20.0" prefWidth="173.0" text="Codice" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="487.0" prefHeight="20.0" prefWidth="173.0" text="Codice" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="574.0" prefHeight="20.0" prefWidth="192.0" text="Denominazione" textFill="#fffdd0">
+      <Label layoutX="359.0" layoutY="487.0" prefHeight="20.0" prefWidth="192.0" text="Denominazione" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="172.0" layoutY="619.0" prefHeight="20.0" prefWidth="173.0" text="1" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="532.0" prefHeight="20.0" prefWidth="173.0" text="1" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="619.0" prefHeight="20.0" prefWidth="200.0" text="ASSISTENZA SUGLI ACQUISTI" textFill="#fffdd0">
+      <Label layoutX="359.0" layoutY="532.0" prefHeight="20.0" prefWidth="200.0" text="ASSISTENZA SUGLI ACQUISTI" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="664.0" prefHeight="20.0" prefWidth="192.0" text="ASSISTENZA SUGLI ORDINI" textFill="#fffdd0">
+      <Label layoutX="359.0" layoutY="577.0" prefHeight="20.0" prefWidth="192.0" text="ASSISTENZA SUGLI ORDINI" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="709.0" prefHeight="20.0" prefWidth="206.0" text="ASSISTENZA TRACCIAMENTO" textFill="#fffdd0">
+      <Label layoutX="359.0" layoutY="622.0" prefHeight="20.0" prefWidth="270.0" text="ASSISTENZA TRACCIAMENTO ORDINE/I" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="172.0" layoutY="664.0" prefHeight="20.0" prefWidth="173.0" text="2" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="577.0" prefHeight="20.0" prefWidth="173.0" text="2" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="172.0" layoutY="709.0" prefHeight="20.0" prefWidth="173.0" text="3" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="622.0" prefHeight="20.0" prefWidth="173.0" text="3" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="172.0" layoutY="754.0" prefHeight="20.0" prefWidth="173.0" text="4" textFill="#fffdd0">
+      <Label layoutX="174.0" layoutY="667.0" prefHeight="20.0" prefWidth="173.0" text="4" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="754.0" prefHeight="20.0" prefWidth="206.0" text="ASSISTENZA ACCOUNT" textFill="#fffdd0">
+      <Label layoutX="359.0" layoutY="667.0" prefHeight="20.0" prefWidth="206.0" text="ASSISTENZA ACCOUNT" textFill="#fffdd0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
