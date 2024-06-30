@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="fixed latest issues about StatusImpl">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="fixed ticketing page layout for clients">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteTicketingPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/clienteTicketingPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/dipendenteHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/loginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/profilePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/profilePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/signUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/thanksPageAfterOrder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/experia/coffee/experiacoffee/thanksPageAfterOrder.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713721405971</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed ticketing page layout for clients">
+      <option name="closed" value="true" />
+      <created>1719743526924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719743526924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +248,7 @@
     <MESSAGE value="changed TextLabel for expirationDate and birthDate into Datepicker Type for SignUpController" />
     <MESSAGE value="implemented Ticket State Pattern&#10;- Ticket Queries related&#10;- Ticketing page for client and employee&#10;- added decimalFormatter to totalePagato" />
     <MESSAGE value="fixed some issues about DipendenteHomePage and its status" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some issues about DipendenteHomePage and its status" />
+    <MESSAGE value="fixed ticketing page layout for clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed ticketing page layout for clients" />
   </component>
 </project>

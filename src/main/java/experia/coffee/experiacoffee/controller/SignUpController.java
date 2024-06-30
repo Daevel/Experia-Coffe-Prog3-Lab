@@ -81,6 +81,10 @@ public class SignUpController implements Initializable {
     @FXML
     public Button cancelButton;
 
+    /* CHECKBOX TRATTAMENTO DATI PERSONALI */
+    @FXML
+    public CheckBox personalDataAgreement;
+
     @FXML
     public Label errorMismatchPassword;
 
@@ -93,26 +97,27 @@ public class SignUpController implements Initializable {
     public void onSignUp() throws IOException {
         if(PasswordValidation.checkPasswordIntegrity(pwd.getText(), repeatPwd.getText())) {
             if(EmailValidation.patternMatches(email.getText())) {
-                Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
-                        .setNAME(name.getText())
-                        .setSURNAME(surname.getText())
-                        .setCELLULARE(phoneNumber.getText())
-                        .setVIA(streetAddress.getText())
-                        .setN_CIVICO(streetNumber.getText())
-                        .setCITTA(city.getText())
-                        .setCAP(postalCode.getText())
-                        .setNUM_CARTA(cardNumber.getText())
-                        .setCVV_CARTA(cvvNumber.getText())
-                        .setINTESTATARIO_CARTA(cardOwner.getText())
-                        .setSCADENZA_CARTA(expirationDate.getValue().toString())
-                        .setCODICE_FISCALE(fiscalCode.getText())
-                        .setDATA_DI_NASCITA(birthDate.getValue().toString());
-                experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
+                if(personalDataAgreement.isSelected()) {
+                    Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
+                            .setNAME(name.getText())
+                            .setSURNAME(surname.getText())
+                            .setCELLULARE(phoneNumber.getText())
+                            .setVIA(streetAddress.getText())
+                            .setN_CIVICO(streetNumber.getText())
+                            .setCITTA(city.getText())
+                            .setCAP(postalCode.getText())
+                            .setNUM_CARTA(cardNumber.getText())
+                            .setCVV_CARTA(cvvNumber.getText())
+                            .setINTESTATARIO_CARTA(cardOwner.getText())
+                            .setSCADENZA_CARTA(expirationDate.getValue().toString())
+                            .setCODICE_FISCALE(fiscalCode.getText())
+                            .setDATA_DI_NASCITA(birthDate.getValue().toString());
+                    experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
 
-                boolean signUpSuccess = query.signUpUser(utente.build());
+                    boolean signUpSuccess = query.signUpUser(utente.build());
 
-                if (signUpSuccess) {
-                    experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
+                    if (signUpSuccess) {
+                        experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
                         createCart(email.getText());
                         PopupWindow.showAlert(Alert.AlertType.INFORMATION,Constants.SIGNUP_CORRECT, Constants.SIGNUP);
                         try {
@@ -120,8 +125,11 @@ public class SignUpController implements Initializable {
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
                         }
+                    } else {
+                        PopupWindowError.showErrorAlert(Alert.AlertType.ERROR,Constants.SIGNUP_ERROR_EMAIL_ALREADY_EXIST, Constants.SIGNUP);
+                    }
                 } else {
-                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR,Constants.SIGNUP_ERROR_EMAIL_ALREADY_EXIST, Constants.SIGNUP);
+                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_MISSING_ACCEPT_TERMS_AND_POLICY, Constants.SIGNUP);
                 }
             } else {
                 PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_ERROR_EMAIL_PATTERN_INVALID, Constants.SIGNUP);

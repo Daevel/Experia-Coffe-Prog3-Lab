@@ -11,45 +11,53 @@
 
 <AnchorPane fx:id="scene2AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #6f4e37;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experia.coffee.experiacoffee.controller.LoginPageController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="244.0" prefHeight="99.0" prefWidth="1280.0" style="-fx-font-size: 30px;" text="Coffee, like never tasted before." textAlignment="CENTER" textFill="#fffdd0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="197.0" prefHeight="99.0" prefWidth="1280.0" style="-fx-font-size: 30px;" text="Coffee, like never tasted before." textAlignment="CENTER" textFill="#fffdd0">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <TextField fx:id="fieldUsername" layoutX="465.0" layoutY="417.0" prefHeight="64.0" prefWidth="357.0" promptText="Inserisci qui la tua email">
+      <TextField fx:id="fieldUsername" layoutX="466.0" layoutY="379.0" prefHeight="64.0" prefWidth="357.0" promptText="Inserisci qui la tua email">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <PasswordField fx:id="fieldPassword" layoutX="465.0" layoutY="525.0" prefHeight="64.0" prefWidth="357.0" promptText="Inserisci qui la tua password">
+      <PasswordField fx:id="fieldPassword" layoutX="466.0" layoutY="487.0" prefHeight="64.0" prefWidth="357.0" promptText="Inserisci qui la tua password">
          <font>
             <Font size="18.0" />
          </font></PasswordField>
-      <Label layoutX="464.0" layoutY="392.0" prefHeight="17.0" prefWidth="87.0" text="Username" textFill="#fffdd0">
+      <Label layoutX="465.0" layoutY="354.0" prefHeight="17.0" prefWidth="87.0" text="Username" textFill="#fffdd0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="464.0" layoutY="500.0" prefHeight="17.0" prefWidth="87.0" text="Password" textFill="#fffdd0">
+      <Label layoutX="465.0" layoutY="462.0" prefHeight="17.0" prefWidth="87.0" text="Password" textFill="#fffdd0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Button fx:id="loginButton" layoutX="465.0" layoutY="614.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="54.0" prefWidth="357.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Accedi">
+      <Button fx:id="loginButton" layoutX="466.0" layoutY="616.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="54.0" prefWidth="357.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Accedi">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="465.0" layoutY="678.0" prefHeight="20.0" prefWidth="357.0" text="oppure" textFill="#fffdd0">
+      <Label alignment="CENTER" layoutX="466.0" layoutY="685.0" prefHeight="20.0" prefWidth="357.0" text="oppure" textFill="#fffdd0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="signUpButton" layoutX="465.0" layoutY="708.0" mnemonicParsing="false" onAction="#openSignUpPage" prefHeight="54.0" prefWidth="357.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Registrati">
+      <Button fx:id="signUpButton" layoutX="465.0" layoutY="722.0" mnemonicParsing="false" onAction="#openSignUpPage" prefHeight="54.0" prefWidth="357.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Registrati">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <ImageView fitHeight="211.0" fitWidth="585.0" layoutX="538.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="174.0" fitWidth="162.0" layoutX="559.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/ExperiaFavicon.png" />
          </image>
       </ImageView>
-      <Label fx:id="errorInvalidCredentials" ellipsisString="" layoutX="467.0" layoutY="595.0" prefHeight="19.0" prefWidth="327.0" textFill="#fffdd0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="339.0" prefHeight="27.0" prefWidth="1280.0" text="Inserisci le credenziali per accedere" textAlignment="CENTER" textFill="#fffdd0">
+      <Label fx:id="errorInvalidCredentials" ellipsisString="" layoutX="466.0" layoutY="567.0" prefHeight="27.0" prefWidth="357.0" textFill="#fffdd0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="296.0" prefHeight="27.0" prefWidth="1280.0" text="Inserisci le credenziali per accedere" textAlignment="CENTER" textFill="#fffdd0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="1035.0" layoutY="762.0" prefHeight="27.0" prefWidth="231.0" text="v. 1.0.0" textAlignment="CENTER" textFill="#fffdd0">
          <font>
             <Font size="18.0" />
          </font>
