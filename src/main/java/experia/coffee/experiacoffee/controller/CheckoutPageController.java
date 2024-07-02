@@ -92,7 +92,7 @@ public class CheckoutPageController implements Initializable {
     }
 
     private float calculateIVA(float subTotale) {
-       final int IVA_PERCENTAGE = 20;
+       final int IVA_PERCENTAGE = 22;
        return (subTotale * IVA_PERCENTAGE)/(100);
     }
 

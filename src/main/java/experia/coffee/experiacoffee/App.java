@@ -19,6 +19,7 @@ public class App extends Application {
     private static final String USER = "root";
     private static final String PASSWORD = "";
     private static Scene scene;
+
     @Override
     public void start(Stage stage) throws IOException {
 

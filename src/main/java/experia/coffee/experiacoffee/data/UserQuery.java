@@ -75,7 +75,6 @@ public class UserQuery {
         return 0;
     }
 
-
     public boolean resetPassword (String email, String password, String role) {
         if(role.equalsIgnoreCase("cliente")) {
             try {
