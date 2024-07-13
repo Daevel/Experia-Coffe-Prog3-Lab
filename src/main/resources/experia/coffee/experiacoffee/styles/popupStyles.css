@@ -1,0 +1,65 @@
+/* popupStyles.css */
+
+/* Stile generale per tutti i popup */
+.root {
+    -fx-font-size: 14px;
+}
+
+/* Stile per gli errori */
+
+.error {
+    -fx-background-color: red;
+}
+.error > *.button-bar > *.container{
+    -fx-background-color: red;
+}
+.error > *.label.content{
+    -fx-text-fill: white;
+}
+.error:header *.header-panel{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+.error:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+}
+
+/* Stile per le informazioni */
+.info {
+    -fx-background-color: #6f4e37;
+}
+.info > *.button-bar > *.container{
+    -fx-background-color: #6f4e37;
+}
+.info > *.label.content{
+    -fx-text-fill: #fffdd0;
+}
+.info:header *.header-panel{
+    -fx-background-color: #6f4e37;
+    -fx-text-fill: #fffdd0;
+}
+.info:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-text-fill: #fffdd0;
+}
+
+/* Stile per i termini e condizioni */
+.term {
+    -fx-background-color: #d0eaff;
+}
+.term > *.button-bar > *.container{
+    -fx-background-color: #d0eaff;
+}
+.term > *.label.content{
+    -fx-text-fill: #333333;
+}
+.term:header *.header-panel{
+    -fx-background-color: #d0eaff;
+    -fx-text-fill: #333333;
+}
+.term:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-text-fill: #333333;
+}
+

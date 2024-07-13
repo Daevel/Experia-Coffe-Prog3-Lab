@@ -13,7 +13,10 @@ import experia.coffee.experiacoffee.validation.PasswordValidation;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -89,6 +92,9 @@ public class SignUpController implements Initializable {
     public Label errorMismatchPassword;
 
     @FXML
+    public Hyperlink termsAndConditionsExperiaCoffee;
+
+    @FXML
     public void returnLoginPage() throws IOException {
         new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
     }
@@ -144,6 +150,58 @@ public class SignUpController implements Initializable {
     private void createCart(String userEmail) {
         experia.coffee.experiacoffee.data.CartQuery query = new CartQuery();
         query.createCart(userEmail);
+    }
+
+    @FXML
+    private void openTermsAndConditions() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Termini e Condizioni");
+        alert.setHeaderText("Termini e Condizioni di Experia Coffee");
+
+        // Aggiungi l'icona alla finestra di dialogo
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(this.getClass().getResource("/experia/coffee/experiacoffee/assets/ExperiaFavicon.png").toString()));
+
+        // Apply CSS styling
+        alert.getDialogPane().getStylesheets().add(this.getClass().getResource("/experia/coffee/experiacoffee/styles/popupStyles.css").toString());
+        alert.getDialogPane().getStyleClass().add("term");
+
+        TextArea textArea = new TextArea(getTermsAndConditionsText());
+        textArea.setWrapText(true);
+        textArea.setEditable(false);
+        textArea.setPrefSize(400, 300);
+        alert.getDialogPane().setContent(textArea);
+        alert.showAndWait();
+    }
+
+    private String getTermsAndConditionsText() {
+        return "Termini e Condizioni di Experia Coffee\n\n" +
+                "1. Accettazione dei Termini\n" +
+                "Utilizzando il nostro sito web e acquistando prodotti dal nostro shop online, accetti i seguenti termini e condizioni. " +
+                "Si prega di leggere attentamente questi termini prima di effettuare qualsiasi acquisto.\n\n" +
+                "2. Prodotti\n" +
+                "Tutti i prodotti per il caffè venduti sul nostro sito sono descritti in modo accurato. Tuttavia, non garantiamo che le descrizioni " +
+                "dei prodotti siano complete, aggiornate o prive di errori. Le immagini dei prodotti sono solo a scopo illustrativo.\n\n" +
+                "3. Prezzi\n" +
+                "I prezzi dei prodotti sono indicati sul nostro sito web e possono essere soggetti a modifiche senza preavviso. " +
+                "I prezzi includono l'IVA, ma non includono le spese di spedizione, che saranno calcolate al momento del checkout.\n\n" +
+                "4. Pagamenti\n" +
+                "Accettiamo diversi metodi di pagamento, tra cui carte di credito e debito, PayPal e altri metodi specificati sul nostro sito. " +
+                "Il pagamento deve essere effettuato al momento dell'ordine.\n\n" +
+                "5. Spedizione\n" +
+                "Effettuiamo spedizioni in tutto il territorio nazionale. I tempi di consegna variano a seconda della località di destinazione. " +
+                "Non siamo responsabili per eventuali ritardi causati da eventi al di fuori del nostro controllo.\n\n" +
+                "6. Resi e Rimborsi\n" +
+                "Se non sei soddisfatto del tuo acquisto, puoi restituire i prodotti entro 14 giorni dalla data di ricezione per un rimborso completo. " +
+                "I prodotti devono essere restituiti nelle loro condizioni originali. Le spese di spedizione per i resi sono a carico del cliente.\n\n" +
+                "7. Privacy\n" +
+                "Il trattamento dei tuoi dati personali è regolato dalla nostra Informativa sulla Privacy, disponibile sul nostro sito web.\n\n" +
+                "8. Modifiche ai Termini\n" +
+                "Ci riserviamo il diritto di modificare questi termini e condizioni in qualsiasi momento. Le modifiche saranno pubblicate sul nostro sito web. " +
+                "Si consiglia di controllare periodicamente questa pagina per eventuali aggiornamenti.\n\n" +
+                "9. Contatti\n" +
+                "Per qualsiasi domanda o chiarimento sui nostri termini e condizioni, contattaci all'indirizzo email support@experiacoffee.com.\n\n" +
+                "Grazie per aver scelto Experia Coffee per i tuoi acquisti di prodotti per il caffè!";
     }
 
 }

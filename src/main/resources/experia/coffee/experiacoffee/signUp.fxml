@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
@@ -18,24 +19,24 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="name" layoutX="64.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="surname" layoutX="269.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="phoneNumber" layoutX="269.0" layoutY="285.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="email" layoutX="64.0" layoutY="285.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="name" layoutX="64.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. Nome" />
+      <TextField fx:id="surname" layoutX="269.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. Cognome" />
+      <TextField fx:id="phoneNumber" layoutX="269.0" layoutY="285.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 3331324455" />
+      <TextField fx:id="email" layoutX="64.0" layoutY="285.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. mariorossi@email.com" />
       <Label layoutX="64.0" layoutY="185.0" text="Nome" textFill="#fffdd0" />
       <Label layoutX="269.0" layoutY="185.0" prefHeight="17.0" prefWidth="58.0" text="Cognome" textFill="#fffdd0" />
       <Label layoutX="269.0" layoutY="268.0" text="Telefono" textFill="#fffdd0" />
       <Label layoutX="64.0" layoutY="268.0" text="Email" textFill="#fffdd0" />
       <Label layoutX="64.0" layoutY="441.0" text="Password" textFill="#fffdd0" />
-      <PasswordField fx:id="pwd" layoutX="64.0" layoutY="458.0" prefHeight="52.0" prefWidth="179.0" />
+      <PasswordField fx:id="pwd" layoutX="64.0" layoutY="458.0" prefHeight="52.0" prefWidth="179.0" promptText="Inserisci qui la tua password..." />
       <Label layoutX="565.0" layoutY="122.0" prefHeight="45.0" prefWidth="701.0" text="Step 2 - Indirizzo di spedizione/fatturazione" textFill="#fffdd0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="streetAddress" layoutX="634.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="streetNumber" layoutX="634.0" layoutY="289.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="postalCode" layoutX="851.0" layoutY="289.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="streetAddress" layoutX="634.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. Via dei marmi" />
+      <TextField fx:id="streetNumber" layoutX="634.0" layoutY="289.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 57" />
+      <TextField fx:id="postalCode" layoutX="851.0" layoutY="289.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 80100" />
       <Label layoutX="634.0" layoutY="185.0" text="Indirizzo/via" textFill="#fffdd0" />
       <Label layoutX="634.0" layoutY="272.0" prefHeight="17.0" prefWidth="58.0" text="Civico" textFill="#fffdd0" />
       <Label layoutX="852.0" layoutY="272.0" text="CAP" textFill="#fffdd0" />
@@ -46,25 +47,25 @@
             <Button fx:id="confirmSubscription" mnemonicParsing="false" onAction="#onSignUp" prefHeight="48.0" prefWidth="190.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Conferma registrazione" />
         </buttons>
       </ButtonBar>
-      <PasswordField fx:id="repeatPwd" layoutX="269.0" layoutY="458.0" prefHeight="52.0" prefWidth="179.0" />
+      <PasswordField fx:id="repeatPwd" layoutX="269.0" layoutY="458.0" prefHeight="52.0" prefWidth="179.0" promptText="Ripeti qui la tua password..." />
       <Label layoutX="268.0" layoutY="441.0" text="Ripeti password" textFill="#fffdd0" />
       <Label layoutX="565.0" layoutY="373.0" prefHeight="45.0" prefWidth="701.0" text="Step 3 - Metodo di pagamento" textFill="#fffdd0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="cardNumber" layoutX="634.0" layoutY="448.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="cvvNumber" layoutX="851.0" layoutY="448.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="cardOwner" layoutX="851.0" layoutY="537.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="cardNumber" layoutX="634.0" layoutY="448.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 1234567890" />
+      <TextField fx:id="cvvNumber" layoutX="851.0" layoutY="448.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 111" />
+      <TextField fx:id="cardOwner" layoutX="851.0" layoutY="537.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. Mario Rossi" />
       <Label layoutX="634.0" layoutY="431.0" text="Numero carta" textFill="#fffdd0" />
       <Label layoutX="851.0" layoutY="431.0" prefHeight="17.0" prefWidth="58.0" text="CVV" textFill="#fffdd0" />
       <Label layoutX="852.0" layoutY="520.0" text="Intestatario Carta" textFill="#fffdd0" />
       <Label layoutX="634.0" layoutY="520.0" text="Scadenza carta" textFill="#fffdd0" />
       <Separator layoutX="531.0" layoutY="-6.0" opacity="0.15" orientation="VERTICAL" prefHeight="809.0" prefWidth="2.0" style="-fx-background-color: black;" />
-      <TextField fx:id="city" layoutX="851.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" />
-      <DatePicker fx:id="expirationDate" layoutX="634.0" layoutY="537.0" prefHeight="52.0" prefWidth="179.0" />
-      <DatePicker fx:id="birthDate" layoutX="269.0" layoutY="369.0" prefHeight="52.0" prefWidth="179.0" />
-      <TextField fx:id="fiscalCode" layoutX="64.0" layoutY="369.0" prefHeight="52.0" prefWidth="179.0" />
+      <TextField fx:id="city" layoutX="851.0" layoutY="202.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. Napoli" />
+      <DatePicker fx:id="expirationDate" layoutX="634.0" layoutY="537.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 16/09/2030" />
+      <DatePicker fx:id="birthDate" layoutX="269.0" layoutY="369.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. 16/09/1970" />
+      <TextField fx:id="fiscalCode" layoutX="64.0" layoutY="369.0" prefHeight="52.0" prefWidth="179.0" promptText="Ex. RSSMRO00R06F839R" />
       <Label layoutX="269.0" layoutY="352.0" text="Data di nascita" textFill="#fffdd0" />
       <Label layoutX="64.0" layoutY="352.0" text="Codice Fiscale" textFill="#fffdd0" />
       <Label fx:id="errorMismatchPassword" layoutX="67.0" layoutY="517.0" prefHeight="17.0" prefWidth="179.0" text="Le password devono coincidere." textFill="#fffdd0" />
@@ -73,8 +74,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <CheckBox fx:id="personalDataAgreement" layoutX="565.0" layoutY="629.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="701.0" text="Ho letto ed accettato i termini e le condizioni ed autorizzo il trattamento dei dati personali." textFill="#fffdd0" />
+      <CheckBox fx:id="personalDataAgreement" layoutX="565.0" layoutY="629.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="515.0" text="* Ho letto ed accettato i termini e le condizioni ed autorizzo il trattamento dei dati personali." textFill="#fffdd0" />
       <CheckBox layoutX="565.0" layoutY="656.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="701.0" text="Desidero ricevere mail e newsletter settimanali per rimanere aggiornati sui prodotti di Experia Coffee." textFill="#fffdd0" />
       <CheckBox layoutX="565.0" layoutY="684.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="701.0" text="Desidero condividere i miei dati (analytics) al fine di migliorare il servizio offerto da Experia Coffee." textFill="#fffdd0" />
+      <Hyperlink fx:id="termsAndConditionsExperiaCoffee" layoutX="565.0" layoutY="748.0" onAction="#openTermsAndConditions" text="Leggi i termini e le condizioni di Experia Coffee" textAlignment="CENTER" textFill="#fffdd0" underline="true" />
    </children>
 </AnchorPane>

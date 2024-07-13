@@ -1,11 +1,13 @@
 package experia.coffee.experiacoffee.utils;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class PopupWindowError extends Alert {
     public PopupWindowError(AlertType alertType, String message, String title) {
@@ -13,12 +15,31 @@ public class PopupWindowError extends Alert {
         setTitle(title);
         setContentText(message);
         initStyle(StageStyle.DECORATED);
-        setHeaderText(null);
+        setHeaderText("Si è verificato un errore");
         setGraphic(null);
 
         Stage stage = (Stage) getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(this.getClass().getResource("/experia/coffee/experiacoffee/assets/ExperiaFavicon.png").toString()));
 
+        // Apply CSS styling
+        getDialogPane().getStylesheets().add(this.getClass().getResource("/experia/coffee/experiacoffee/styles/popupStyles.css").toString());
+
+        // Apply specific style class
+        getDialogPane().getStyleClass().add(getStyleClassForAlertType(alertType));
+    }
+
+    // metodo per scegliere la classe css corretta in base al popup evocato
+    private String getStyleClassForAlertType(AlertType alertType) {
+        switch (alertType) {
+            case ERROR:
+                return "error";
+            case INFORMATION:
+                return "info";
+            case CONFIRMATION:
+                return "confirmation";
+            default:
+                return "";
+        }
     }
 
     public static void showErrorAlert(AlertType alertType, String message, String title) {
