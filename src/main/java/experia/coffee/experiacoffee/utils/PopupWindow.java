@@ -15,14 +15,12 @@ public class PopupWindow extends Alert {
         super(alertType);
         setTitle(title);
         setContentText(message);
-        initStyle(StageStyle.UTILITY);
+        initStyle(StageStyle.DECORATED);
         setHeaderText(null);
         setGraphic(null);
 
-
         Stage stage = (Stage) getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(this.getClass().getResource("/experia/coffee/experiacoffee/assets/ExperiaFavicon.png").toString()));
-
 
         // Chiudi automaticamente la finestra dopo 3 secondi
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), e -> close()));

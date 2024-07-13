@@ -2,6 +2,7 @@ package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.LoginResult;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,6 +47,8 @@ public class LoginQuery {
                         } else {
                             return new LoginResult(false, null).getUser();
                         }
+                    } catch (Exception e) {
+                        PopupWindowError.handleException(e);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -96,13 +99,14 @@ public class LoginQuery {
                         }
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    PopupWindowError.handleException(e);
                     return new LoginResult(false, null).getUser();
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
             return new LoginResult(false, null).getUser();
         }
+        return null;
     }
 }

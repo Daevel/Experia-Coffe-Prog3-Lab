@@ -1,7 +1,6 @@
 package experia.coffee.experiacoffee.controller;
 
 import experia.coffee.experiacoffee.data.OrderQuery;
-import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.*;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
@@ -47,7 +46,6 @@ public class CheckoutPageController implements Initializable {
     @FXML
     public void onSubmitOrder() throws IOException {
         String email = singletonUser.getEMAIL();
-        //String cartID = retrieveCartID(email);
         experia.coffee.experiacoffee.data.OrderQuery query = new OrderQuery();
         boolean isOrderSuccessful = query.createOrder(email);
         if (isOrderSuccessful) {
@@ -94,11 +92,6 @@ public class CheckoutPageController implements Initializable {
     private float calculateIVA(float subTotale) {
        final int IVA_PERCENTAGE = 22;
        return (subTotale * IVA_PERCENTAGE)/(100);
-    }
-
-    private String retrieveCartID(String userEmail) {
-        experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
-        return userQuery.retrieveCartID(userEmail);
     }
 
 }

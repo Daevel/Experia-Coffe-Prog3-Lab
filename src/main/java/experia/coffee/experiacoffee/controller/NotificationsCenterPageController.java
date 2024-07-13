@@ -10,6 +10,7 @@ import experia.coffee.experiacoffee.model.StatePattern.OrderStatus.*;
 import experia.coffee.experiacoffee.model.StatePattern.TicketingStatus.TicketingStatus;
 import experia.coffee.experiacoffee.model.Ticket;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import experia.coffee.experiacoffee.utils.StatusImpl;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -101,7 +102,7 @@ public class NotificationsCenterPageController implements Initializable {
                 totalePagatoLabel.setVisible(false);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
 
         statusOrder_STATO_ORDINE.setCellFactory(column -> {

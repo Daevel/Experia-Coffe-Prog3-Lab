@@ -9,6 +9,7 @@ import experia.coffee.experiacoffee.model.ObserverPattern.ProductObserver;
 import experia.coffee.experiacoffee.model.SingletonPattern.UtenteSingleton;
 import experia.coffee.experiacoffee.model.SingletonPattern.ValoreTotaleSingleton;
 import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,18 +69,14 @@ public class ClienteHomePage implements Initializable {
         updateTotalAmount();
         showProducts();
 
-        if (utente != null) {
-
+        try {
             String nome = utente.getNAME();
             String cognome = utente.getSURNAME();
             String email = utente.getEMAIL();
-
             showCart(email);
-
             welcomeLabel.setText("Benvenuto, " + nome + " " + cognome + "!");
-
-        } else {
-            System.out.println("L'utente e' null nella Home page");
+        } catch (Exception e) {
+          PopupWindowError.handleException(e);
         }
     }
 

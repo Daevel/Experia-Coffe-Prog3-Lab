@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.Ordine;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -38,16 +39,15 @@ public class OrderQuery {
                         orderStatus.add(s);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    PopupWindowError.handleException(e);
                 } finally {
                     DBConnection.closeConnection();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             }
-
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return orderStatus;
     }
@@ -96,7 +96,7 @@ public class OrderQuery {
             DBConnection.closeConnection();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return productList;
     }
@@ -122,10 +122,10 @@ public class OrderQuery {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return false;
     }
@@ -166,10 +166,10 @@ public class OrderQuery {
                     return false;
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return false;
     }
@@ -186,7 +186,7 @@ public class OrderQuery {
             return rowsDeleted > 0;
 
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
             return false;
         }
     }
