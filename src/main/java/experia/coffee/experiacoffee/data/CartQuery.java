@@ -1,5 +1,10 @@
 package experia.coffee.experiacoffee.data;
 
+import experia.coffee.experiacoffee.common.Constants;
+import experia.coffee.experiacoffee.utils.PopupWindow;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
+import javafx.scene.control.Alert;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -19,16 +24,16 @@ public class CartQuery {
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if(rowsAffected > 0) {
-                    System.out.println("Carrello creato correttamente");
+                    PopupWindow.showAlert(Alert.AlertType.CONFIRMATION, Constants.CART_CREATE_SUCCESS, Constants.CART);
                 } else {
-                    System.out.println("Errore nella creazione del carrello");
+                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.CART_CREATE_FAILED, Constants.CART);
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
     }
 }

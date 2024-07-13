@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.Magazzino;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -38,7 +39,7 @@ public class WarehouseQuery {
             DBConnection.closeConnection();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return warehouseList;
     }

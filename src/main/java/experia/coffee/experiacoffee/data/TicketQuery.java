@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.data;
 import experia.coffee.experiacoffee.model.Ticket;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -25,11 +26,18 @@ public class TicketQuery {
                 preparedStatement.setString(4, new Timestamp(creationDate.getTime()).toString());
                 preparedStatement.executeUpdate();
                 return true;
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+            } finally {
+                DBConnection.closeConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
             return false;
+        } finally {
+            DBConnection.closeConnection();
         }
+        return false;
     }
 
     public ObservableList<Ticket> getTicketList () {
@@ -48,7 +56,9 @@ public class TicketQuery {
             st.close();
             DBConnection.closeConnection();
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
+        } finally {
+            DBConnection.closeConnection();
         }
         return ticketList;
     }
@@ -69,16 +79,15 @@ public class TicketQuery {
                         ticketList.add(t);
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    PopupWindowError.handleException(e);
                 } finally {
                     DBConnection.closeConnection();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             }
-
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return ticketList;
     }
@@ -92,16 +101,16 @@ public class TicketQuery {
                 preparedStatement.setString(1, emailDipendente);
                 preparedStatement.setString(2, Constants.TICKET_STATUS_TAKEN_CHARDE);
                 preparedStatement.setInt(3, ticketID);
-
                 int rowsAffected = preparedStatement.executeUpdate();
                 return rowsAffected;
+
             } catch (SQLException e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             } finally {
                 DBConnection.closeConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return 0;
     }
@@ -117,17 +126,14 @@ public class TicketQuery {
                 int rowsAffected = preparedStatement.executeUpdate();
                 return rowsAffected;
             } catch (SQLException e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             } finally {
                 DBConnection.closeConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return 0;
     }
-
-
-
 
 }

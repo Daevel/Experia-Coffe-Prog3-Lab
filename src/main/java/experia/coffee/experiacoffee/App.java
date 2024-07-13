@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee;
 
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -45,7 +46,7 @@ public class App extends Application {
             boolean dbExists = resultSet.next();
             return dbExists;
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
             return false;
         }
     }
@@ -59,9 +60,11 @@ public class App extends Application {
                 executeScript("src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee-useDatabase.sql", connection);
                 executeScript("src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee.sql", connection);
                 executeScript("src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee-popolamento.sql", connection);
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
     }
 
@@ -84,15 +87,14 @@ public class App extends Application {
                 if (script.length() > 0) {
                     preparedStatement.execute(script.toString());
                 }
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();

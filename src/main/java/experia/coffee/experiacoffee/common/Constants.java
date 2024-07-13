@@ -23,6 +23,7 @@ public class Constants {
     public static final String PROFILE_PAGE_CHANGE_EMAIL_SUCCESS = "Cambio email avvenuto con successo, redirect verso la pagina di login in corso...";
     public static final String PROFILE_PAGE_CHANGE_EMAIL_ERROR = "Richiesta fallita. L'email inserità è già presente nei nostri sistemi, riprovare.";
     public static final String PASSWORD_MISMATCH_ERROR = "Le password inserite non coincidono, riprovare.";
+
     public static final String TICKET_SEND_SUCCESS = "Ticket generato ed inviato correttamente, redirect in corso...";
     public static final String TICKET_SEND_ERROR = "Errore nella generazione del ticket, riprovare.";
     public static final String TICKET_UPDATE_SUCCESS = "Ticket aggiornato con successo, carico la tabella...";
@@ -46,9 +47,10 @@ public class Constants {
     public static final String ORDER_STATUS_ON_THE_WAY = "In Transito";
     public static final String ORDER_STATUS_ON_WAITING = "In Attesa";
     public static final String ORDER_STATUS_ON_DELIVERED = "Consegnato";
-
     public static final String ORDER_UPDATED_SUCCESS = "Ordine aggiornato correttamente";
     public static final String ORDER_UPDATED_ERROR = "Aggiornamento dell'ordine fallito, riprovare.";
 
-
+    public static final String CART_CREATE_SUCCESS = "Il carrello è stato creato correttamente";
+    public static final String CART_CREATE_FAILED = "Errore nella creazione del carrello";
+    public static final String CART = "Carrello acquisti";
 }

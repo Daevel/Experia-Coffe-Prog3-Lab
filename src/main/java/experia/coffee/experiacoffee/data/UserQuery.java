@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,34 +24,9 @@ public class UserQuery {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return -1;
-    }
-
-    public String retrieveCartID(String userEmail) {
-        String cartID = null;
-        try {
-            c.getDBConn();
-            String sql = "SELECT ID FROM tbl_cliente WHERE EMAIL = ?";
-            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
-
-                preparedStatement.setString(1, userEmail);
-
-                try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    if (resultSet.next()) {
-                        cartID = resultSet.getString("ID");
-                    }
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return cartID;
     }
 
     public int changeEmail (String newEmail, String oldEmail) {
@@ -63,14 +39,15 @@ public class UserQuery {
                 preparedStatement.setString(2, oldEmail);
 
                 int rowsAffected = preparedStatement.executeUpdate();
+
                 return rowsAffected;
             } catch (SQLException e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
             } finally {
                 DBConnection.closeConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return 0;
     }
@@ -88,13 +65,13 @@ public class UserQuery {
 
                     return rowsAffected > 0;
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    PopupWindowError.handleException(e);
                     return false;
                 } finally {
                     DBConnection.closeConnection();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
                 return false;
             }
         } else if (role.equalsIgnoreCase("dipendente")) {
@@ -109,13 +86,13 @@ public class UserQuery {
 
                     return rowsAffected > 0;
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    PopupWindowError.handleException(e);
                     return false;
                 } finally {
                     DBConnection.closeConnection();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                PopupWindowError.handleException(e);
                 return false;
             }
         }

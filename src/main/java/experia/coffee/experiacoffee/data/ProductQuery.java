@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.ObserverPattern.Prodotto;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -26,7 +27,7 @@ public class ProductQuery {
             st.close();
             DBConnection.closeConnection();
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return productList;
     }
@@ -58,11 +59,16 @@ public class ProductQuery {
                         s = new Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
                         productList.add(s);
                     }
+                } catch (Exception e) {
+                    PopupWindowError.handleException(e);
                 }
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+            } finally {
+                DBConnection.closeConnection();
             }
-            DBConnection.closeConnection();
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return productList;
     }
@@ -94,11 +100,16 @@ public class ProductQuery {
                         s = new Prodotto(rs.getString("NOME_PRODOTTO"),rs.getFloat("PREZZO_PRODOTTO"), rs.getInt("QUANTITA"),null,null);
                         amountProduct.add(s);
                     }
+                } catch (Exception e) {
+                    PopupWindowError.handleException(e);
                 }
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+            } finally {
+                DBConnection.closeConnection();
             }
-            DBConnection.closeConnection();
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
         return amountProduct;
     }

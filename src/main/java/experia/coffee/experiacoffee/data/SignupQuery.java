@@ -1,6 +1,7 @@
 package experia.coffee.experiacoffee.data;
 
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 
 import java.sql.PreparedStatement;
 
@@ -47,10 +48,17 @@ public class SignupQuery {
                 preparedStatement.setString(15, utente.getDATA_DI_NASCITA());
                 preparedStatement.executeUpdate();
                 return true;
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+                return false;
+            } finally {
+                DBConnection.closeConnection();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
             return false;
+        } finally {
+            DBConnection.closeConnection();
         }
     }
 

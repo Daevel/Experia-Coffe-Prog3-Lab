@@ -1,5 +1,6 @@
 package experia.coffee.experiacoffee.data;
 
+import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.application.Application;
 
 import java.sql.Connection;
@@ -17,13 +18,11 @@ public class DBConnection {
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         setCon(DriverManager.getConnection(url, "root", ""));
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        PopupWindowError.handleException(e);
                     }
-                } else {
-
                 }
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                PopupWindowError.handleException(ex);
             }
         }
     }
@@ -40,7 +39,7 @@ public class DBConnection {
         try {
             con.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            PopupWindowError.handleException(e);
         }
     }
 }
