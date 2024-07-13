@@ -19,7 +19,7 @@ public class PopupWindow extends Alert {
         setTitle(title);
         setContentText(message);
         initStyle(StageStyle.DECORATED);
-        setHeaderText(null);
+        setHeaderText("Messaggio di sistema");
         setGraphic(null);
 
         Stage stage = (Stage) getDialogPane().getScene().getWindow();
