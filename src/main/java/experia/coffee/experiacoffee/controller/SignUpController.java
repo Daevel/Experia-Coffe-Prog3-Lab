@@ -3,6 +3,7 @@ package experia.coffee.experiacoffee.controller;
 import experia.coffee.experiacoffee.common.Constants;
 import experia.coffee.experiacoffee.data.CartQuery;
 import experia.coffee.experiacoffee.data.SignupQuery;
+import java.time.format.DateTimeFormatter;
 import experia.coffee.experiacoffee.data.UserQuery;
 import experia.coffee.experiacoffee.model.BuilderPattern.Utente;
 import experia.coffee.experiacoffee.model.SceneSwitch;
@@ -100,54 +101,68 @@ public class SignUpController implements Initializable {
 
     @FXML
     public void onSignUp() throws IOException {
+
+        final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        String birthDateFormatted = birthDate.getValue() != null ? birthDate.getValue().format(DATE_FORMATTER) : "";
+        String expirationDateFormatted = expirationDate.getValue() != null ? expirationDate.getValue().format(DATE_FORMATTER) : "";
+
         if (PasswordValidation.checkPasswordIntegrity(pwd.getText(), repeatPwd.getText())) {
             if (EmailValidation.patternMatches(email.getText())) {
                 if (PhoneNumberValidator.isValidPhoneNumber(phoneNumber.getText())) {
-                    if (FiscalcodeValidator.isValidCodiceFiscale(fiscalCode.getText())) {
-                        if (DateValidator.isValidDate(birthDate.getValue().toString())) {
-                            if (DateValidator.isValidDate(expirationDate.getValue().toString())) {
-                                if (personalDataAgreement.isSelected()) {
-                                    Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
-                                            .setNAME(name.getText())
-                                            .setSURNAME(surname.getText())
-                                            .setCELLULARE(phoneNumber.getText())
-                                            .setVIA(streetAddress.getText())
-                                            .setN_CIVICO(streetNumber.getText())
-                                            .setCITTA(city.getText())
-                                            .setCAP(postalCode.getText())
-                                            .setNUM_CARTA(cardNumber.getText())
-                                            .setCVV_CARTA(cvvNumber.getText())
-                                            .setINTESTATARIO_CARTA(cardOwner.getText())
-                                            .setSCADENZA_CARTA(expirationDate.getValue().toString())
-                                            .setCODICE_FISCALE(fiscalCode.getText())
-                                            .setDATA_DI_NASCITA(birthDate.getValue().toString());
-                                    experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
+                    if(CAPValidator.isValidCAP(postalCode.getText())) {
+                        if (FiscalcodeValidator.isValidCodiceFiscale(fiscalCode.getText())) {
+                            if(CardOwnerValidator.isCardOwnerNameValid(name.getText(), surname.getText(), cardOwner.getText())) {
+                                if (DateValidator.isValidDate(birthDateFormatted)) {
+                                    if (DateValidator.isValidDate(expirationDateFormatted)) {
+                                        if (personalDataAgreement.isSelected()) {
+                                            Utente.UtenteBuilder utente = new Utente.UtenteBuilder(email.getText(), pwd.getText())
+                                                    .setNAME(name.getText())
+                                                    .setSURNAME(surname.getText())
+                                                    .setCELLULARE(phoneNumber.getText())
+                                                    .setVIA(streetAddress.getText())
+                                                    .setN_CIVICO(streetNumber.getText())
+                                                    .setCITTA(city.getText())
+                                                    .setCAP(postalCode.getText())
+                                                    .setNUM_CARTA(cardNumber.getText())
+                                                    .setCVV_CARTA(cvvNumber.getText())
+                                                    .setINTESTATARIO_CARTA(cardOwner.getText())
+                                                    .setSCADENZA_CARTA(expirationDate.getValue().toString())
+                                                    .setCODICE_FISCALE(fiscalCode.getText())
+                                                    .setDATA_DI_NASCITA(birthDate.getValue().toString());
+                                            experia.coffee.experiacoffee.data.SignupQuery query = new SignupQuery();
 
-                                    boolean signUpSuccess = query.signUpUser(utente.build());
+                                            boolean signUpSuccess = query.signUpUser(utente.build());
 
-                                    if (signUpSuccess) {
-                                        experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
-                                        createCart(email.getText());
-                                        PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.SIGNUP_CORRECT, Constants.SIGNUP);
-                                        try {
-                                            new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
-                                        } catch (IOException ex) {
-                                            throw new RuntimeException(ex);
+                                            if (signUpSuccess) {
+                                                experia.coffee.experiacoffee.data.UserQuery userQuery = new UserQuery();
+                                                createCart(email.getText());
+                                                PopupWindow.showAlert(Alert.AlertType.INFORMATION, Constants.SIGNUP_CORRECT, Constants.SIGNUP);
+                                                try {
+                                                    new SceneSwitch(signUpAnchorPane, "loginPage.fxml");
+                                                } catch (IOException ex) {
+                                                    throw new RuntimeException(ex);
+                                                }
+                                            } else {
+                                                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_ERROR_EMAIL_ALREADY_EXIST, Constants.SIGNUP);
+                                            }
+                                        } else {
+                                            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_MISSING_ACCEPT_TERMS_AND_POLICY, Constants.SIGNUP);
                                         }
                                     } else {
-                                        PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_ERROR_EMAIL_ALREADY_EXIST, Constants.SIGNUP);
+                                        PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_DATE, Constants.SIGNUP);
                                     }
                                 } else {
-                                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_MISSING_ACCEPT_TERMS_AND_POLICY, Constants.SIGNUP);
+                                    PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_DATE, Constants.SIGNUP);
                                 }
                             } else {
-                                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_DATE, Constants.SIGNUP);
+                                PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_CARD_OWNER_MISMATCH, Constants.SIGNUP);
                             }
                         } else {
-                            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_DATE, Constants.SIGNUP);
+                            PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_FISCAL_CODE, Constants.SIGNUP);
                         }
                     } else {
-                        PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_FISCAL_CODE, Constants.SIGNUP);
+                        PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_POSTAL_CODE, Constants.SIGNUP);
                     }
                 } else {
                     PopupWindowError.showErrorAlert(Alert.AlertType.ERROR, Constants.SIGNUP_INVALID_PHONE_NUMBER, Constants.SIGNUP);

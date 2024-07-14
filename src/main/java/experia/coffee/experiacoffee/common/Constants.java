@@ -17,6 +17,8 @@ public class Constants {
     public static final String SIGNUP_INVALID_DATE = "Registrazione fallita. Una delle date inserite non e' valida, riprova.";
     public static final String SIGNUP_INVALID_FISCAL_CODE = "Registrazione fallita. Il codice fiscale inserito non e' valido, riprova.";
     public static final String SIGNUP_INVALID_PHONE_NUMBER = "Registrazione fallita. Il numero di telefono inserito non e' corretto, riprova.";
+    public static final String SIGNUP_INVALID_POSTAL_CODE = "Registrazione fallita. Il codice postale inserito non è corretto. Riprovare";
+    public static final String SIGNUP_CARD_OWNER_MISMATCH = "Registrazione fallita. Il possessore della carta non corrisponde alla persona che sta tentando di registrarsi. Riprovare.";
 
     public static final String LOGOUT = "Logout";
     public static final String LOGOUT_SUCCESS = "Logout in corso, arrivederci.";
