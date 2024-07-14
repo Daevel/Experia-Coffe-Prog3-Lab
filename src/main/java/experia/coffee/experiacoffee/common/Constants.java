@@ -14,6 +14,9 @@ public class Constants {
     public static final String SIGNUP_ERROR_EMAIL_PATTERN_INVALID = "Registrazione fallita. L'email inserita non rispetta i criteri validi. Riprovare.";
     public static final String SIGNUP_ERROR_EMAIL_PASSWORD_MISMATCH = "Registrazioe fallita. Le password inserite non coincidono, riprovare.";
     public static final String SIGNUP_MISSING_ACCEPT_TERMS_AND_POLICY = "Registrazione fallita. E' necessario accettare i termini e le condizioni per proseguire.";
+    public static final String SIGNUP_INVALID_DATE = "Registrazione fallita. Una delle date inserite non e' valida, riprova.";
+    public static final String SIGNUP_INVALID_FISCAL_CODE = "Registrazione fallita. Il codice fiscale inserito non e' valido, riprova.";
+    public static final String SIGNUP_INVALID_PHONE_NUMBER = "Registrazione fallita. Il numero di telefono inserito non e' corretto, riprova.";
 
     public static final String LOGOUT = "Logout";
     public static final String LOGOUT_SUCCESS = "Logout in corso, arrivederci.";
