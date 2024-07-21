@@ -36,8 +36,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="returnToHomePageButton" layoutX="1134.0" layoutY="730.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="39.0" prefWidth="99.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Anulla" />
-      <Button fx:id="proceedOrder" layoutX="1021.0" layoutY="730.0" mnemonicParsing="false" onAction="#onSubmitOrder" prefHeight="39.0" prefWidth="99.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Procedi" />
+      <Button fx:id="returnToHomePageButton" layoutX="1018.0" layoutY="727.0" mnemonicParsing="false" onAction="#onReturnHomePage" prefHeight="39.0" prefWidth="99.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Anulla" />
+      <Button fx:id="proceedOrder" layoutX="1128.0" layoutY="727.0" mnemonicParsing="false" onAction="#onSubmitOrder" prefHeight="39.0" prefWidth="99.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Procedi" />
       <Label fx:id="ivaPercentage" layoutX="28.0" layoutY="679.0" prefHeight="45.0" prefWidth="266.0" text="IVA(20%)" textFill="#fffdd0">
          <font>
             <Font size="18.0" />

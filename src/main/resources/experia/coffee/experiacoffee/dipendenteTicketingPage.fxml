@@ -67,7 +67,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="updateTicketButton" layoutX="1132.0" layoutY="741.0" mnemonicParsing="false" onAction="#updateTicketStatusById" prefHeight="45.0" prefWidth="134.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Aggiorna ticket" textFill="WHITE" />
+      <Button fx:id="updateTicketButton" layoutX="1132.0" layoutY="741.0" mnemonicParsing="false" onAction="#updateTicketStatusById" prefHeight="45.0" prefWidth="134.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Aggiorna ticket" textFill="WHITE" />
       <Label fx:id="ticketSelectedTitle" layoutX="478.0" layoutY="581.0" prefHeight="45.0" prefWidth="558.0" text="Ticket selezionato:" textFill="#fffdd0">
          <font>
             <Font size="18.0" />

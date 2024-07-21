@@ -72,7 +72,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="checkoutPageButton" layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" onAction="#openCheckoutPage" prefHeight="40.0" prefWidth="186.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Checkout" />
+      <Button fx:id="checkoutPageButton" layoutX="1072.0" layoutY="740.0" mnemonicParsing="false" onAction="#openCheckoutPage" prefHeight="40.0" prefWidth="186.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Checkout" />
       <Label fx:id="totalAmount" layoutX="852.0" layoutY="740.0" prefHeight="40.0" prefWidth="215.0" textFill="#fffdd0">
          <font>
             <Font size="18.0" />

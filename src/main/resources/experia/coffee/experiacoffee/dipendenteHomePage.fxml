@@ -117,7 +117,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="updateOrderButton" layoutX="428.0" layoutY="193.0" mnemonicParsing="false" onAction="#updateOrder" prefHeight="25.0" prefWidth="85.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Aggiorna" />
+      <Button fx:id="updateOrderButton" layoutX="428.0" layoutY="193.0" mnemonicParsing="false" onAction="#updateOrder" prefHeight="25.0" prefWidth="85.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Aggiorna" />
       <Button fx:id="clearFieldsButton" layoutX="428.0" layoutY="229.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="25.0" prefWidth="85.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Cancella" />
       <ToggleButton fx:id="makeOrderDeliveredButton" layoutX="428.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleToggleButtonAction" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: green;" stylesheets="@styles/style.css" text="Consegnato" textFill="WHITE" />
       <ToggleButton fx:id="makeOrderInTransitButton" layoutX="428.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleToggleButtonAction" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: yellow;" stylesheets="@styles/style.css" text="In Transito" />

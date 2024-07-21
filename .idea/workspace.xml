@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="fixed some pages and added code for validation in signup process">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/CAPValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/CardOwnerValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/DateValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/FiscalcodeValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/PhoneNumberValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" afterDir="false" />
@@ -91,7 +92,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

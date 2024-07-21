@@ -31,7 +31,7 @@
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Button fx:id="loginButton" layoutX="466.0" layoutY="616.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="54.0" prefWidth="357.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Accedi">
+      <Button fx:id="loginButton" layoutX="466.0" layoutY="616.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="54.0" prefWidth="357.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Accedi">
          <font>
             <Font size="16.0" />
          </font></Button>

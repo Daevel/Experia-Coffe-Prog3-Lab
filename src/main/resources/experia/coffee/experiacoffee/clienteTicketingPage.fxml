@@ -40,8 +40,8 @@
             <Font size="18.0" />
          </font>
       </TextArea>
-      <Button fx:id="sendTicketRequest" layoutX="1152.0" layoutY="697.0" mnemonicParsing="false" onAction="#onSendTicket" prefHeight="38.0" prefWidth="102.0" styleClass="classic-button" stylesheets="@styles/style.css" text="Invia richiesta" />
-      <Button fx:id="goBack" layoutX="1209.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="38.0" prefWidth="45.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="X" />
+      <Button fx:id="sendTicketRequest" layoutX="1152.0" layoutY="697.0" mnemonicParsing="false" onAction="#onSendTicket" prefHeight="38.0" prefWidth="102.0" styleClass="cancel-button" stylesheets="@styles/style.css" text="Invia richiesta" />
+      <Button fx:id="goBack" layoutX="1209.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="38.0" prefWidth="45.0" styleClass="classic-button" stylesheets="@styles/style.css" text="X" />
       <Text fill="#fffdd0" layoutX="174.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ecco una piccola legenda che potrebbe aiutarti:" wrappingWidth="381.13671875">
          <font>
             <Font size="18.0" />
