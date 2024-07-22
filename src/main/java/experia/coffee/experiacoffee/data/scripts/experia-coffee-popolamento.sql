@@ -22,6 +22,7 @@ VALUES
     ('Valentina', 'Marchetti', 'valentina.marchetti@gmail.com', '+39 339 9012345', 'Bari', 'Via Bari', '90', '70100', '9012345678901234', '901', 'Valentina Marchetti', '2024-01-05', 'RSSLNT88M41H501M', '1988-11-15'),
     ('Ernesto', 'Brancaccio', 'ernesto.brancaccio@gmail.com', '+39 357 3211565', 'Potenza', 'Via del Piave', '11', '85100', '9013645655901255', '777', 'Ernesto Brancaccio', '2024-02-22', 'RSSTNB90M22H501E', '1990-06-30');
 
+INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Default', 'TBD', 'Z000');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Naples', 'Napoli', 'Z001');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Rome', 'Roma', 'Z002');
 INSERT INTO tbl_filiale (NOME_FILIALE, SEDE, CODICE_ZONA_FILIALE) VALUES('Experia Coffee - Milan', 'Milano', 'Z003');
@@ -437,6 +438,7 @@ INSERT INTO tbl_aggiunto_in (ID_PRODOTTO, ID_CARRELLO) VALUES
 
 
 INSERT INTO tbl_corriere (P_IVA, NOME, TELEFONO, EMAIL) VALUES
+                                                            ('00000000000', 'EXPERIA COFFEE - DEFAULT', '000 000 000', 'default@experiacoffee.it'),
                                                             ('04209680158', 'DHL EXPRESS (ITALY) S.R.L.', '199 199 345', 'dhlexpress@expresspec.dhl.it'),
                                                             ('04507990150', 'BRT S.P.A.', '06 2273 7311', 'brt@pec.brt.it'),
                                                             ('08537690151', 'UPS ITALIA SRL', '02 30 30 30 39', 'amministrazione.ups@pec.it'),

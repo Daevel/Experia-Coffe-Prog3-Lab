@@ -50,8 +50,9 @@ public class CheckoutPageController implements Initializable {
         boolean isOrderSuccessful = query.createOrder(email);
         if (isOrderSuccessful) {
             new SceneSwitch(checkoutPane, "thanksPageAfterOrder.fxml");
+        } else {
+            System.out.println("Errore nella creazione dell'ordine");
         }
-        System.out.println("Errore nella creazione dell'ordine");
     }
 
     @Override

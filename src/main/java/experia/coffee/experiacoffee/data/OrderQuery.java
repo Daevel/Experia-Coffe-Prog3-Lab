@@ -5,9 +5,8 @@ import experia.coffee.experiacoffee.utils.PopupWindowError;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.UUID;
 
 public class OrderQuery {
 
@@ -102,25 +101,130 @@ public class OrderQuery {
     }
 
 
-    public boolean createOrder (String userEmail) {
+    public boolean createOrder(String userEmail) {
+        ShippingQuery shippingQuery = new ShippingQuery();
+
+
         try {
             c.getDBConn();
-            String sql = "INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO, INDIRIZZO_SPEDIZIONE) VALUES ('EMPTY', 0, (SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?), (SELECT VIA from tbl_cliente WHERE EMAIL = ?))";
-            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
+
+
+            // Inserimento dell'ordine
+            String sqlOrder = "INSERT INTO tbl_ordine (FATTURA, NUMERO_ORDINE, ID_CARRELLO, INDIRIZZO_SPEDIZIONE) " +
+                    "VALUES ('EMPTY', 0, (SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?), " +
+                    "(SELECT VIA FROM tbl_cliente WHERE EMAIL = ?))";
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sqlOrder)) {
+                String numeroOrdine = generateRandomOrderNumber();
 
                 preparedStatement.setString(1, userEmail);
                 preparedStatement.setString(2, userEmail);
 
                 int rowsAffected = preparedStatement.executeUpdate();
 
+                if (rowsAffected > 0) {
+                    // Recupero ID carrello
+                    int idCarrello = retrieveIDCartFromEmail(userEmail);
+                    if (idCarrello != -1) {
+                        // Creazione del record gestito_da
+                        if (insertGestitoDaOrder(idCarrello)) {
+                            // Creazione della spedizione
+                            String codiceSpedizione = shippingQuery.insertNewSpedizione();
+                            if (codiceSpedizione != null) {
+                                // Creazione del record emette_spedizione
+                                if (insertEmetteSpedizione(codiceSpedizione)) {
+                                    System.out.println("Ordine creato correttamente");
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+
+                e.printStackTrace(); // Gestione degli errori
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Gestione degli errori
+        }
+        return false;
+    }
+
+    private String generateRandomOrderNumber() {
+        return "ORD-" + UUID.randomUUID().toString().replaceAll("-", "").substring(0, 10).toUpperCase();
+    }
+
+
+
+
+    public int retrieveIDCartFromEmail(String userEmail) {
+        int idCarrello = -1;
+        try {
+            c.getDBConn();  // Assumendo che c sia un oggetto che gestisce la connessione al database
+            String sql = "SELECT ID FROM tbl_carrello WHERE EMAIL_CLIENTE = ?";
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
+
+                preparedStatement.setString(1, userEmail);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        idCarrello = resultSet.getInt("ID");
+                        System.out.println("ID carrello estratto correttamente");
+                    } else {
+                        System.out.println("Errore nel retrieve dell'ID carrello");
+                    }
+                }
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+            }
+        } catch (Exception e) {
+            PopupWindowError.handleException(e);
+        }
+        return idCarrello;
+    }
+
+    public boolean insertGestitoDaOrder(int id_carrello) {
+        try {
+            c.getDBConn();
+            String sql = "INSERT INTO tbl_gestito_da (ID_FILIALE, CODICE_ORDINE) VALUES ('Z000', ?)";
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
+
+                preparedStatement.setInt(1, id_carrello);
+
+                int rowsAffected = preparedStatement.executeUpdate();
+
                 if(rowsAffected > 0) {
-                    System.out.println("Ordine creato correttamente");
+                    System.out.println("Cross row gestito_da creato correttamente");
                     return true;
                 } else {
-                    System.out.println("Errore nella creazione dell'ordine");
+                    System.out.println("Errore nella creazione del record in gestito_da");
                     return false;
                 }
+            } catch (Exception e) {
+                PopupWindowError.handleException(e);
+            }
+        } catch (Exception e) {
+            PopupWindowError.handleException(e);
+        }
+        return false;
+    }
 
+    public boolean insertEmetteSpedizione(String codice_spedizione) {
+        try {
+            c.getDBConn();
+            String sql = "INSERT INTO tbl_emette_spedizione (CODICE_ZONA_FILIALE, NUMERO_TRACCIAMENTO) VALUES ('Z000', ?)";
+            try (PreparedStatement preparedStatement = DBConnection.getCon().prepareStatement(sql)) {
+
+                preparedStatement.setString(1, codice_spedizione);
+
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if(rowsAffected > 0) {
+                    System.out.println("Cross row emette_spedizione creato correttamente");
+                    return true;
+                } else {
+                    System.out.println("Errore nella creazione del record in emette_spedizione");
+                    return false;
+                }
             } catch (Exception e) {
                 PopupWindowError.handleException(e);
             }

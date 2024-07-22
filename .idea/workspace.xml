@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dece3d82-d069-42f2-875f-77316d8b3160" name="Changes" comment="fixed some pages and added code for validation in signup process">
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/DateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/FiscalcodeValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/validation/PhoneNumberValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/ShippingQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/controller/CheckoutPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee-popolamento.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/scripts/experia-coffee-popolamento.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,5 +257,66 @@
     <MESSAGE value="fixed some issues about DipendenteHomePage and its status" />
     <MESSAGE value="fixed ticketing page layout for clients" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed ticketing page layout for clients" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/experia/coffee/experiacoffee/data/OrderQuery.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
